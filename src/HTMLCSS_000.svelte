@@ -1,17 +1,18 @@
 <script>
+  import { base } from "$app/paths";
 </script>
 
 <!-- <div style="height:50px;width:100px;border:1px solid black"> -->
 <nav>
   <ul>
     <li>
-      <a href="index.html">Hem</a>
+      <a href="{base}/index.html">Hem</a>
     </li>
     <li>
-      <a href="about.svelte">Om oss</a>
+      <a href="{base}/about.svelte">Om oss</a>
     </li>
     <li>
-      <a href="contact.svelte">Kontakta oss</a>
+      <a href="{base}/contact.svelte">Kontakta oss</a>
     </li>
   </ul>
 </nav>

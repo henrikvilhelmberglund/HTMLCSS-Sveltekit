@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { base } from "$app/paths";
   import HTMLCSS_000 from "../HTMLCSS_000.svelte";
-  import HTMLCSS_000Exercise from "../HTMLCSS_000.svelte";
+  import HTMLCSS_000Exercise from "../HTMLCSS_000_exercise.svelte";
   import HTMLCSS_000Exercise2 from "../HTMLCSS_000_exercise2.svelte";
 </script>
 
