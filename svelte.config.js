@@ -17,9 +17,11 @@ const config = {
       precompress: false,
       strict: true
     }),
-
     paths: {
       base: "/HTMLCSS-Sveltekit",
+    },
+    vitePlugin: {
+      experimental: { inspector: true }
     }
   },
 };
