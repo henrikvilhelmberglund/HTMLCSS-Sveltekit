@@ -6,13 +6,13 @@
 <nav>
   <ul>
     <li>
-      <a href="index.html">Hem</a>
+      <a href="{base}/">Hem</a>
     </li>
     <li>
-      <a href="{base}/about.svelte">Om oss</a>
+      <a href="{base}/about">Om oss</a>
     </li>
     <li>
-      <a href="{base}/contact.svelte">Kontakta oss</a>
+      <a href="{base}/contact">Kontakta oss</a>
     </li>
   </ul>
 </nav>
