@@ -5,7 +5,9 @@
   }
 </script>
 
-Which HTML element defines.. a hyperlink = <a href="http://google.com">a link to google</a>
+Which HTML element defines.. a hyperlink = <a href="http://google.com"
+  >a link to google</a
+>
 
 an article =
 <article>This is an article tag</article>
@@ -37,7 +39,7 @@ a section in a document (OBS! Finns fler än ett rätt svar.) =
 <nav>This is a navigation link</nav>
 and all other semantic tags
 <br />
-an image =<img src="/src/assets/svelte.svg" alt="svelte logo" />
+an image =<img src="svelte.svg" alt="svelte logo" />
 
 the main content of a document =
 <main>This is the main content of a document</main>
@@ -48,7 +50,9 @@ an ordered list =
   <li>an ordered list</li>
 </ol>
 
-an option in a drop-down list =<select name="" id=""> <option value="">This is an option</option></select>
+an option in a drop-down list =<select name="" id="">
+  <option value="">This is an option</option></select
+>
 
 important text in a paragrapha= <strong>This text is important</strong>
 
@@ -64,7 +68,12 @@ an unordered list =
   <li>Unordered list</li>
 </ul>
 
-a multiline input control (text area) =<textarea name="" id="" cols="30" rows="10">This is a text area</textarea>
+a multiline input control (text area) =<textarea
+  name=""
+  id=""
+  cols="30"
+  rows="10">This is a text area</textarea
+>
 
 a table =
 <table>This is a table</table>
