@@ -20,10 +20,10 @@ const config = {
     paths: {
       base: "/HTMLCSS-Sveltekit",
     },
-    vitePlugin: {
-      experimental: { inspector: true }
-    }
   },
+  vitePlugin: {
+    experimental: { inspector: true }
+  }
 };
 
 export default config;
