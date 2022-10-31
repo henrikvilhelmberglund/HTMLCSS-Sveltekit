@@ -7,7 +7,7 @@
   <ul>
     <li>
       <!-- /../ = gå tillbaka en mapp  -->
-      <a href="{base}/index.html">Hem</a>
+      <a href="index.html">Hem</a>
     </li>
     <li>
       <a href="{base}/about.svelte">Om oss</a>
