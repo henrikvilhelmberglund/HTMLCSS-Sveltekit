@@ -74,9 +74,9 @@ CSS Selector {
 
   div:hover {
     background: yellow;
-    padding-top: 10px;
-    position: fixed;
-    top: 10px;
+    padding-top: 50px;
+    /* position: fixed; */
+    /* top: 10px; */
     transition: all 500ms;
   }
 </style>
