@@ -30,7 +30,7 @@
   <h2>Javascript är kul!</h2>
   <a href="https://vitejs.dev" target="_blank">
     <div>
-      <img src="vite.svg" width="100px" alt="Vite Logo" />
+      <img src="{base}/vite.svg" width="100px" alt="Vite Logo" />
       <p>Click!</p>
     </div>
   </a>

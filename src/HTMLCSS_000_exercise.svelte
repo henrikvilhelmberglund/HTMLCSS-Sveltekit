@@ -1,5 +1,7 @@
 <script>
   // your script goes here
+  import { base } from "$app/paths";
+
   function buttonFunc() {
     alert("You pressed me!");
   }
@@ -39,7 +41,7 @@ a section in a document (OBS! Finns fler än ett rätt svar.) =
 <nav>This is a navigation link</nav>
 and all other semantic tags
 <br />
-an image =<img src="svelte.svg" alt="svelte logo" />
+an image =<img src="{base}/svelte.svg" alt="svelte logo" />
 
 the main content of a document =
 <main>This is the main content of a document</main>
