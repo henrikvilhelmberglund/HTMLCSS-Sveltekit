@@ -17,7 +17,7 @@ const config = {
     }),
 
     paths: {
-      base: dev ? "" : "/HTMLCSS-Sveltekit/",
+      base: dev ? "" : "/HTMLCSS-Sveltekit",
     }
   },
 };
