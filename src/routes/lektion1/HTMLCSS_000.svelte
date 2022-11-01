@@ -35,11 +35,15 @@
     </div>
   </a>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident amet repellendus temporibus, eos expedita aperiam asperiores perspiciatis velit
-    molestias debitis placeat consequuntur magni sequi explicabo. Quia, ipsa! Velit, magnam vel?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident amet
+    repellendus temporibus, eos expedita aperiam asperiores perspiciatis velit
+    molestias debitis placeat consequuntur magni sequi explicabo. Quia, ipsa!
+    Velit, magnam vel?
   </p>
   <h3>Fördelarna med JS</h3>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quisquam?</p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quisquam?
+  </p>
   <h2>Men CSS är roligare!</h2>
   <p>Lorem ipsum dolor sit amet.</p>
 </div>
