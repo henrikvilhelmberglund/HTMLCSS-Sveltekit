@@ -12,6 +12,11 @@
   } else if (number === 0) {
     leadingzero = 1;
   }
+  let phoneString;
+  $: phoneString =
+    length + leadingzero === 9
+      ? "Your landline phone number is"
+      : "Your mobile phone number is";
 </script>
 
 <div>
@@ -22,39 +27,37 @@
   {#if number === null || undefined}
     <p>Enter a phone number</p>
   {:else if leadingzero === 1}
-    {#if length === 9}
-      <!-- content here -->
-      Your phone number is 0{Array.from(String(number))
-        .slice(0, 2)
-        .join("")}-{Array.from(String(number))
-        .slice(2, 5)
-        .join("")}-{Array.from(String(number)).slice(5, 9).join("")}
-    {:else}
-      Your phone number is 0{Array.from(String(number))
+    {#if length === 8}
+      {phoneString} 0{Array.from(String(number))
         .slice(0, 1)
         .join("")}-{Array.from(String(number))
         .slice(1, 4)
         .join("")}-{Array.from(String(number)).slice(4, 9).join("")}
-      <!-- else content here -->
-    {/if}
-  {:else if length === 10}
-    <!-- content here -->
-    <p>
-      Your phone number is {Array.from(String(number))
-        .slice(0, 3)
-        .join("")}-{Array.from(String(number))
-        .slice(3, 6)
-        .join("")}-{Array.from(String(number)).slice(6, 10).join("")}
-    </p>
-  {:else}
-    <p>
-      Your phone number is {Array.from(String(number))
+    {:else}
+      {phoneString} 0{Array.from(String(number))
         .slice(0, 2)
         .join("")}-{Array.from(String(number))
         .slice(2, 5)
+        .join("")}-{Array.from(String(number)).slice(5, 9).join("")}
+    {/if}
+  {:else if length === 9}
+    <p>
+      {phoneString}
+      {Array.from(String(number)).slice(0, 2).join("")}-{Array.from(
+        String(number)
+      )
+        .slice(2, 5)
         .join("")}-{Array.from(String(number)).slice(5, 10).join("")}
     </p>
-    <!-- else content here -->
+  {:else}
+    <p>
+      {phoneString}
+      {Array.from(String(number)).slice(0, 3).join("")}-{Array.from(
+        String(number)
+      )
+        .slice(3, 6)
+        .join("")}-{Array.from(String(number)).slice(6, 10).join("")}
+    </p>
   {/if}
 </div>
 
