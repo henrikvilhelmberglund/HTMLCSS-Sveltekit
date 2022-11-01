@@ -3,22 +3,24 @@
   import HTMLCSS_000 from "./HTMLCSS_000.svelte";
   import HTMLCSS_000Exercise from "./HTMLCSS_000_exercise.svelte";
   import HTMLCSS_000Exercise2 from "./HTMLCSS_000_exercise2.svelte";
+  let visible = 0;
+
+  function tabClick(e, pageNum) {
+    visible = pageNum;
+    //console.log(visible);
+  }
 </script>
 
+<button on:click={() => tabClick(event, 1)}>Page 1</button>
+<button on:click={() => tabClick(event, 2)}>Page 2</button>
+<button on:click={() => tabClick(event, 3)}>Page 3</button>
+
 <div class="tab">
-  <a href="#page1">Page 1</a>
-  <a href="#page2">Page 2</a>
-  <a href="#page3">Page 3</a>
-
-  <div id="page1">
+  {#if visible === 1}
     <HTMLCSS_000 />
-  </div>
-
-  <div id="page2">
+  {:else if visible === 2}
     <HTMLCSS_000Exercise />
-  </div>
-
-  <div id="page3">
+  {:else if visible === 3}
     <HTMLCSS_000Exercise2 />
-  </div>
+  {/if}
 </div>
