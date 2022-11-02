@@ -1,4 +1,6 @@
 <script>
+  import { tweened } from "svelte/motion";
+  import { cubicOut } from "svelte/easing";
   let movies = [
     {
       name: "LOTR",
@@ -46,10 +48,7 @@
     },
   ];
 
-  let displayImage;
-  let displayName;
-  let displayImageAnime;
-  let displayNameAnime;
+  /*
 
   function showImage(name, img, type) {
     if (type === "movie") {
@@ -61,6 +60,28 @@
       displayImageAnime = img;
     }
   }
+
+  function hideImage(name, img, type) {
+    if (type === "movie") {
+      displayImage = "";
+    } else if (type === "anime") {
+      displayImageAnime = "";
+    }
+  }
+*/
+
+  const opacity = tweened(1, {
+    duration: 1,
+    easing: cubicOut,
+  });
+
+  const animeOpacity = tweened(1, {
+    duration: 1,
+    easing: cubicOut,
+  });
+
+  let currentMovie = "";
+  let currentAnime = "";
 </script>
 
 <!-- 
@@ -72,52 +93,64 @@
   <ol>
     {#each movies as movie}
       <li
-        on:mouseenter={() => showImage(movie.name, movie.img, "movie")}
-        on:mouseleave={() => (displayImage = "")}
+        class={movie.name}
+        on:mouseenter={() => {
+          opacity.set(1);
+          currentMovie = movie.name;
+        }}
+        on:mouseleave={() => {
+          opacity.set(0);
+        }}
       >
         {movie.name}
       </li>
+      <div class="absolute-pos">
+        {#if currentMovie === movie.name}
+          <img
+            src={movie.img}
+            alt="Poster for {movie.img}"
+            class="smaller-image"
+            style="opacity:{$opacity}"
+          />
+        {/if}
+      </div>
     {/each}
   </ol>
 </div>
-
-{#if displayImage}
-  <div class="absolute-pos">
-    <img
-      src={displayImage}
-      alt="Poster for {displayName}"
-      class="smaller-image"
-    />
-  </div>
-{/if}
 
 <div>
   <ul>
     {#each otherMovies as otherMovie}
       <li
-        on:mouseenter={() =>
-          showImage(otherMovie.name, otherMovie.img, "anime")}
-        on:mouseleave={() => (displayImageAnime = "")}
+        class={otherMovie.name}
+        on:mouseenter={() => {
+          animeOpacity.set(1);
+          currentAnime = otherMovie.name;
+        }}
+        on:mouseleave={() => {
+          animeOpacity.set(0);
+        }}
       >
         {otherMovie.name}
       </li>
+      <div class="absolute-pos">
+        {#if currentAnime === otherMovie.name}
+          <img
+            src={otherMovie.img}
+            alt="Poster for {otherMovie.img}"
+            class="smaller-image"
+            style="opacity:{$animeOpacity}"
+          />
+        {/if}
+      </div>
     {/each}
   </ul>
 </div>
 
-{#if displayImageAnime}
-  <div class="absolute-pos">
-    <img
-      src={displayImageAnime}
-      alt="Poster for {displayNameAnime}"
-      class="smaller-image"
-    />
-  </div>
-{/if}
-
 <style>
   .smaller-image {
     width: 50%;
+    transition: opacity 1s;
   }
   .absolute-pos {
     position: absolute;
