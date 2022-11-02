@@ -6,8 +6,10 @@
 
 <main>
   <article>
-    <a href="{base}/lektion1/articles/article{+articleNumber + 1}"
-      ><img
+    <a
+      href="{base}/lektion1/articles/article{+articleNumber + 1}"
+      target="_blank"
+      rel="noreferrer" ><img
         src={$page.data.articles[articleNumber].img}
         alt={$page.data.articles[articleNumber].altimg}
         class="article-image"
