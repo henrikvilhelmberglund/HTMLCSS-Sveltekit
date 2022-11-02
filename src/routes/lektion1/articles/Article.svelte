@@ -9,7 +9,8 @@
     <a
       href="{base}/lektion1/articles/article{+articleNumber + 1}"
       target="_blank"
-      rel="noreferrer" ><img
+      rel="noreferrer"
+      ><img
         src={$page.data.articles[articleNumber].img}
         alt={$page.data.articles[articleNumber].altimg}
         class="article-image"
@@ -24,6 +25,7 @@
 <style>
   .article-image {
     width: 35%;
+    border-radius: 1%;
   }
   h2 {
     text-transform: uppercase;

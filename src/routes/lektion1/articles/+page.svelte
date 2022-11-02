@@ -29,7 +29,9 @@
 <main>
   {#each articles as whatever, i}
     <article class="article">
-      <Article articleNumber={i} />
+      <div class="inner-article">
+        <Article articleNumber={i} />
+      </div>
     </article>
   {/each}
 </main>
@@ -38,6 +40,10 @@
   .article {
     width: 60%;
     padding-bottom: 120px;
+  }
+  .inner-article {
+    border: 4px solid slateblue;
+    border-radius: 10px;
   }
   h2 {
     text-transform: uppercase;
