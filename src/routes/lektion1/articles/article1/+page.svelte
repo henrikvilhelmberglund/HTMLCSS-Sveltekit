@@ -1,6 +1,9 @@
 <script>
   import { base } from "$app/paths";
+  import Article from "../Article.svelte";
 </script>
-1
+
+<Article articleNumber="0" />
+
 <style>
 </style>
