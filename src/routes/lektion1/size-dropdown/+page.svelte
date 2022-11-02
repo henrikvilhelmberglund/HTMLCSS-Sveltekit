@@ -13,7 +13,11 @@
 </div>
 
 <span class="is-inline">
-  <p>You picked {size}!</p>
+  {#if size}
+    <p>You picked {size}!</p>
+  {:else}
+    <p>Pick a size.</p>
+  {/if}
   {#if size === "XS"}
     <p>You must be tiny.</p>
   {:else if size === "S"}
