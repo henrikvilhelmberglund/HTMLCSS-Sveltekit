@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="/HTMLCSS-Sveltekit/globalstyle.css" />
   <meta name="viewport" content="width=device-width" />
   <meta http-equiv="content-security-policy" content="">
+		<link href="/HTMLCSS-Sveltekit/_app/immutable/assets/_layout-939dfb01.css" rel="stylesheet">
+		<link href="/HTMLCSS-Sveltekit/_app/immutable/assets/_page-a03e45ac.css" rel="stylesheet">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/start-be33c71e.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/index-4ee04c6a.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/singletons-e79976f5.js">
@@ -14,7 +16,8 @@
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/_layout.svelte-82888bb4.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/modules/pages/_layout.js-7b9cbfbc.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/_layout-8d2a742b.js">
-		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/_page.svelte-04938685.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/lektion1/_layout.svelte-66104b6c.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/lektion1/_page.svelte-7d286bcc.js">
 </head>
 
 <body>
@@ -24,12 +27,16 @@
 <nav><a href="/HTMLCSS-Sveltekit/">Home</a>
   <a href="/HTMLCSS-Sveltekit/lektion1">Lektion 1</a></nav>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-</p>
+<nav><a href="/HTMLCSS-Sveltekit/lektion1/articles" class="svelte-1odqxxs">Articles</a><a href="/HTMLCSS-Sveltekit/lektion1/size-dropdown" class="svelte-1odqxxs">Size dropdown</a><a href="/HTMLCSS-Sveltekit/lektion1/phone-number" class="svelte-1odqxxs">Phone number</a><a href="/HTMLCSS-Sveltekit/lektion1/movies" class="svelte-1odqxxs">Movies</a></nav>
+
+<button>Page 1</button>
+<button>Page 2</button>
+<button>Page 3</button>
+
+<div class="tab"></div>
 
 
-		<script type="module" data-sveltekit-hydrate="8p3uli">
+		<script type="module" data-sveltekit-hydrate="3ykukt">
 			import { start } from "/HTMLCSS-Sveltekit/_app/immutable/start-be33c71e.js";
 
 			start({
@@ -37,14 +44,14 @@
 				hydrate: {
 					status: 200,
 					error: null,
-					node_ids: [0, 4],
+					node_ids: [0, 2, 7],
 					params: {},
-					routeId: "/",
-					data: (function(a){return [a,a]}(null)),
+					routeId: "/lektion1",
+					data: (function(a){return [a,a,a]}(null)),
 					form: null
 				},
 				paths: {"base":"/HTMLCSS-Sveltekit","assets":"/HTMLCSS-Sveltekit"},
-				target: document.querySelector('[data-sveltekit-hydrate="8p3uli"]').parentNode,
+				target: document.querySelector('[data-sveltekit-hydrate="3ykukt"]').parentNode,
 				trailing_slash: "never"
 			});
 		</script>
