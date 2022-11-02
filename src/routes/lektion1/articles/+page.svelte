@@ -28,16 +28,16 @@
 
 <main>
   {#each articles as whatever, i}
-    <article>
+    <article class="article">
       <Article articleNumber={i} />
     </article>
   {/each}
 </main>
 
 <style>
-  /* 
-  .article-image {
-    width: 20%;
+  .article {
+    width: 60%;
+    padding-bottom: 120px;
   }
   h2 {
     text-transform: uppercase;
@@ -45,5 +45,4 @@
   h3 {
     font-style: oblique;
   }
-  */
 </style>
