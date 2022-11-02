@@ -1,7 +1,7 @@
 <script>
   import { base } from "$app/paths";
   import { page } from "$app/stores";
-  let links = ["size-dropdown", "phone-number", "movies"];
+  let links = ["articles", "size-dropdown", "phone-number", "movies"];
   //console.log("routeID: " + $page.routeId);
   //console.log("pathname: " + $page.url.pathname);
 

@@ -122,7 +122,7 @@
   .absolute-pos {
     position: absolute;
     top: 50px;
-    right: 150px;
+    right: 50%;
   }
   li:hover {
     color: slateblue;
