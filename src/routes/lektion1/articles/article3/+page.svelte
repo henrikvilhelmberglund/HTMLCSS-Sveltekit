@@ -7,7 +7,9 @@
   <title>Lektion 1: Article 3</title>
 </svelte:head>
 
-<Article articleNumber="2" />
+<main>
+  <Article articleNumber="2" />
+</main>
 
 <style>
 </style>
