@@ -1,5 +1,4 @@
 <script>
-  // your script goes here
   let number = null;
   let leadingzero = 0;
   let length;
@@ -25,7 +24,7 @@
 </div>
 <div>
   {#if number === null || undefined}
-    <p>Enter a phone number</p>
+    <h2>Enter a phone number</h2>
   {:else if leadingzero === 1}
     {#if length === 8}
       {phoneString} 0{Array.from(String(number))
@@ -41,28 +40,27 @@
         .join("")}-{Array.from(String(number)).slice(5, 9).join("")}
     {/if}
   {:else if length === 9}
-    <p>
+    <h2>
       {phoneString}
       {Array.from(String(number)).slice(0, 2).join("")}-{Array.from(
         String(number)
       )
         .slice(2, 5)
         .join("")}-{Array.from(String(number)).slice(5, 10).join("")}
-    </p>
+    </h2>
   {:else}
-    <p>
+    <h2>
       {phoneString}
       {Array.from(String(number)).slice(0, 3).join("")}-{Array.from(
         String(number)
       )
         .slice(3, 6)
         .join("")}-{Array.from(String(number)).slice(6, 10).join("")}
-    </p>
+    </h2>
   {/if}
 </div>
 
 <style>
-  /* your styles go here */
   div {
     padding: 40px;
   }
