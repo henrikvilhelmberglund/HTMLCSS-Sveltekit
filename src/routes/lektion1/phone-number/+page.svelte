@@ -27,6 +27,7 @@
   <form action="">
     <input
       type="number"
+      placeholder="0701234567 // 081234567"
       pattern="\d*"
       bind:value={number}
       name=""
