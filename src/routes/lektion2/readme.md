@@ -30,6 +30,10 @@ Kan valfritt ha lista för länkar i nav
 
 title visar en liten rute när man hoverar (t.ex för alt)
 
+## CSS-ärvning
+
+om man styler t.ex body med en färg och underliggande p-taggar inte har styling blir de samma färg
+
 ### random
 
 wp-content = wordpress-site
