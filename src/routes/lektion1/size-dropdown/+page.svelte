@@ -3,6 +3,10 @@
   let size;
 </script>
 
+<svelte:head>
+  <title>Lektion 1: Size dropdown</title>
+</svelte:head>
+
 <div>
   <select bind:value={size} name="size" id="size-dropdown">
     <option value="" disabled hidden selected>Select size</option>

@@ -88,6 +88,9 @@
   Skapa en numrerad lista över namnen på dina topp 5 filmer.
   Skapa en onumrerad lista där du skriver upp fem alternativa.
 -->
+<svelte:head>
+  <title>Lektion 1: Movies</title>
+</svelte:head>
 
 <div>
   <ol>

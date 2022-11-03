@@ -18,6 +18,10 @@
       : "Your mobile phone number is";
 </script>
 
+<svelte:head>
+  <title>Lektion 1: Phone number</title>
+</svelte:head>
+
 <div>
   <label for="phonenumber">Enter a phone number</label>
   <input type="number" bind:value={number} name="" id="phonenumber" />

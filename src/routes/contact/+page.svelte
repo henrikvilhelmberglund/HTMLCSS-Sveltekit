@@ -3,6 +3,10 @@
   import { base } from "$app/paths";
 </script>
 
+<svelte:head>
+  <title>Lektion 1: Contact</title>
+</svelte:head>
+
 <nav>
   <ul>
     <li>

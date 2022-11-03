@@ -25,6 +25,9 @@
       {/each}
     </main>
   -->
+  <svelte:head>
+  <title>Lektion 1: Articles main</title>
+</svelte:head>
 
 <main>
   {#each articles as whatever, i}

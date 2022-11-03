@@ -11,6 +11,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>Lektion 1</title>
+</svelte:head>
+
 <button on:click={() => tabClick(event, 1)}>Page 1</button>
 <button on:click={() => tabClick(event, 2)}>Page 2</button>
 <button on:click={() => tabClick(event, 3)}>Page 3</button>
