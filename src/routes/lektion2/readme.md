@@ -25,3 +25,11 @@ Kan valfritt ha lista för länkar i nav
 - tel blir semantisk (skärmläsare)
 - button i form blir type submit
 - pattern="\d*" för att bara tillåta siffror
+
+## title-attribut
+
+title visar en liten rute när man hoverar (t.ex för alt)
+
+### random
+
+wp-content = wordpress-site

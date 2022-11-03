@@ -12,6 +12,7 @@
     ><img
       src={$page.data.articles[articleNumber].img}
       alt={$page.data.articles[articleNumber].altimg}
+      title={$page.data.articles[articleNumber].altimg}
       class="article-image"
     /></a
   >
