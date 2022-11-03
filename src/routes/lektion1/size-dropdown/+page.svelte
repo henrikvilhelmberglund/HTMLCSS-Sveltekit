@@ -11,7 +11,7 @@
   <select bind:value={size} name="size" id="size-dropdown">
     <option value="" disabled hidden selected>Select size</option>
     {#each sizes as size}
-      <option value={size}>{size}</option>
+      <option>{size}</option>
     {/each}
   </select>
 </div>
