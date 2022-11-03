@@ -100,6 +100,21 @@ man kan ha header i main t.ex, man kan ha flera headers
 bara en main
 baserat från designen ska man kunna se vilka element som ska vara vart
 
+## EM vs REM
+
+### EM
+
+- em är baserat på font-size i parent (eller parents parent etc)
+- t.ex 2em är dubbla parents font-size
+- kan sätta px på ett ställe och använda em på andra
+
+### REM
+
+- rem är baserat på font-size i html-taggen 
+- rem är nice för att man kan ändra på font-size i html-taggen för att ändra all text på hela sidan (om man har använt rem överallt)
+- single source of truth (behåller proportionerna och blir konsekvent)
+- försök att sätta font-size med rem
+- kan också användas för padding/margin etc
 
 ## body margin
 
