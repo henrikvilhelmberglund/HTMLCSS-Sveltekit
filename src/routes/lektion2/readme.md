@@ -48,6 +48,59 @@ text-decoration för länkunderline etc
 
 kan ha svart färg med opacity i hover för att visa att saker är klickbara 
 
+## Semantisk HTML
+
+title i head är det som står i sökresultat
+
+ex. ankademin
+
+```html
+<head>
+  <title>Ankademins sida</title>
+  </head>
+<body>
+<header>Ankademin</header>
+<nav>Home, våra kurser, hitta oss</nav>
+<main>
+
+Våra utbildningar
+
+<section>
+På plats
+<article>
+Bild 1
+</article>
+<article>
+Bild 2
+</article>
+</section>
+
+<section>
+På distans
+<article>
+Bild 1
+</article>
+<article>
+Bild 2
+</article>
+</section>
+
+<aside>
+  Senaste nytt
+  </aside>
+
+</main>
+<footer>
+  Copyrighttext, sociala medier
+  </footer>
+  </body>
+```
+
+man kan ha header i main t.ex, man kan ha flera headers
+bara en main
+baserat från designen ska man kunna se vilka element som ska vara vart
+
+
 ## body margin
 
 sätt margin i body till 0 om man vill ha t.ex bakgrundsfärg längst ut i kanten
