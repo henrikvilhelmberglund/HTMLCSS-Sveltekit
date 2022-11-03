@@ -24,24 +24,37 @@
 
 <div>
   <label for="phonenumber">Enter a phone number</label>
-  <input type="number" bind:value={number} name="" id="phonenumber" />
+  <form action="">
+    <input
+      type="number"
+      pattern="\d*"
+      bind:value={number}
+      name=""
+      id="phonenumber"
+    />
+    <!-- <button>Give me your number!</button> -->
+  </form>
 </div>
 <div>
   {#if number === null || undefined}
     <h2>Enter a phone number</h2>
   {:else if leadingzero === 1}
     {#if length === 8}
-      {phoneString} 0{Array.from(String(number))
-        .slice(0, 1)
-        .join("")}-{Array.from(String(number))
-        .slice(1, 4)
-        .join("")}-{Array.from(String(number)).slice(4, 9).join("")}
+      <h2>
+        {phoneString} 0{Array.from(String(number))
+          .slice(0, 1)
+          .join("")}-{Array.from(String(number))
+          .slice(1, 4)
+          .join("")}-{Array.from(String(number)).slice(4, 9).join("")}
+      </h2>
     {:else}
-      {phoneString} 0{Array.from(String(number))
-        .slice(0, 2)
-        .join("")}-{Array.from(String(number))
-        .slice(2, 5)
-        .join("")}-{Array.from(String(number)).slice(5, 9).join("")}
+      <h2>
+        {phoneString} 0{Array.from(String(number))
+          .slice(0, 2)
+          .join("")}-{Array.from(String(number))
+          .slice(2, 5)
+          .join("")}-{Array.from(String(number)).slice(5, 9).join("")}
+      </h2>
     {/if}
   {:else if length === 9}
     <h2>
