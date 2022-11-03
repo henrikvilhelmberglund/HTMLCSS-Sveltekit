@@ -107,6 +107,15 @@ Extra: Skapa en knapp för att ändra stylingen på hela sidan till dark-mode me
 
  -->
 
+<svelte:head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,800&family=Roboto+Condensed:wght@300&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+</svelte:head>
+
 <nav>
   {#each recipes as recipe}
     <section class="links">
@@ -120,13 +129,11 @@ Extra: Skapa en knapp för att ändra stylingen på hela sidan till dark-mode me
 <main>
   {#each recipes as recipe}
     <article class="recipe">
-      <section>
+      <section class="recipe-section">
         <h2>{recipe.title}</h2>
-      </section>
-      <section>
         <img src={recipe.img} alt={recipe.title} />
       </section>
-      <section>
+      <section class="recipe-section">
         <h3>Ingredienser:</h3>
         <ul>
           {#if recipe.ingredients}
@@ -139,7 +146,7 @@ Extra: Skapa en knapp för att ändra stylingen på hela sidan till dark-mode me
           {/if}
         </ul>
       </section>
-      <section>
+      <section class="recipe-section">
         <h3>Tillagning:</h3>
         <a id="tillagning-{recipe.title}" />
         <ol>
@@ -152,13 +159,13 @@ Extra: Skapa en knapp för att ändra stylingen på hela sidan till dark-mode me
           {/if}
         </ol>
       </section>
-      <section>
+      <section class="recipe-section">
         <a id="faktaruta-{recipe.title}" />
         <div class="trivia">
           <h4>{recipe.trivia}</h4>
         </div>
       </section>
-      <section>
+      <section class="recipe-section">
         <a href={recipe.externalLink}>Alternativt recept för {recipe.title}</a>
       </section>
     </article>
@@ -170,7 +177,7 @@ Extra: Skapa en knapp för att ändra stylingen på hela sidan till dark-mode me
     background-color: black;
   }
   img {
-    width: 50%;
+    width: 130%;
   }
   .links {
     padding: 30px;
@@ -178,7 +185,11 @@ Extra: Skapa en knapp för att ändra stylingen på hela sidan till dark-mode me
     display: grid;
   }
 
-  h2,
+  h2 {
+    font-family: "Roboto";
+    color: firebrick;
+    font-size: 4rem;
+  }
   h3 {
     font-family: "Roboto";
     color: firebrick;
@@ -194,8 +205,17 @@ Extra: Skapa en knapp för att ändra stylingen på hela sidan till dark-mode me
   .recipe {
     background-color: wheat;
     border: 8px solid aquamarine;
-    padding: 12px;
-    margin: 12px;
+    padding: 60px;
+    margin: 20px;
+    display: flex;
+    font-family: "Raleway", sans-serif;
+  }
+  /* 
+font-family: 'Roboto', sans-serif;
+*/
+
+  .recipe-section {
+    padding: 50px;
   }
 
   .trivia {
@@ -203,6 +223,7 @@ Extra: Skapa en knapp för att ändra stylingen på hela sidan till dark-mode me
     margin: 50px;
     padding: 50px;
     border-radius: 40px;
+    font-family: "Roboto Condensed", sans-serif;
   }
 
   h4 {
