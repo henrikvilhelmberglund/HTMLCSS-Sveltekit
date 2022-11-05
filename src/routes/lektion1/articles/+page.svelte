@@ -1,5 +1,5 @@
 <script>
-  import Article from "./ArticleComponent.svelte";
+  import Article from "./Article.svelte";
   let articles = Array.from(Array(3));
 </script>
 
