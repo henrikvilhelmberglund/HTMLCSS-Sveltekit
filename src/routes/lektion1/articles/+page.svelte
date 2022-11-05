@@ -28,7 +28,7 @@
 </svelte:head>
 
 <main>
-  {#each articles as { }, i}
+  {#each articles as _, i}
     <article class="article">
       <div class="inner-article">
         <Article articleNumber={i} />
