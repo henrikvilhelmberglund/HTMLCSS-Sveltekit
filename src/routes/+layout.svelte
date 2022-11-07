@@ -8,6 +8,7 @@
   <a href="{base}/">Home</a>
   <a href="{base}/lektion1">Lektion 1</a>
   <a href="{base}/lektion2">Lektion 2</a>
+  <a href="{base}/lektion3">Lektion 3</a>
 </nav>
 
 <slot />
