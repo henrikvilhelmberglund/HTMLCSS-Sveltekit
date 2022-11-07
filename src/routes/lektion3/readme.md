@@ -45,3 +45,7 @@ A > B child selector (träffar direct children)
 - id, klass, typ
 
 - 100 kr, 10kr, 1kr
+
+- !important efter value för att ge max specificity
+
+- inline style ger högst specificity men borde inte använda
