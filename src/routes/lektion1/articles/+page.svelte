@@ -1,6 +1,4 @@
 <script>
-  import { base } from "$app/paths";
-  export let data;
   import Article from "./Article.svelte";
   let articles = Array.from(Array(3));
 </script>
@@ -25,12 +23,12 @@
       {/each}
     </main>
   -->
-  <svelte:head>
+<svelte:head>
   <title>Lektion 1: Articles main</title>
 </svelte:head>
 
 <main>
-  {#each articles as whatever, i}
+  {#each articles as _, i}
     <article class="article">
       <div class="inner-article">
         <Article articleNumber={i} />
@@ -47,11 +45,5 @@
   .inner-article {
     border: 4px solid slateblue;
     border-radius: 10px;
-  }
-  h2 {
-    text-transform: uppercase;
-  }
-  h3 {
-    font-style: oblique;
   }
 </style>

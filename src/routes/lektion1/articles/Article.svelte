@@ -2,6 +2,7 @@
   import { base } from "$app/paths";
   export let articleNumber;
   import { page } from "$app/stores";
+  import { articles } from "./stores.js";
 </script>
 
 <a
@@ -11,14 +12,14 @@
 >
   <article>
     <img
-      src={$page.data.articles[articleNumber].img}
-      alt={$page.data.articles[articleNumber].altimg}
-      title={$page.data.articles[articleNumber].altimg}
+      src={$articles[articleNumber].img}
+      alt={$articles[articleNumber].altimg}
+      title={$articles[articleNumber].altimg}
       class="article-image"
     />
-    <h2>{$page.data.articles[articleNumber].title}</h2>
-    <h3>{$page.data.articles[articleNumber].subtitle}</h3>
-    <p>{$page.data.articles[articleNumber].text}</p>
+    <h2>{$articles[articleNumber].title}</h2>
+    <h3>{$articles[articleNumber].subtitle}</h3>
+    <p>{$articles[articleNumber].text}</p>
   </article>
 </a>
 

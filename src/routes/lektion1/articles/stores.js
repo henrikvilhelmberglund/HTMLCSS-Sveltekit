@@ -1,4 +1,6 @@
-let articles = [
+import { writable } from 'svelte/store';
+
+export const articles = writable([
   {
     img: "https://images.unsplash.com/photo-1667336278617-6b1692b77ea8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
     altimg: "A sheep eating grass",
@@ -20,8 +22,4 @@ let articles = [
     subtitle: "Mmm, that's a juicy looking burger.",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint maxime suscipit fugit sunt praesentium a. Ea, explicabo? Nemo, pariatur nam earum delectus sit ullam temporibus incidunt, tenetur repellat sunt quas! Illo, quis nostrum repellat doloribus nesciunt beatae itaque, accusantium assumenda maxime deleniti praesentium dicta velit sunt. Aliquam distinctio ipsam ex explicabo consequatur a laborum illo ducimus, neque quasi. Velit, suscipit?",
   },
-];
-
-export async function load() {
-  return { articles };
-}
+])

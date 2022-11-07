@@ -1,4 +1,5 @@
 <script>
+  import "../app.postcss";
   // your script goes here
   import { base } from "$app/paths";
 </script>
