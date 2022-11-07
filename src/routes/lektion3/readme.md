@@ -18,7 +18,7 @@ A > B child selector (träffar direct children)
 :last-child last child pseudo-selector
 :nth-child(A)
 :nth-last-child(A) som ovan fast baklänges
-:first-of-type
+:first-of-type  kollar bara siblings
 :nth-of-type(A)   kan också skriva even och odd
 :nth-of-type(An+b) som ovan fast med offset b
 :only-of-type
@@ -30,6 +30,18 @@ A > B child selector (träffar direct children)
 [attribute^="value"]   börjar med
 [attribute$="value"]   slutar med
 [attribute*="value"]   wildcard
-
+[attribute="name"][otherattribute="othername"] combined
 
 ## CSS specificity
+
+- kan ha flera klasser i HTMLen
+
+- ok med generella klassnamn för man kan i CSSen ha t.ex .box.big istället för bara .big
+
+- :first-of-type är för siblings, inte parent
+
+- (1, 1, 1)
+
+- id, klass, typ
+
+- 100 kr, 10kr, 1kr
