@@ -3,8 +3,12 @@
 </script>
 
 <article>
-  <p>in article 1</p>
-  <p>in article 2</p>
+  <section>
+    <p>in article section 1</p>
+  </section>
+  <section>
+    <p>in article section 2</p>
+  </section>
 </article>
 <ul>
   <li>
@@ -16,12 +20,10 @@
 </ul>
 <section>
   <span>
-    <section>
-      <p>in section 1</p>
-    </section>
-    <section>
-      <p>in section 2</p>
-    </section>
+    <p>in span 1</p>
+  </span>
+  <span>
+    <p>in span 2</p>
   </span>
 </section>
 <aside>
@@ -60,7 +62,7 @@
 
 <a href="http://">link</a>
 
-<ul id="clothing-list">
+<ul class="clothing-list">
   <li>in clothing-list</li>
   <li>in clothing-list</li>
   <li>last child in clothing-list</li>
@@ -79,7 +81,7 @@
   }
 
   /* 2. Första section-taggen inuti en article =  */
-  article :first-child {
+  article section:first-of-type {
     color: slateblue;
   }
 
@@ -89,7 +91,7 @@
   }
 
   /* 4. Första span inuti en section =  */
-  section:first-child {
+  section span:first-of-type {
     color: violet;
   }
 
@@ -125,7 +127,7 @@
 
   /* 11. Alla li-taggar med klassen “shop-item” inuti en div =  */
   /* not specific enough */
-  li.shop-item {
+  div li.shop-item {
     color: tomato;
   }
 
@@ -146,7 +148,7 @@
   }
 
   /* 15. Sista li-taggen inuti ul som har klassen “clothing-list” =  */
-  ul#clothing-list li:last-child {
+  ul.clothing-list :last-child {
     color: springgreen;
   }
 
