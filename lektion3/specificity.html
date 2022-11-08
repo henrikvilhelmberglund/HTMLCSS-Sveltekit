@@ -8,8 +8,7 @@
   <meta name="viewport" content="width=device-width" />
   <meta http-equiv="content-security-policy" content="">
 		<link href="/HTMLCSS-Sveltekit/_app/immutable/assets/_layout-f65e72a7.css" rel="stylesheet">
-		<link href="/HTMLCSS-Sveltekit/_app/immutable/assets/_layout-e52193a7.css" rel="stylesheet">
-		<link href="/HTMLCSS-Sveltekit/_app/immutable/assets/_page-10a61069.css" rel="stylesheet">
+		<link href="/HTMLCSS-Sveltekit/_app/immutable/assets/_page-25dc272f.css" rel="stylesheet">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/start-001f3fb9.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/index-dbeec53a.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/singletons-d9c164a1.js">
@@ -18,8 +17,8 @@
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/_layout.svelte-f22a78a7.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/modules/pages/_layout.js-7b9cbfbc.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/_layout-8d2a742b.js">
-		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/lektion1/_layout.svelte-505c2af7.js">
-		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/lektion1/size-dropdown/_page.svelte-4292d4e0.js"><title>Lektion 1: Size dropdown</title><!-- HEAD_svelte-1570jo8_START --><!-- HEAD_svelte-1570jo8_END -->
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/lektion3/_layout.svelte-16dd40c7.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/lektion3/specificity/_page.svelte-ec42e1ee.js">
 </head>
 
 <body>
@@ -31,18 +30,19 @@
   <a href="/HTMLCSS-Sveltekit/lektion2">Lektion 2</a>
   <a href="/HTMLCSS-Sveltekit/lektion3">Lektion 3</a></nav>
 
-<nav><a href="/HTMLCSS-Sveltekit/lektion1/articles" class="svelte-1vtuzvo">Articles</a><a href="/HTMLCSS-Sveltekit/lektion1/size-dropdown" class="svelte-1vtuzvo">Size dropdown</a><a href="/HTMLCSS-Sveltekit/lektion1/phone-number" class="svelte-1vtuzvo">Phone number</a><a href="/HTMLCSS-Sveltekit/lektion1/movies" class="svelte-1vtuzvo">Movies</a></nav>
+<nav><a href="/HTMLCSS-Sveltekit/lektion3/specificity">Specificity</a>
+  <a href="/HTMLCSS-Sveltekit/lektion3/exercise">Exercise</a></nav>
+<h1>CSS</h1>
+<h2 class="svelte-ncoh0v">CSS <span class="svelte-ncoh0v">Selectors</span> &amp; Specificity</h2>
+<div class="box big svelte-ncoh0v"><div class="box small one svelte-ncoh0v"></div>
+  <div class="box small two svelte-ncoh0v"><span class="box tiny svelte-ncoh0v"></span>
+    <div class="box tiny svelte-ncoh0v" id="favorite-box"></div>
+    <div class="box tiny svelte-ncoh0v"></div></div>
+  <div class="box small three svelte-ncoh0v"></div>
+</div>
 
 
-
-<div class="svelte-1psqcgk"><select name="size" id="size-dropdown"><option value="" disabled hidden selected>Select size</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option></select></div>
-
-<span class="is-inline svelte-1psqcgk"><p class="svelte-1psqcgk">Pick a size.</p>
-  
-</span>
-
-
-		<script type="module" data-sveltekit-hydrate="cc53ya">
+		<script type="module" data-sveltekit-hydrate="1hfs1yy">
 			import { start } from "/HTMLCSS-Sveltekit/_app/immutable/start-001f3fb9.js";
 
 			start({
@@ -50,14 +50,14 @@
 				hydrate: {
 					status: 200,
 					error: null,
-					node_ids: [0, 2, 16],
+					node_ids: [0, 5, 21],
 					params: {},
-					routeId: "/lektion1/size-dropdown",
+					routeId: "/lektion3/specificity",
 					data: (function(a){return [a,a,a]}(null)),
 					form: null
 				},
 				paths: {"base":"/HTMLCSS-Sveltekit","assets":"/HTMLCSS-Sveltekit"},
-				target: document.querySelector('[data-sveltekit-hydrate="cc53ya"]').parentNode,
+				target: document.querySelector('[data-sveltekit-hydrate="1hfs1yy"]').parentNode,
 				trailing_slash: "never"
 			});
 		</script>
