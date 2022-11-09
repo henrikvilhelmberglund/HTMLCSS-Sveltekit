@@ -72,10 +72,22 @@
         {/each}
         {#each table.rows as rows}
           <tr>
-            {#each rows as row}
-              <td>
-                {row}
-              </td>
+            {#each rows as row, i}
+              {#if i === 0}
+                <td class="left">
+                  {#each row as span, i}
+                    <span class="name-{i}">{span}</span>
+                  {/each}
+                </td>
+              {:else if i === 1}
+                <td>
+                  {row}
+                </td>
+              {:else}
+                <td>
+                  {row}
+                </td>
+              {/if}
             {/each}
           </tr>
         {/each}
@@ -249,13 +261,15 @@
     border-radius: 4px;
   }
 
-  .bigger-text {
+  .name-0 {
     font-size: 1.3rem;
+    padding: 3px;
   }
 
-  .smaller-text {
+  .name-1 {
     font-size: 0.8rem;
     font-weight: 700;
+    color: #777;
   }
 
   .tiny-text {
