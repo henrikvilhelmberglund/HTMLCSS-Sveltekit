@@ -97,7 +97,6 @@
 <a href="#">
   <div class="fixed-btn">Fixed button</div>
 </a>
-<!-- NOTE - HTML -->
 
 <!-- Question 13 -->
 <p>
@@ -125,6 +124,7 @@
   "inline-block". How does the blue div behave?
 </p>
 
+<!-- NOTE - HTML -->
 <!-- Question 16 -->
 <p>
   16. Position the smaller square so that it is both horizontally and vertically
@@ -330,7 +330,6 @@
     right: 10px;
   }
 
-  /* <!-- NOTE - Style --> */
   /* Question 13 */
   .position-20-40 {
     background-color: #bb00ff;
@@ -345,6 +344,7 @@
     width: 200px;
     height: 50px;
     background-color: grey;
+    display: inline-block;
   }
 
   .move-me {
@@ -356,6 +356,7 @@
     /* bottom: 30px; */
     left: -30px;
     top: -30px;
+    display: inline-block;
   }
 
   /* Question 15 */
@@ -375,6 +376,7 @@
     bottom: 230px;
     left: 30px;
   }
+  /* <!-- NOTE - Style --> */
 
   /* Question 17 */
   .parent-div {
