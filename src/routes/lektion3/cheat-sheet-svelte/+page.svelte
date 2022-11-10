@@ -38,7 +38,60 @@
         ],
       ],
     },
-    {},
+    {
+      title: "Combination",
+      subtitle: ["Name", "CSS", "Description", "Results"],
+      rows: [
+        [
+          ["Descendant", "Selector"],
+          "div a",
+          [
+            "Select elements that are descendants of the first element",
+            "Select anchors that are inside a div",
+          ],
+          // TODO
+          ["A", "B", "C", "D"],
+        ],
+        // prettier-ignore
+        [["Direct Child","Selector"],"div > a",["Select elements that are direct children of the first element", "Select anchors that are direct children of a div"], ["div a b a c a d"],],
+        [
+          ["General Sibling", "Selector"],
+          "div ~ a",
+          [
+            "Select elements that are siblings of the first element and come after the first element",
+            "Selects all anchors that are siblings of a div and come after the div",
+          ],
+          ["a div a a"],
+        ],
+        [
+          ["Adjacent Sibling", "Selector"],
+          "div + a",
+          [
+            "Select elements that are siblings of the first element and come directly after the first element",
+            "Selects all anchors that are siblings of a div and come directly after the div",
+          ],
+          ["a div a a"],
+        ],
+        [
+          ["Or", "Selector"],
+          "div,",
+          [
+            "Select elements that match any selector in the list",
+            "Selects all anchors and all divs",
+          ],
+          ["a div a b"],
+        ],
+        [
+          ["And", "Selector"],
+          "div.c",
+          [
+            "Select elements that match all the selector combinations",
+            "Selects all divs with the class c",
+          ],
+          [".a div.c .c div"],
+        ],
+      ],
+    },
     {},
     {},
     {},
@@ -56,12 +109,22 @@
   <link rel="stylesheet" href="../cheat-sheet-svelte.css" />
 </svelte:head>
 
-<div>
-  <h1>CSS cheat-sheet</h1>
+<div class="flex-h1">
+  <div>
+    <h1>CSS</h1>
+  </div>
+  <div>
+    <h3>{"{"}selectors: cheat-sheet{"}"}</h3>
+  </div>
+</div>
+<div class="flex-h4">
+  <div>
+    <h4>By Web Dev Simplified, copied(?) by Henrik Berglund</h4>
+  </div>
 </div>
 
-<div class="base-div">
-  {#each tables as table}
+{#each tables as table, y}
+  <div class="base-div">
     {#if table.title}
       <h2>{table.title}</h2>
       <!-- <p>{table.subtitle}</p> -->
@@ -76,7 +139,7 @@
         {/each}
       </div>
       {#each table.rows as rows, i}
-        <div class="flex-row">
+        <div class="flex-row-{y}">
           {#each rows as row, i}
             <!-- <div class="flex-row"> -->
             <!-- <div class="left"> -->
@@ -138,8 +201,8 @@
       {/each}
       <!-- </div> -->
     {/if}
-  {/each}
-</div>
+  </div>
+{/each}
 
 <style>
   .flex-column {
@@ -174,7 +237,7 @@
     flex: 1;
   }
 
-  .flex-row {
+  .flex-row-0 {
     /* background-color: red; */
     /* width: 700px; */
     /* padding: 10px; */
@@ -182,6 +245,19 @@
     /* flex-direction: row; */
     /* justify-content: space-around; */
     /* align-items: center; */
+    /* align-self: center; */
+    /* flex-wrap: wrap; */
+    /* width: 30%; */
+  }
+  .flex-row-1 {
+    /* background-color: red; */
+    /* width: 700px; */
+    /* padding: 10px; */
+    display: flex;
+    height: 100px;
+    /* flex-direction: row; */
+    /* justify-content: space-around; */
+    align-items: center;
     /* align-self: center; */
     /* flex-wrap: wrap; */
     /* width: 30%; */
@@ -197,9 +273,36 @@
     /* padding: 10px; */
   }
 
+  .flex-h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+    height: 100px;
+  }
+  .flex-h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+    height: 5px;
+    font-weight: 300;
+    /* height: 100px; */
+  }
+  h1 {
+    padding: 10px;
+    font-size: 3rem;
+  }
+
   h2 {
     padding: 10px;
     padding-bottom: 0px;
+  }
+
+  h3 {
+    padding: 10px;
+    font-size: 2rem;
+    font-weight: 300;
   }
 
   .base-div {
@@ -223,32 +326,6 @@
     padding: 0px;
     width: 98%;
     /* right: 10px; */
-  }
-
-  table {
-    table-layout: fixed;
-    width: 100%;
-    margin: 10px;
-    /* padding: 10px; */
-  }
-
-  td {
-    text-align: center;
-    padding: 10px;
-    margin: 0px;
-  }
-
-  td.left {
-    text-align: left;
-  }
-
-  tr {
-    padding: 0px;
-  }
-
-  th {
-    color: #777;
-    font-weight: 900;
   }
 
   .hit {
