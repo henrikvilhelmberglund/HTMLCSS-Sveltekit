@@ -84,6 +84,7 @@ Skapa en div som har id “ankademin-school”.
     display: flex;
     flex-direction: column;
     /* align-items: center; */
+    padding: 10px;
     justify-content: space-around;
   }
 
@@ -93,6 +94,7 @@ Skapa en div som har id “ankademin-school”.
     /* padding: 20px; */
     /* margin: 20px; */
     display: flex;
+    margin: 5px;
   }
 
   .school-corridor:nth-of-type(1) {
@@ -100,12 +102,14 @@ Skapa en div som har id “ankademin-school”.
     justify-content: flex-end;
     align-items: flex-end;
   }
-
+  /* ska egentligen vara ute i hörnen */
   .school-corridor:nth-of-type(2) {
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    padding: 10px;
   }
   .school-corridor:nth-of-type(3) {
     flex-direction: column;
@@ -114,11 +118,15 @@ Skapa en div som har id “ankademin-school”.
     /* flex-wrap: wrap; */
   }
 
+  .school-corridor:nth-of-type(3) > div {
+    border: 1px solid black;
+  }
+
   .classroom {
     background-color: thistle;
     height: 125px;
     width: 125px;
-    margin: 2.5px;
+    margin: 0 5px;
   }
   .small-classroom {
     background-color: cornflowerblue;
@@ -143,6 +151,6 @@ Skapa en div som har id “ankademin-school”.
     background-color: cornflowerblue;
     height: 100px;
     width: 100px;
-    margin: 2.5px;
+    margin: 5px;
   }
 </style>

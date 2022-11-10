@@ -70,4 +70,21 @@ parent {
 
 - flex:flow för att sätta flex-direction och flex-wrap samtidigt
 
--align:content för att bestämma mellanrummet mellan??
+- align:content för att bestämma mellanrummet mellan??
+
+- flex:wrap default är nowrap
+
+- många osynliga divar på sidor för att man ska kunna positionera med flexbox
+
+- om man fastnar kan man ändra i HTMLen och lägga till divar t.ex
+
+## Andra flexbox-saker
+
+- flex-grow: 1   kan växa när man gör fönstret större
+
+- värdet är relativt med siblings (default 0)
+
+- baseras på width (kan blocka med min-width)
+
+- flex:order 1  kan flytta runt visuellt i flex (0 är default, 1 är efter, -1 är innana)
+
