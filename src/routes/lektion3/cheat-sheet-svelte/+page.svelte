@@ -1,13 +1,14 @@
 <script>
   let tables = [
     {
+      // NOTE data
       title: "Basic",
       subtitle: ["Name", "CSS", "Description", "Results"],
       rows: [
         [
           ["Universal", "Selector"],
           "*",
-          "Select all elements",
+          ["Select all elements"],
           ["A", "B", "C", "D"],
         ],
         [
@@ -81,7 +82,27 @@
                 </td>
               {:else if i === 1}
                 <td>
-                  {row}
+                  <div class="CSS">{row}</div>
+                </td>
+                <!-- NOTE HTML -->
+              {:else if i === 2}
+                <td>
+                  {#each row as span, i}
+                    <div class="description-{i}">{span}</div>
+                  {/each}
+                </td>
+                <!-- <td> -->
+                <!-- {row} -->
+                <!-- </td> -->
+              {:else if i === 3}
+                <td>
+                  {#each row as span, i}
+                    {#if span.toUpperCase() === span}
+                      <span class="hit">{span}</span>
+                    {:else}
+                      <span class="not-hit">{span}</span>
+                    {/if}
+                  {/each}
                 </td>
               {:else}
                 <td>
@@ -202,6 +223,7 @@
     padding-left: 20px;
     margin: 10px;
     padding-bottom: 10px;
+    width: 900px;
   }
 
   .gray {
@@ -222,11 +244,12 @@
     table-layout: fixed;
     width: 100%;
     margin: 10px;
+    /* padding: 10px; */
   }
 
   td {
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     margin: 0px;
   }
 
@@ -250,6 +273,7 @@
     padding-left: 6px;
     padding-right: 6px;
     border-radius: 4px;
+    text-transform: lowercase;
   }
 
   .not-hit {
@@ -271,6 +295,29 @@
     font-weight: 700;
     color: #777;
   }
+
+  .CSS {
+    font-size: 1.3rem;
+  }
+
+  .description-0 {
+    font-size: 0.8rem;
+    /* padding: 3px; */
+  }
+
+  .description-1 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #777;
+  }
+
+  .description-2 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #777;
+  }
+
+  /* NOTE CSS */
 
   .tiny-text {
     font-size: 0.8rem;
