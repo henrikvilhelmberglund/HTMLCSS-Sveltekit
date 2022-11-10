@@ -97,6 +97,7 @@
 <a href="#">
   <div class="fixed-btn">Fixed button</div>
 </a>
+<!-- NOTE - HTML -->
 
 <!-- Question 13 -->
 <p>
@@ -191,7 +192,6 @@
 <!-- Question 22 -->
 <p>22. Draw the Empire state building below.</p>
 
-<!-- NOTE - HTML -->
 <div class="empire">
   <div class="e1" />
   <div class="e2" />
@@ -206,6 +206,15 @@
   }
 
   /* Add Question 2 CSS below: */
+
+  /* 
+.rainbow :nth-child(1) {}
+.rainbow :nth-child(2) {}
+.rainbow :nth-child(3) {}
+.rainbow :nth-child(4) {}
+.rainbow :nth-child(5) {}
+*/
+
   .m {
     color: red;
   }
@@ -218,7 +227,7 @@
   .i {
     color: green;
   }
-  .g {
+  .c {
     color: blue;
   }
 
@@ -259,7 +268,8 @@
     background-color: green;
     width: 200px;
     height: 20px;
-    margin: 20px;
+    /* margin: 20px; */
+    margin: 5px 0;
   }
 
   /* Question 9 */
@@ -272,16 +282,26 @@
     border-radius: 20px;
   }
 
+  .user-friendly:hover {
+    background: black;
+    color: white;
+    border: 3px solid black;
+  }
+
   /* Question 10 */
   .static {
     background-color: #00ffff;
     text-align: center;
     width: 100px;
     height: 100px;
-    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .center-me {
+    /* padding: 35px 0px; */
+    /* margin: 30px; */
     display: inline-block;
     /* margin: 30%; */
   }
@@ -294,6 +314,7 @@
     position: relative;
     top: -50px;
     left: -50px;
+    z-index: -1;
   }
 
   /* Question 12 */
@@ -309,6 +330,7 @@
     right: 10px;
   }
 
+  /* <!-- NOTE - Style --> */
   /* Question 13 */
   .position-20-40 {
     background-color: #bb00ff;
@@ -323,7 +345,6 @@
     width: 200px;
     height: 50px;
     background-color: grey;
-    display: inline-block;
   }
 
   .move-me {
@@ -331,9 +352,10 @@
     height: 60px;
     background-color: blue;
     position: relative;
-    right: 30px;
-    bottom: 30px;
-    display: inline-block;
+    /* right: 30px; */
+    /* bottom: 30px; */
+    left: -30px;
+    top: -30px;
   }
 
   /* Question 15 */
@@ -475,7 +497,6 @@
     background-color: gray;
   }
 
-  /* <!-- NOTE - Style --> */
   /* Default Styles */
 
   p {
