@@ -13,3 +13,11 @@
 </nav>
 
 <slot />
+
+<style windi:preflights:global windi:safelist:global>
+</style>
+
+<!-- use this for scoped preflights 
+  <style windi:preflights>
+  </style>
+-->

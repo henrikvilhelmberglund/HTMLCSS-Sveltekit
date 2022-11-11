@@ -1,4 +1,5 @@
 import preprocess from "svelte-preprocess";
+import { windi } from "svelte-windicss-preprocess";
 //import adapter from '@sveltejs/adapter-auto';
 import adapter from "@sveltejs/adapter-static";
 
@@ -26,9 +27,7 @@ const config = {
   },
 
   preprocess: [
-    preprocess({
-
-    }),
+    windi({})
   ],
 };
 
