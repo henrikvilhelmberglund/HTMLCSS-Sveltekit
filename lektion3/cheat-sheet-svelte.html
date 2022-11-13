@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/HTMLCSS-Sveltekit/favicon.png" />
+  <!-- <link rel="stylesheet" href="/HTMLCSS-Sveltekit/cheat-sheet.css" /> -->
+  <meta name="viewport" content="width=device-width" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <meta http-equiv="content-security-policy" content="">
+		<link href="/HTMLCSS-Sveltekit/_app/immutable/assets/_layout-db8b6571.css" rel="stylesheet">
+		<link href="/HTMLCSS-Sveltekit/_app/immutable/assets/_page-d0b32833.css" rel="stylesheet">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/start-82541275.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/index-b8b93c50.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/singletons-e4c0b18d.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/index-273865a6.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/paths-6cd3a76e.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/_layout.svelte-ab52acb8.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/modules/pages/_layout.js-7b9cbfbc.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/_layout-8d2a742b.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/lektion3/_layout.svelte-64163272.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/lektion3/cheat-sheet-svelte/_page.svelte-b326291f.js"><!-- HEAD_svelte-12n3gwc_START --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"><link rel="stylesheet" href="../cheat-sheet-svelte.css"><!-- HEAD_svelte-12n3gwc_END -->
+</head>
+
+<body>
+  <div>
+
+
+<nav><a href="/HTMLCSS-Sveltekit/">Home</a>
+  <a href="/HTMLCSS-Sveltekit/lektion1">Lektion 1</a>
+  <a href="/HTMLCSS-Sveltekit/lektion2">Lektion 2</a>
+  <a href="/HTMLCSS-Sveltekit/lektion3">Lektion 3</a>
+  <a href="/HTMLCSS-Sveltekit/lektion4">Lektion 4</a></nav>
+
+<nav><a href="/HTMLCSS-Sveltekit/lektion3/specificity">Specificity</a>
+  <a href="/HTMLCSS-Sveltekit/lektion3/exercise">Exercise</a>
+  <a href="/HTMLCSS-Sveltekit/lektion3/cheat-sheet">Cheat-sheet</a>
+  <a href="/HTMLCSS-Sveltekit/lektion3/cheat-sheet-svelte">Cheat-sheet-svelte</a></nav>
+
+
+<div class="flex-h1 svelte-16j4qi6"><div><h1 class="svelte-16j4qi6">CSS</h1></div>
+  <div><h3 class="svelte-16j4qi6">{selectors: cheat-sheet}</h3></div></div>
+<div class="flex-h4 svelte-16j4qi6"><div><h4>By Web Dev Simplified, copied(?) by Henrik Berglund</h4></div></div>
+
+<div class="base-div svelte-16j4qi6"><h2 class="svelte-16j4qi6">Basic</h2>
+      <div class="flex-row svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Name</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">CSS</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Description</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Results</div>
+          </div></div>
+      <div class="flex-row-0 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Universal
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">*
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select all elements
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><span class="hit svelte-16j4qi6">A
+                      </span><span class="hit svelte-16j4qi6">B
+                      </span><span class="hit svelte-16j4qi6">C
+                      </span><span class="hit svelte-16j4qi6">D
+                      </span>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-0 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Type
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">div
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements of that type
+                  </div><div class="description-1 svelte-16j4qi6">Select div elements
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><span class="not-hit svelte-16j4qi6">a
+                      </span><span class="hit svelte-16j4qi6">DIV
+                      </span><span class="not-hit svelte-16j4qi6">c
+                      </span><span class="hit svelte-16j4qi6">DIV
+                      </span>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-0 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Class
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">.c
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements with that class
+                  </div><div class="description-1 svelte-16j4qi6">Select elements with the c class
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><span class="not-hit svelte-16j4qi6">.a
+                      </span><span class="not-hit svelte-16j4qi6">.b
+                      </span><span class="hit svelte-16j4qi6">.C
+                      </span><span class="not-hit svelte-16j4qi6">.d
+                      </span>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-0 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Id
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">#i
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements with that id
+                  </div><div class="description-1 svelte-16j4qi6">Select elements with the i id
+                  </div><div class="description-2 svelte-16j4qi6">*It is best practice to not use ids in CSS
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><span class="not-hit svelte-16j4qi6">#a
+                      </span><span class="not-hit svelte-16j4qi6">#b
+                      </span><span class="hit svelte-16j4qi6">#I
+                      </span><span class="not-hit svelte-16j4qi6">#d
+                      </span>
+                </div>
+            </div></div>
+        
+  </div><div class="base-div svelte-16j4qi6"><h2 class="svelte-16j4qi6">Combination</h2>
+      <div class="flex-row svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Name</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">CSS</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Description</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Results</div>
+          </div></div>
+      <div class="flex-row-1 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Descendant
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">div a
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are descendants of the first element
+                  </div><div class="description-1 svelte-16j4qi6">Select anchors that are inside a div
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">A</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-2 svelte-16j4qi6"><span class="hit svelte-16j4qi6">A</span>
+                              <div class="tiny-line-2 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-2 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">c</span>
+                              <div class="tiny-line-2 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-2 svelte-16j4qi6"><span class="hit svelte-16j4qi6">A</span>
+                              <div class="tiny-line-2 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-2 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">d</span>
+                              <div class="tiny-line-2 svelte-16j4qi6"></div>
+                            </div>
+                      </div>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-1 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Direct Child
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">div > a
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are direct children of the first element
+                  </div><div class="description-1 svelte-16j4qi6">Select anchors that are direct children of a div
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">A</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-2 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">a</span>
+                              <div class="tiny-line-2 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-2 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">c</span>
+                              <div class="tiny-line-2 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-2 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">a</span>
+                              <div class="tiny-line-2 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-2 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">d</span>
+                              <div class="tiny-line-2 svelte-16j4qi6"></div>
+                            </div>
+                      </div>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-1 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">General Sibling
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">div ~ a
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are siblings of the first element and come after the first element
+                  </div><div class="description-1 svelte-16j4qi6">Selects all anchors that are siblings of a div and come after the div
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><span class="not-hit svelte-16j4qi6">a
+                      </span><span class="not-hit svelte-16j4qi6">div
+                      </span><span class="hit svelte-16j4qi6">A
+                      </span><span class="hit svelte-16j4qi6">A
+                      </span>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-1 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Adjacent Sibling
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">div + a
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are siblings of the first element and come directly after the first element
+                  </div><div class="description-1 svelte-16j4qi6">Selects all anchors that are siblings of a div and come directly after the div
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><span class="not-hit svelte-16j4qi6">a
+                      </span><span class="not-hit svelte-16j4qi6">div
+                      </span><span class="hit svelte-16j4qi6">A
+                      </span><span class="not-hit svelte-16j4qi6">a
+                      </span>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-1 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Or
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">div, a
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that match any selector in the list
+                  </div><div class="description-1 svelte-16j4qi6">Selects all anchors and all divs
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><span class="hit svelte-16j4qi6">A
+                      </span><span class="hit svelte-16j4qi6">DIV
+                      </span><span class="hit svelte-16j4qi6">A
+                      </span><span class="not-hit svelte-16j4qi6">b
+                      </span>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-1 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">And
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">div.c
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that match all the selector combinations
+                  </div><div class="description-1 svelte-16j4qi6">Selects all divs with the class c
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><span class="not-hit svelte-16j4qi6">.a
+                      </span><span class="hit svelte-16j4qi6">DIV.C
+                      </span><span class="not-hit svelte-16j4qi6">.c
+                      </span><span class="not-hit svelte-16j4qi6">div
+                      </span>
+                </div>
+            </div></div>
+        
+  </div><div class="base-div svelte-16j4qi6"><h2 class="svelte-16j4qi6">Attribute</h2>
+      <div class="flex-row svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Name</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">CSS</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Description</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Results</div>
+          </div></div>
+      <div class="flex-row-2 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Has
+                    </span><span class="name-1 svelte-16j4qi6">Attribute
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">[a]
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that have that attribute
+                  </div><div class="description-1 svelte-16j4qi6">Select elements with the a attribute
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><span class="hit svelte-16j4qi6">[A]
+                      </span><span class="hit svelte-16j4qi6">[A=”1”]
+                      </span><span class="not-hit svelte-16j4qi6">[c]
+                      </span><span class="not-hit svelte-16j4qi6">d
+                      </span>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-2 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Exact
+                    </span><span class="name-1 svelte-16j4qi6">Attribute
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">[a=”1”]
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that have that attribute with exactly that value
+                  </div><div class="description-1 svelte-16j4qi6">Select elements with the a attribute with a value of 1
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><span class="not-hit svelte-16j4qi6">[a]
+                      </span><span class="hit svelte-16j4qi6">[A=”1”]
+                      </span><span class="not-hit svelte-16j4qi6">[c]
+                      </span><span class="not-hit svelte-16j4qi6">d
+                      </span>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-2 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Begins With
+                    </span><span class="name-1 svelte-16j4qi6">Attribute
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">[a^=”1”]
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that have that attribute which start with that value
+                  </div><div class="description-1 svelte-16j4qi6">Select elements with the a attribute with a value that starts with 1
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><span class="hit svelte-16j4qi6">[A=”12”]
+                      </span><span class="not-hit svelte-16j4qi6">[a=”21”]
+                      </span>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-2 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Ends With
+                    </span><span class="name-1 svelte-16j4qi6">Attribute
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">[a$=”1”]
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that have that attribute which end with that value
+                  </div><div class="description-1 svelte-16j4qi6">Select elements with the a attribute with a value that ends with 1
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><span class="not-hit svelte-16j4qi6">[a=”12”]
+                      </span><span class="hit svelte-16j4qi6">[A=”21”]
+                      </span>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-2 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Substring 
+                    </span><span class="name-1 svelte-16j4qi6">Attribute
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">[a*=”1”]
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that have that attribute which contain that value anywhere
+                  </div><div class="description-1 svelte-16j4qi6">Select elements with the a attribute with a value that contains a 1
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><span class="hit svelte-16j4qi6">[A=”12”]
+                      </span><span class="hit svelte-16j4qi6">[A=”21”]
+                      </span>
+                </div>
+            </div></div>
+        
+  </div><div class="base-div svelte-16j4qi6"><h2 class="svelte-16j4qi6">Pseudo Element</h2>
+      <div class="flex-row svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Name</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">CSS</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Description</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Results</div>
+          </div></div>
+      <div class="flex-row-3 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Before
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">div::before
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Creates an empty element directly before the children of selected element
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">BEFORE</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">c</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">after</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div>
+                      </div>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-3 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">After
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">div::after
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Creates an empty element directly after the children of selected element
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">before</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">c</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">AFTER</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div>
+                      </div>
+                </div>
+            </div></div>
+        
+  </div><div class="base-div svelte-16j4qi6"><h2 class="svelte-16j4qi6">Pseudo Class (State)</h2>
+      <div class="flex-row svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Name</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">CSS</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Description</div>
+          </div></div>
+      <div class="flex-row-4 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Hover
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">button:hover
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are hovered by the mouse
+                  </div><div class="description-1 svelte-16j4qi6">Select buttons that are being hovered
+                  </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-4 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Focus
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">button:focus
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are focused.
+                  </div><div class="description-1 svelte-16j4qi6">Select buttons that are being focused *Focus is set by either tabbing to an element or clicking an element such as a button or anchor tag
+                  </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-4 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Required
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">input:required
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select inputs that are required
+                  </div><div class="description-1 svelte-16j4qi6">Select inputs with the required attribute
+                  </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-4 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Checked
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">input:checked
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select checkboxes/radio buttons that are checked
+                  </div><div class="description-1 svelte-16j4qi6">Select inputs that are checked
+                  </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-4 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Disabled
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">input:disabled
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select inputs that are disabled
+                  </div><div class="description-1 svelte-16j4qi6">Select inputs with the disabled attribute
+                  </div>
+            </div></div>
+        
+  </div><div class="base-div svelte-16j4qi6"><h2 class="svelte-16j4qi6">Pseudo Class (Position/Other)</h2>
+      <div class="flex-row svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Name</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">CSS</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Description</div>
+          </div><div class="flex-column svelte-16j4qi6"><div class="subtitle svelte-16j4qi6">Results</div>
+          </div></div>
+      <div class="flex-row-5 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">First Child
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">a:first-child
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are the first child inside a container
+                  </div><div class="description-1 svelte-16j4qi6">Select anchors that are the first child
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">A</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">a</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div>
+                      </div>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-5 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Last Child
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">a:last-child
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are the last child inside a container
+                  </div><div class="description-1 svelte-16j4qi6">Select anchors that are the last child
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">a</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">A</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div>
+                      </div>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-5 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Nth Child
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">a:nth-child(2n)
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are the nth child inside a container based on the formula
+                  </div><div class="description-1 svelte-16j4qi6">Select anchors that are even numbered children
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">a</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">B</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">A</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div>
+                      </div>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-5 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Nth Last Child 
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">a:nth-last-child(3)
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are the nth child inside a container based on the formula counting from the end
+                  </div><div class="description-1 svelte-16j4qi6">Select anchors that are the third to last child
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">a</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">A</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">A</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div>
+                      </div>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-5 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Only Child
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">a:only-child
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are the only child inside a container
+                  </div><div class="description-1 svelte-16j4qi6">Select anchors that are the only child
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">a</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">A</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div>
+                      </div>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-5 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">First Of Type Selector
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">a:first-of-type
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are the first of a type inside a container
+                  </div><div class="description-1 svelte-16j4qi6">Select the first anchor in a container
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">A</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">a</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div>
+                      </div>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-5 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Last Of Type
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">a:last-of-type
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are the last of a type inside a container
+                  </div><div class="description-1 svelte-16j4qi6">Select the last anchor in a container
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">a</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">A</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div>
+                      </div>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-5 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Nth Of Type
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">a:nth-of-type(2n)
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are the nth of a type inside a container based on the formula
+                  </div><div class="description-1 svelte-16j4qi6">Select every second anchor
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">a</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">A</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div>
+                      </div>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-5 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Nth Last Of Type
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">a:nth-last-of-type(2)
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are the nth of a type inside a container based on the formula counting from the end
+                  </div><div class="description-1 svelte-16j4qi6">Select the second to last anchor
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">A</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">a</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div>
+                      </div>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-5 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Only Of Type
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">a:only-of-type
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select elements that are the only of a type inside a container
+                  </div><div class="description-1 svelte-16j4qi6">Select anchors that are the only anchor in a container
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-0 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">div</span>
+                              <div class="tiny-line-0 svelte-16j4qi6"></div>
+                            </div>
+                      </div><div class="flex-row-with-children svelte-16j4qi6"><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">a</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">B</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="not-hit svelte-16j4qi6">b</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div><div class="tiny-border-1 svelte-16j4qi6"><span class="hit svelte-16j4qi6">A</span>
+                              <div class="tiny-line-1 svelte-16j4qi6"></div>
+                            </div>
+                      </div>
+                </div>
+            </div></div>
+        <div class="border svelte-16j4qi6"></div><div class="flex-row-5 svelte-16j4qi6"><div class="flex-column svelte-16j4qi6"><div class="flex-child"><span class="name-0 svelte-16j4qi6">Not
+                    </span><span class="name-1 svelte-16j4qi6">Selector
+                    </span>
+                </div>
+            </div><div class="flex-column svelte-16j4qi6">a:not(.c)
+                
+            </div><div class="flex-column svelte-16j4qi6"><div class="description-0 svelte-16j4qi6">Select all elements that do not match the selector inside the not selector
+                  </div><div class="description-1 svelte-16j4qi6">Select all anchor tags that do not have the c class
+                  </div>
+            </div><div class="flex-column svelte-16j4qi6"><div class="nice-div"><span class="not-hit svelte-16j4qi6">b
+                      </span><span class="not-hit svelte-16j4qi6">a.c
+                      </span><span class="hit svelte-16j4qi6">A
+                      </span><span class="hit svelte-16j4qi6">A.D
+                      </span>
+                </div>
+            </div></div>
+        
+  </div>
+
+
+		<script type="module" data-sveltekit-hydrate="1vfqw6">
+			import { start } from "/HTMLCSS-Sveltekit/_app/immutable/start-82541275.js";
+
+			start({
+				env: {},
+				hydrate: {
+					status: 200,
+					error: null,
+					node_ids: [0, 5, 22],
+					params: {},
+					routeId: "/lektion3/cheat-sheet-svelte",
+					data: (function(a){return [a,a,a]}(null)),
+					form: null
+				},
+				paths: {"base":"/HTMLCSS-Sveltekit","assets":"/HTMLCSS-Sveltekit"},
+				target: document.querySelector('[data-sveltekit-hydrate="1vfqw6"]').parentNode,
+				trailing_slash: "never"
+			});
+		</script>
+	</div>
+</body>
+
+</html>

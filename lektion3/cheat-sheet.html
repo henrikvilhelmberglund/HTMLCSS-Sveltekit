@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/HTMLCSS-Sveltekit/favicon.png" />
+  <!-- <link rel="stylesheet" href="/HTMLCSS-Sveltekit/cheat-sheet.css" /> -->
+  <meta name="viewport" content="width=device-width" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <meta http-equiv="content-security-policy" content="">
+		<link href="/HTMLCSS-Sveltekit/_app/immutable/assets/_layout-db8b6571.css" rel="stylesheet">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/start-82541275.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/index-b8b93c50.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/singletons-e4c0b18d.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/index-273865a6.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/paths-6cd3a76e.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/_layout.svelte-ab52acb8.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/modules/pages/_layout.js-7b9cbfbc.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/_layout-8d2a742b.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/lektion3/_layout.svelte-64163272.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/lektion3/cheat-sheet/_page.svelte-82017e1b.js"><!-- HEAD_svelte-2nro22_START --><link rel="stylesheet" href="../cheat-sheet.css"><!-- HEAD_svelte-2nro22_END -->
+</head>
+
+<body>
+  <div>
+
+
+<nav><a href="/HTMLCSS-Sveltekit/">Home</a>
+  <a href="/HTMLCSS-Sveltekit/lektion1">Lektion 1</a>
+  <a href="/HTMLCSS-Sveltekit/lektion2">Lektion 2</a>
+  <a href="/HTMLCSS-Sveltekit/lektion3">Lektion 3</a>
+  <a href="/HTMLCSS-Sveltekit/lektion4">Lektion 4</a></nav>
+
+<nav><a href="/HTMLCSS-Sveltekit/lektion3/specificity">Specificity</a>
+  <a href="/HTMLCSS-Sveltekit/lektion3/exercise">Exercise</a>
+  <a href="/HTMLCSS-Sveltekit/lektion3/cheat-sheet">Cheat-sheet</a>
+  <a href="/HTMLCSS-Sveltekit/lektion3/cheat-sheet-svelte">Cheat-sheet-svelte</a></nav>
+
+
+<div><h1>CSS cheat-sheet</h1></div>
+
+<div class="base-div"><h2>Basic</h2>
+  <table><tr><th>Name</th>
+      <th>CSS</th>
+      <th>Description</th>
+      <th>Results</th></tr>
+    <tr><td class="left"><span class="bigger-text">Universal</span>
+        <span class="gray smaller-text">Selector</span></td>
+      <td><span class="bigger-text">*</span></td>
+      <td class="left tiny-text">Select all elements </td>
+      <td><span class="hit">a</span>
+        <span class="hit">b</span>
+        <span class="hit">c</span>
+        <span class="hit">d</span></td></tr>
+    <tr><td colspan="4"><div class="border"></div></td></tr>
+    <tr><td class="left"><span class="bigger-text">Type</span>
+        <span class="gray smaller-text">Selector</span></td>
+      <td><span class="bigger-text">div</span></td>
+      <td class="left"><div class="tiny-text">Select all elements of that type</div>
+        <div class="tiny-text">Select div elements</div></td>
+      <td><span class="not-hit">a</span>
+        <span class="hit">div</span>
+        <span class="not-hit">c</span>
+        <span class="hit">div</span></td></tr>
+    <tr><td colspan="4"><div class="border"></div></td></tr>
+
+    <tr><td class="left"><span class="bigger-text">Class</span>
+        <span class="gray smaller-text">Selector</span></td>
+      <td><span class="bigger-text">.c</span></td>
+      <td class="left"><div class="tiny-text">Select elements with that class</div>
+        <div class="gray tiny-text">Select elements with the c class</div></td>
+      <td><span class="not-hit">.a</span>
+        <span class="not-hit">.b</span>
+        <span class="hit">.c</span>
+        <span class="not-hit">.d</span></td></tr>
+
+    <tr><td colspan="4"><div class="border"></div></td></tr>
+
+    <tr><td class="left"><span class="bigger-text">Id</span>
+        <span class="gray smaller-text">Selector</span></td>
+      <td><span class="bigger-text">#i</span></td>
+      <td class="left"><div class="tiny-text">Select elements with that id</div>
+        <div class="gray tiny-text">Select elements with the i id</div>
+        <div class="gray tiny-text">*It is best practice to not use ids in CSS
+        </div></td>
+      <td><span class="not-hit">#a</span>
+        <span class="not-hit">#b</span>
+        <span class="hit">#i</span>
+        <span class="not-hit">#d</span></td></tr></table>
+</div>
+
+
+		<script type="module" data-sveltekit-hydrate="1crba4e">
+			import { start } from "/HTMLCSS-Sveltekit/_app/immutable/start-82541275.js";
+
+			start({
+				env: {},
+				hydrate: {
+					status: 200,
+					error: null,
+					node_ids: [0, 5, 21],
+					params: {},
+					routeId: "/lektion3/cheat-sheet",
+					data: (function(a){return [a,a,a]}(null)),
+					form: null
+				},
+				paths: {"base":"/HTMLCSS-Sveltekit","assets":"/HTMLCSS-Sveltekit"},
+				target: document.querySelector('[data-sveltekit-hydrate="1crba4e"]').parentNode,
+				trailing_slash: "never"
+			});
+		</script>
+	</div>
+</body>
+
+</html>
