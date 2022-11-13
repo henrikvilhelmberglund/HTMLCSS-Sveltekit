@@ -27,7 +27,7 @@
           [".a", ".b", ".C", ".d"],
         ],
         [
-          ["ID", "Selector"],
+          ["Id", "Selector"],
           "#i",
           [
             "Select elements with that id",
@@ -49,19 +49,25 @@
             "Select elements that are descendants of the first element",
             "Select anchors that are inside a div",
           ],
-          // TODO
           [["div"], ["A", "b"], ["A", "c", "A", "d"]],
         ],
-        // prettier-ignore
-        [["Direct Child","Selector"],"div > a",["Select elements that are direct children of the first element", "Select anchors that are direct children of a div"], ["div a b a c a d"],],
         [
-          ["General Sibling", "Selector"],
-          "div ~ a",
+          ["Direct Child", "Selector"],
+          "div > a",
           [
             "Select elements that are direct children of the first element",
             "Select anchors that are direct children of a div",
           ],
           [["div"], ["A", "b"], ["a", "c", "a", "d"]],
+        ],
+        [
+          ["General Sibling", "Selector"],
+          "div ~ a",
+          [
+            "Select elements that are siblings of the first element and come after the first element",
+            "Selects all anchors that are siblings of a div and come after the div",
+          ],
+          ["a", "div", "A", "A"],
         ],
         [
           ["Adjacent Sibling", "Selector"],
@@ -70,16 +76,16 @@
             "Select elements that are siblings of the first element and come directly after the first element",
             "Selects all anchors that are siblings of a div and come directly after the div",
           ],
-          ["a div a a"],
+          ["a", "div", "A", "a"],
         ],
         [
           ["Or", "Selector"],
-          "div,",
+          "div, a",
           [
             "Select elements that match any selector in the list",
             "Selects all anchors and all divs",
           ],
-          ["a div a b"],
+          ["A", "DIV", "A", "b"],
         ],
         [
           ["And", "Selector"],
@@ -88,7 +94,7 @@
             "Select elements that match all the selector combinations",
             "Selects all divs with the class c",
           ],
-          [".a div.c .c div"],
+          [".a", "DIV.C", ".c", "div"],
         ],
       ],
     },
@@ -153,7 +159,7 @@
           [
             "Creates an empty element directly before the children of selected element",
           ],
-          ["div BEFORE c after"],
+          [["div"], ["BEFORE", "c", "after"]],
         ],
         [
           ["After", "Selector"],
@@ -161,7 +167,7 @@
           [
             "Creates an empty element directly after the children of selected element",
           ],
-          ["div before c AFTER"],
+          [["div"], ["before", "c", "AFTER"]],
         ],
       ],
     },
@@ -178,12 +184,36 @@
           ],
         ],
         [
-          ["After", "Selector"],
-          "div::after",
+          ["Focus", "Selector"],
+          "button:focus",
           [
-            "Creates an empty element directly after the children of selected element",
+            "Select elements that are focused.",
+            "Select buttons that are being focused *Focus is set by either tabbing to an element or clicking an element such as a button or anchor tag",
           ],
-          ["div before c AFTER"],
+        ],
+        [
+          ["Required", "Selector"],
+          "input:required",
+          [
+            "Select inputs that are required",
+            "Select inputs with the required attribute",
+          ],
+        ],
+        [
+          ["Checked", "Selector"],
+          "input:checked",
+          [
+            "Select checkboxes/radio buttons that are checked",
+            "Select inputs that are checked",
+          ],
+        ],
+        [
+          ["Disabled", "Selector"],
+          "input:disabled",
+          [
+            "Select inputs that are disabled",
+            "Select inputs with the disabled attribute",
+          ],
         ],
       ],
     },
@@ -192,12 +222,112 @@
       subtitle: ["Name", "CSS", "Description", "Results"],
       rows: [
         [
-          ["Hover", "Selector"],
-          "button:hover",
+          ["First Child", "Selector"],
+          "a:first-child",
           [
-            "Select elements that are hovered by the mouse",
-            "Select buttons that are being hovered",
+            "Select elements that are the first child inside a container",
+            "Select anchors that are the first child",
           ],
+          [
+            ["div", "div"],
+            ["A", "b", "b", "a"],
+          ],
+        ],
+        [
+          ["Last Child", "Selector"],
+          "a:last-child",
+          [
+            "Select elements that are the last child inside a container",
+            "Select anchors that are the last child",
+          ],
+          [
+            ["div", "div"],
+            ["a", "b", "b", "A"],
+          ],
+        ],
+        [
+          ["Nth Child", "Selector"],
+          "a:nth-child(2n)",
+          [
+            "Select elements that are the nth child inside a container based on the formula",
+            "Select anchors that are even numbered children",
+          ],
+          [["div"], ["a", "B", "b", "A"]],
+        ],
+        [
+          ["Nth Last Child ", "Selector"],
+          "a:nth-last-child(3)",
+          [
+            "Select elements that are the nth child inside a container based on the formula counting from the end",
+            "Select anchors that are the third to last child",
+          ],
+          [["div"], ["a", "A", "b", "A"]],
+        ],
+        [
+          ["Only Child", "Selector"],
+          "a:only-child",
+          [
+            "Select elements that are the only child inside a container",
+            "Select anchors that are the only child",
+          ],
+          [
+            ["div", "div"],
+            ["a", "b", "A"],
+          ],
+        ],
+        [
+          ["First Of Type Selector", "Selector"],
+          "a:first-of-type",
+          [
+            "Select elements that are the first of a type inside a container",
+            "Select the first anchor in a container",
+          ],
+          [["div"], ["b", "A", "a", "b"]],
+        ],
+        [
+          ["Last Of Type", "Selector"],
+          "a:last-of-type",
+          [
+            "Select elements that are the last of a type inside a container",
+            "Select the last anchor in a container",
+          ],
+          [["div"], ["b", "a", "A", "b"]],
+        ],
+        [
+          ["Nth Of Type", "Selector"],
+          "a:nth-of-type(2n)",
+          [
+            "Select elements that are the nth of a type inside a container based on the formula",
+            "Select every second anchor",
+          ],
+          [["div"], ["b", "a", "A", "b"]],
+        ],
+        [
+          ["Nth Last Of Type", "Selector"],
+          "a:nth-last-of-type(2)",
+          [
+            "Select elements that are the nth of a type inside a container based on the formula counting from the end",
+            "Select the second to last anchor",
+          ],
+          [["div"], ["b", "A", "a", "b"]],
+        ],
+        [
+          ["Only Of Type", "Selector"],
+          "a:only-of-type",
+          [
+            "Select elements that are the only of a type inside a container",
+            "Select anchors that are the only anchor in a container",
+          ],
+          [["div"], ["a", "B", "b", "A"]],
+        ],
+        [
+          ["Not", "Selector"],
+          "a:not(.c)",
+          [
+            "Select all elements that do not match the selector inside the not selector",
+            "Select all anchor tags that do not have the c class",
+          ],
+          ["b", "a.c", "A", "A.D"],
         ],
       ],
     },
@@ -232,9 +362,7 @@
   <div class="base-div">
     {#if table.title}
       <h2>{table.title}</h2>
-      <!-- <p>{table.subtitle}</p> -->
       <div class="flex-row">
-        <!-- <div class="flex-row"> -->
         {#each table.subtitle as subtitle}
           <div class="flex-column">
             <div class="subtitle">
@@ -243,67 +371,34 @@
           </div>
         {/each}
       </div>
-      <!-- {table.rows.length} -->
       {#each table.rows as rows, rl}
         <div class="flex-row-{y}">
           {#each rows as row, i}
-            <!-- <div class="flex-row"> -->
-            <!-- <div class="left"> -->
             <div class="flex-column">
               {#if i === 0}
                 <div class="flex-child">
                   {#each row as span, i}
-                    <!-- <div> -->
-
                     <span class="name-{i}">
                       {span}
                     </span>
-                    <!-- </div> -->
                   {/each}
                 </div>
               {:else if i === 1}
-                <!-- <div class="flex-child" /> -->
                 {row}
                 <!-- NOTE HTML -->
               {:else if i === 2}
-                <!-- <div> -->
-                <!-- <div class="flex-child" /> -->
                 {#each row as span, i}
                   <div class="description-{i}">
                     {span}
                   </div>
                 {/each}
-                <!-- </div> -->
-                <!-- <td> -->
-                <!-- </td> -->
               {:else if i === 3}
-                <!-- <div class="flex-child" /> -->
-                <!-- <div> -->
-
                 <div class="nice-div">
                   {#each row as span, r}
-                    <!-- {console.log(span)}
-                    {console.log(typeof span)} -->
                     {#if typeof span === "object"}
                       <div class="flex-row-with-children">
                         {#each span as element, s}
-                          {#if typeof element === "object"}
-                            <div class="flex-row-with-children">
-                              {#each element as inner, e}
-                                {#if typeof inner === "object"}
-                                  console.log("what")
-                                {:else if inner.toUpperCase() === inner}
-                                  <span class="hit">
-                                    {inner}
-                                  </span>
-                                {:else}
-                                  <span class="not-hit">
-                                    {inner}
-                                  </span>
-                                {/if}
-                              {/each}
-                            </div>
-                          {:else if element.toUpperCase() === element}
+                          {#if element.toUpperCase() === element}
                             <div class="tiny-border-{r}">
                               <span class="hit">
                                 {element}
@@ -339,7 +434,6 @@
           <div class="border" />
         {/if}
       {/each}
-      <!-- </div> -->
     {/if}
   </div>
 {/each}
@@ -347,13 +441,19 @@
 <style>
   .flex-column {
     /* background-color: green; */
-    padding: 10px;
+    padding: 4px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     /* align-items: center; */
     width: 300px;
-    height: 30px;
+    /* height: 30px; */
+  }
+
+  span {
+    /* display: inline-block; */
+    vertical-align: middle;
+    text-align: center;
   }
 
   .flex-column:nth-of-type(1) {
@@ -378,134 +478,50 @@
   }
 
   .flex-row-0 {
-    /* background-color: red; */
-    /* width: 700px; */
-    /* padding: 10px; */
     display: flex;
-    /* flex-direction: row; */
-    /* justify-content: space-around; */
-    /* align-items: center; */
-    /* align-self: center; */
-    /* flex-wrap: wrap; */
-    /* width: 30%; */
   }
   .flex-row-1 {
-    /* background-color: red; */
-    /* width: 700px; */
-    /* padding: 10px; */
     display: flex;
-    height: 100px;
-    /* flex-direction: row; */
-    /* justify-content: space-around; */
     align-items: center;
-    /* align-self: center; */
-    /* flex-wrap: wrap; */
-    /* width: 30%; */
   }
   .flex-row-2 {
-    /* background-color: red; */
-    /* width: 700px; */
-    /* padding: 10px; */
     display: flex;
-    height: 100px;
-    /* flex-direction: row; */
-    /* justify-content: space-around; */
     align-items: center;
-    /* align-self: center; */
-    /* flex-wrap: wrap; */
-    /* width: 30%; */
   }
   .flex-row-3 {
-    /* background-color: red; */
-    /* width: 700px; */
-    /* padding: 10px; */
     display: flex;
-    height: 100px;
-    /* flex-direction: row; */
-    /* justify-content: space-around; */
     align-items: center;
-    /* align-self: center; */
-    /* flex-wrap: wrap; */
-    /* width: 30%; */
   }
   .flex-row-4 {
-    /* background-color: red; */
-    /* width: 700px; */
-    /* padding: 10px; */
     display: flex;
-    height: 100px;
-    /* flex-direction: row; */
-    /* justify-content: space-around; */
     align-items: center;
-    /* align-self: center; */
-    /* flex-wrap: wrap; */
-    /* width: 30%; */
   }
   .flex-row-5 {
-    /* background-color: red; */
-    /* width: 700px; */
-    /* padding: 10px; */
     display: flex;
-    height: 100px;
-    /* flex-direction: row; */
-    /* justify-content: space-around; */
     align-items: center;
-    /* align-self: center; */
-    /* flex-wrap: wrap; */
-    /* width: 30%; */
   }
   .flex-row-6 {
-    /* background-color: red; */
-    /* width: 700px; */
-    /* padding: 10px; */
     display: flex;
-    height: 100px;
-    /* flex-direction: row; */
-    /* justify-content: space-around; */
     align-items: center;
-    /* align-self: center; */
-    /* flex-wrap: wrap; */
-    /* width: 30%; */
   }
 
   .flex-row-with-children {
-    /* background-color: red; */
-    /* width: 700px; */
-    /* padding: 10px; */
     display: flex;
-    /* height: 100px; */
-    /* flex-direction: row; */
     justify-content: center;
     justify-content: space-around;
     align-items: center;
-    /* align-self: center; */
-    /* flex-wrap: wrap; */
-    /* width: 30%; */
   }
 
   .flex-row:nth-of-type(1) {
-    /* background-color: red; */
     display: flex;
     text-align: center;
-    /* justify-content: space-around; */
-  }
-  .flex-child {
-    /* background-color: yellow; */
-    /* padding: 10px; */
-  }
-  .flex-child-results {
-    /* background-color: yellow; */
-    /* padding: 10px; */
   }
 
   .centered-div {
-    /* background-color: yellow; */
     justify-content: center;
-    /* justify-content: space-around; */
     align-items: center;
     display: flex;
     flex-direction: column;
-    /* padding: 10px; */
   }
 
   .flex-h1 {
@@ -522,7 +538,6 @@
     width: 900px;
     height: 5px;
     font-weight: 300;
-    /* height: 100px; */
   }
   h1 {
     padding: 10px;
@@ -542,6 +557,7 @@
 
   .base-div {
     background-color: #222222;
+    color: #ddd;
     border-radius: 8px;
     padding-left: 20px;
     margin: 10px;
@@ -554,24 +570,14 @@
   }
 
   .border {
-    /* position: relative; */
-    /* right: 5px; */
     border-bottom: 1px solid #777;
-    /* width: 170%; */
     padding: 0px;
     width: 98%;
-    /* right: 10px; */
   }
   .tiny-border-0 {
-    /* display: flex; */
     position: relative;
-    /* right: 4px; */
-    border-bottom: 2px solid #777;
-    /* margin-left: 5px; */
+    border-bottom: 2px solid #eee;
     width: 60%;
-    /* padding: 0px; */
-    /* width: 98%; */
-    /* right: 10px; */
     align-items: center;
     justify-content: center;
     display: flex;
@@ -582,13 +588,9 @@
     display: flex;
     position: relative;
     display: inline;
-    /* right: 5px; */
-    border-bottom: 2px solid #777;
+    border-bottom: 2px solid #eee;
     margin: 3px;
     width: 30%;
-    /* padding: 0px; */
-    /* width: 98%; */
-    /* right: 10px; */
   }
 
   .tiny-line-1 {
@@ -596,7 +598,7 @@
     right: 15px;
     top: -5px;
     display: inline;
-    border-right: 1px solid #777;
+    border-right: 1px solid #eee;
     height: 15px;
   }
   .tiny-line-2 {
@@ -604,13 +606,12 @@
     right: 15px;
     top: -5px;
     display: inline;
-    border-right: 1px solid #777;
+    border-right: 1px solid #eee;
     height: 5px;
   }
 
   .hit {
     background-color: hsl(208, 69%, 51%);
-    /* padding: 1px; */
     margin: 5px;
     padding-left: 4px;
     padding-right: 4px;
@@ -621,7 +622,7 @@
 
   .not-hit {
     border: 1px solid #aaa;
-    color: #aaa;
+    color: #ddd;
     margin: 5px;
     padding-left: 4px;
     padding-right: 4px;
@@ -634,32 +635,25 @@
     font-size: 1rem;
     color: #aaa;
     font-weight: 800;
-    /* padding: 3px; */
-    /* width: 100px; */
   }
 
   .name-0 {
     font-size: 1.3rem;
     padding: 3px;
-    /* width: 100px; */
   }
 
   .name-1 {
     font-size: 0.8rem;
     font-weight: 700;
     color: #777;
-    /* width: 100px; */
   }
 
   .CSS {
     font-size: 1.3rem;
-    /* width: 300px; */
-    /* width: 300px; */
   }
 
   .description-0 {
     font-size: 0.8rem;
-    /* padding: 3px; */
   }
 
   .description-1 {
