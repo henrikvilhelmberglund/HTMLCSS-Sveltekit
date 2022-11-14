@@ -10,6 +10,7 @@
   <a href="{base}/lektion2">Lektion 2</a>
   <a href="{base}/lektion3">Lektion 3</a>
   <a href="{base}/lektion4">Lektion 4</a>
+  <a href="{base}/lektion5">Lektion 5</a>
 </nav>
 
 <slot />
