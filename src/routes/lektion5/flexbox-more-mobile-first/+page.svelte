@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<h1>Media queries (desktop first)</h1>
+<h1>Media queries (mobile first)</h1>
 
 <div class="wrapper">
   <header>
@@ -25,44 +25,43 @@
 
 <style>
   .header-link {
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80%;
+    margin: 5px 0;
     background-color: lightblue;
   }
   article {
     height: 50px;
     background-color: pink;
-    margin: 0 5px;
+    margin: 5px 0;
     width: 80px;
   }
   .main-content {
     display: flex;
     flex-direction: column;
-    flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
   }
   header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 80px;
+    height: 120px;
+    flex-direction: column;
     background: darkgreen;
   }
   main {
     display: flex;
-    min-height: 140px;
-    max-width: 70%;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+
     /* height: 140px; */
     /* width: 50%; */
-    flex-basis: 200px;
     background-color: darkslateblue;
-    padding: 5px;
-    flex-grow: 1;
-    flex-wrap: wrap;
   }
   aside {
     min-height: 140px;
-    max-width: 30%;
+    max-width: 100%;
     /* height: 140px; */
     /* width: 50%; */
     background-color: firebrick;
@@ -79,41 +78,49 @@
   }
 
   /* specialregler för mobil under */
-  @media (max-width: 500px) {
+  @media (min-width: 500px) {
     /* 
     * {
       background-color: red;
     }
     */
     main {
-      flex-direction: column;
-      align-items: center;
-      max-width: 100%;
+      align-items: flex-start;
+      min-height: 140px;
+      max-width: 70%;
+      flex-basis: 200px;
+      padding: 5px;
+      flex-grow: 1;
+      flex-wrap: wrap;
+      flex-direction: row;
     }
     aside {
-      max-width: 100%;
+      max-width: 30%;
     }
     article {
-      margin: 5px 0;
+      margin: 0 5px;
     }
     .main-content {
       flex-direction: column;
+      flex-direction: row;
     }
   }
 
-  @media (max-width: 220px) {
+  @media (min-width: 220px) {
     /* 
     * {
       background-color: red;
     }
     */
     header {
-      flex-direction: column;
-      height: 120px;
+      justify-content: space-around;
+      align-items: center;
+      height: 80px;
+      flex-direction: row;
     }
     .header-link {
-      width: 80%;
-      margin: 5px 0;
+      height: 50px;
+      width: 50px;
     }
   }
 </style>
