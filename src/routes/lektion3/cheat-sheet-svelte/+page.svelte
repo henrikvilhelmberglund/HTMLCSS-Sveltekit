@@ -399,6 +399,7 @@
                       <div class="flex-row-with-children">
                         {#each span as element, s}
                           {#if element.toUpperCase() === element}
+                            <!-- TODO test tiny flexboxes with certain height and width instead -->
                             <div class="tiny-border-{r}">
                               <span class="hit">
                                 {element}
