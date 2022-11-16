@@ -19,22 +19,27 @@
     <div class="flexbox-row">
       <div class="div-login">
         <div class="login-column-0">
-          <input type="text" class="input-field" placeholder="Användarnamn" />
+          <input
+            type="text"
+            class="input-field-0"
+            placeholder=" Användarnamn"
+          />
         </div>
         <div class="login-column-1">
-          <input type="text" class="input-field" placeholder="Lösenord" />
+          <input type="text" class="input-field-1" placeholder=" Lösenord" />
         </div>
         <div class="login-row">
           <div class="row-left">
             <div class="checkbox">
               <input type="checkbox" name="remember-me" id="" />
-              <label for="remember-me">Kom ihåg mig</label>
-              <div class="label" />
+              <!-- <div class="label"> -->
+              <label for="remember-me" class="label">Kom ihåg mig</label>
+              <!-- </div> -->
             </div>
           </div>
           <div class="row-right">
-            <div class="password">
-              <a href="http://">Glömt lösenord</a>
+            <div>
+              <a href="http://" class="password">Glömt lösenord</a>
             </div>
           </div>
         </div>
@@ -56,11 +61,23 @@
     </div>
   </div>
 </main>
-<footer>this is footer</footer>
+<footer>
+  <p>Serve inc Fake AB</p>
+  <p>08-99 999 35 71</p>
+  <p>Inteenriktiggata 99, 13 337, Härstorp</p>
+</footer>
 
 <style>
+  p {
+    padding: 0px;
+    padding-left: 30px;
+    margin: 0px;
+    color: white;
+    font-weight: 200;
+  }
   .row-left {
     display: flex;
+    flex-direction: row;
     width: 50%;
     justify-content: flex-start;
   }
@@ -71,17 +88,24 @@
   }
   .checkbox {
     /* flex: 0; */
-    padding-left: 5px;
+    /* padding-left: 5px; */
+    font-size: 0.8rem;
+    text-align: center;
   }
   .label {
     /* flex: 1; */
+    font-size: 0.7rem;
+    font-weight: 200;
   }
   .password {
     /* flex: 1; */
+    font-size: 0.7rem;
+    text-decoration: none;
+    font-weight: 200;
   }
   .google-log-in-btn {
     width: 100%;
-    line-height: 30px;
+    line-height: 25px;
     background: white;
     color: #222;
     font-size: 1rem;
@@ -92,8 +116,8 @@
   }
   .facebook-log-in-btn {
     width: 100%;
-    line-height: 30px;
-    background: hsl(230, 58%, 64%);
+    line-height: 25px;
+    background: #4988e7;
     color: white;
     font-size: 1rem;
     text-decoration: none;
@@ -106,29 +130,45 @@
     display: flex;
     flex-direction: row;
     flex: 1;
+    width: 100%;
     text-align: center;
   }
   .div-google {
-    /* display: flex;
+    display: flex;
     flex-direction: column;
-    align-items: center; */
-    display: block;
-    width: 300px;
+    align-items: center;
+    /* display: block; */
+    /* width: 300px; */
+    width: 100%;
+    flex: 1;
   }
-  .input-field {
+  .input-field-0 {
     width: 100%;
     height: 30px;
     border: 0px solid black;
     border-radius: 4px;
+    padding-left: 10px;
   }
-  .input-field::placeholder {
-    padding-left: 30px;
+  .input-field-0::placeholder {
     color: #bbb;
+    font-family: "Inter", "FontAwesome";
+    font-size: 1rem;
+    padding-left: 2px;
   }
-  .input-field:focus {
-    /* background-color: red; */
-    color: black;
+  .input-field-1 {
+    width: 100%;
+    height: 30px;
+    border: 0px solid black;
+    border-radius: 4px;
+    padding-left: 10px;
   }
+  .input-field-1::placeholder {
+    padding-left: 2px;
+    color: #bbb;
+    font-family: "Inter", "FontAwesome";
+    font-size: 1rem;
+  }
+
   .log-in-btn {
     width: 100%;
     /* max-width: 100%; */
@@ -142,51 +182,40 @@
     /* padding: 0; */
     /* display: block; */
   }
+  .log-in-btn:hover {
+    background: #333;
+    cursor: pointer;
+  }
+  .log-in-btn:active {
+    background: #333;
+    box-shadow: 
+    /* inset -1px -1px 1px rgba(255, 255, 255, 0.6), */ inset
+      1px 2px 5px rgba(0, 0, 0, 0.6);
+    /* cursor: pointer; */
+  }
   .login-row {
-    padding: 10px;
-    padding-left: 0px;
     display: flex;
     width: 100%;
-    /* flex: 1; */
   }
   .login-column-0 {
     display: flex;
     flex: 1;
-    padding: 10px;
+    /* padding: 10px; */
     /* min-width: 100px; */
     width: 100%;
   }
-  .login-column-0:before {
-    font-family: "FontAwesome";
-    font-size: 1rem;
-    content: "\f007";
-    position: absolute;
-    left: 565px;
-    bottom: 515px;
-    padding: 5px;
-    color: #bbb;
-  }
+
   .login-column-1 {
     display: flex;
     flex: 1;
-    padding: 10px;
+    padding: 15px 0 10px 0;
     /* min-width: 100px; */
     width: 100%;
-  }
-  .login-column-1:after {
-    font-family: "FontAwesome";
-    font-size: 1rem;
-    content: "\f084";
-    position: absolute;
-    left: 565px;
-    bottom: 465px;
-    padding: 5px;
-    color: #bbb;
   }
   .login-column-2 {
     display: flex;
     flex: 1;
-    padding: 10px;
+    padding: 15px 0 10px 0;
     /* min-width: 100px; */
     width: 100%;
   }
@@ -195,15 +224,18 @@
   }
   .div-login {
     display: flex;
+    flex: 1;
     flex-direction: column;
     /* width: 33%; */
     color: white;
-    width: 270px;
+    /* width: 270px; */
+    width: 50%px;
   }
   .div-eller {
+    /* flex: 1; */
     /* width: 33%; */
     color: white;
-    padding: 100px;
+    padding: 70px;
   }
 
   .flexbox-row {
@@ -211,16 +243,20 @@
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
+    padding: 30px;
+    width: 40%;
   }
   .flexbox-parent {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 89vh;
+    height: 86.4vh;
+    width: 100%;
   }
   #main {
-    height: 89vh;
+    height: 86.4vh;
   }
   * {
     font-family: "Inter", sans-serif;
@@ -228,20 +264,24 @@
   }
   h1 {
     color: white;
+    padding: 30px;
+    padding-top: 100px;
   }
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     /* font-variation-settings: "wght" 100; */
     font-weight: 200;
   }
   main {
-    height: 100vh;
-    width: 100%;
+    /* height: 100vh; */
+    /* width: 100%; */
     background: linear-gradient(black, #fd3a22);
   }
   footer {
-    background-color: gray;
-    height: 50px;
+    background-color: #504c4c;
+    height: 70px;
     width: 100%;
+    padding: 5px 0;
+    font-size: 0.9rem;
   }
 </style>
