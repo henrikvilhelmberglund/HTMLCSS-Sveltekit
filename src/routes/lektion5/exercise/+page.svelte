@@ -114,6 +114,11 @@
     padding: 4px;
     font-weight: 600;
   }
+
+  .google-log-in-btn:hover {
+    background: #ccc;
+    cursor: pointer;
+  }
   .facebook-log-in-btn {
     width: 100%;
     line-height: 25px;
@@ -124,6 +129,10 @@
     border-radius: 4px;
     padding: 4px;
     font-weight: 600;
+  }
+  .facebook-log-in-btn:hover {
+    background: hsl(216, 77%, 70%);
+    cursor: pointer;
   }
   .inner-div-google {
     padding: 10px;
@@ -150,10 +159,10 @@
     padding-left: 10px;
   }
   .input-field-0::placeholder {
+    padding-left: 2px;
     color: #bbb;
     font-family: "Inter", "FontAwesome";
-    font-size: 1rem;
-    padding-left: 2px;
+    font-size: 0.9rem;
   }
   .input-field-1 {
     width: 100%;
@@ -166,7 +175,7 @@
     padding-left: 2px;
     color: #bbb;
     font-family: "Inter", "FontAwesome";
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .log-in-btn {
