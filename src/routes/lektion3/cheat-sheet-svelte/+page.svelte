@@ -399,19 +399,34 @@
                       <div class="flex-row-with-children">
                         {#each span as element, s}
                           {#if element.toUpperCase() === element}
-                            <!-- TODO test tiny flexboxes with certain height and width instead -->
-                            <div class="tiny-border-{r}">
-                              <span class="hit">
+                            <div class="flex-column-with-children-{r}">
+                              <!-- TODO test tiny flexboxes with certain height and width instead -->
+                              <div class="flex-border-wrapper">
+                                <div class="tiny-line-{r}" />
+                              </div>
+                              <span class="hit-{r}">
                                 {element}
                               </span>
-                              <div class="tiny-line-{r}" />
+                              <div class="flex-border-wrapper">
+                                <div class="tiny-border-{r}" />
+                                {#if r > 0}
+                                  <div class="tiny-line-extra-{r}" />
+                                {/if}
+                              </div>
                             </div>
+                            <!-- </div> -->
                           {:else}
-                            <div class="tiny-border-{r}">
-                              <span class="not-hit">
+                            <div class="flex-column-with-children-{r}">
+                              <div class="flex-border-wrapper">
+                                <div class="tiny-line-{r}" />
+                              </div>
+                              <span class="not-hit-{r}">
                                 {element}
                               </span>
-                              <div class="tiny-line-{r}" />
+                              <div class="flex-border-wrapper">
+                                <div class="tiny-border-{r}" />
+                                <div class="tiny-line-extra-{r}" />
+                              </div>
                             </div>
                           {/if}
                         {/each}
@@ -442,13 +457,13 @@
 <style>
   .flex-column {
     /* background-color: green; */
-    padding: 4px;
+    /* padding: 4px; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     /* align-items: center; */
     width: 300px;
-    /* height: 30px; */
+    /* height: 100px; */
   }
 
   span {
@@ -505,12 +520,36 @@
     display: flex;
     align-items: center;
   }
+  .flex-column-with-children-0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    /* align-items: center; */
+  }
+  .flex-column-with-children-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    /* align-items: center; */
+  }
+  .flex-column-with-children-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0 5px;
+    /* align-items: center; */
+  }
 
   .flex-row-with-children {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     justify-content: space-around;
     align-items: center;
+    /* height: 35px; */
   }
 
   .flex-row:nth-of-type(1) {
@@ -575,45 +614,119 @@
     padding: 0px;
     width: 98%;
   }
+
+  .flex-border-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 10px; */
+    /* height: 10%; */
+    /* width: 50px; */
+    /* height: 10px; */
+  }
   .tiny-border-0 {
     position: relative;
-    border-bottom: 2px solid #eee;
-    width: 60%;
-    align-items: center;
-    justify-content: center;
+    /* border-bottom: 2px solid #eee; */
+    /* flex: 1; */
+    /* width: 100%; */
+    height: 1px;
+    /* align-items: center; */
+    /* justify-content: center; */
+    top: 5px;
     display: flex;
+    width: 185%;
+    background-color: white;
+    /* margin: 3px; */
   }
   .tiny-border-1 {
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     display: flex;
     position: relative;
-    display: inline;
-    border-bottom: 2px solid #eee;
-    margin: 3px;
-    width: 30%;
+    top: 5px;
+    /* border-bottom: 2px solid #eee; */
+    /* margin: 3px; */
+    width: 155%;
+    height: 1px;
+    background-color: white;
+  }
+  /* .tiny-line-0 {
+    position: relative;
+    left: 5px;
+    display: flex;
+    height: 5px;
+    width: 2px;
+    background-color: white;
+  } */
+  .nice-div {
+    /* margin: 115px; */
+    /* position: relative; */
+    /* height: 50%; */
+    /* width: 50%; */
+  }
+  .tiny-line-0 {
+    position: relative;
+    /* right: 15px; */
+    top: 30px;
+    /* top: -4px; */
+    /* left: 13px; */
+    /* left: 50%; */
+    /* display: block; */
+    /* display: flex; */
+    /* border-right: 1px solid #eee; */
+    /* margin: 10px; */
+    /* height: 4px; */
+    width: 1px;
+    /* margin: 10px; */
+    background-color: white;
   }
 
   .tiny-line-1 {
     position: relative;
-    right: 15px;
-    top: -5px;
-    display: inline;
-    border-right: 1px solid #eee;
-    height: 15px;
+    /* right: 15px; */
+    top: 0px;
+    /* left: 13px; */
+    /* left: 50%; */
+    /* display: block; */
+    /* display: flex; */
+    /* border-right: 1px solid #eee; */
+    /* margin: 10px; */
+    height: 4px;
+    width: 1px;
+    background-color: white;
   }
   .tiny-line-2 {
     position: relative;
-    right: 15px;
-    top: -5px;
-    display: inline;
-    border-right: 1px solid #eee;
-    height: 5px;
+    /* top: 4px; */
+    /* border-right: 1px solid #eee; */
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-0 {
+    position: relative;
+    top: 0px;
+    /* border-right: 1px solid #eee; */
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-1 {
+    position: relative;
+    top: 0px;
+    /* border-right: 1px solid #eee; */
+    background-color: white;
+    width: 1px;
+    height: 4px;
   }
 
   .hit {
     background-color: hsl(208, 69%, 51%);
+    /* margin: 0 15px 0 15px; */
+    /* width: 20%; */
     margin: 5px;
+    /* display: inline-block; */
     padding-left: 4px;
     padding-right: 4px;
     border-radius: 4px;
@@ -624,7 +737,67 @@
   .not-hit {
     border: 1px solid #aaa;
     color: #ddd;
+    /* width: 50%; */
+    /* margin: 0 15px 0 15px; */
     margin: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+    font-weight: 700;
+    z-index: 5;
+  }
+
+  .hit-0 {
+    border: 1px solid #aaa;
+    background-color: hsl(208, 69%, 51%);
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+    text-transform: lowercase;
+    font-weight: 700;
+  }
+
+  .not-hit-0 {
+    border: 1px solid #aaa;
+    color: #ddd;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+    font-weight: 700;
+    z-index: 5;
+  }
+  .hit-1 {
+    background-color: hsl(208, 69%, 51%);
+    border: 1px solid #aaa;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+    text-transform: lowercase;
+    font-weight: 700;
+  }
+
+  .not-hit-1 {
+    border: 1px solid #aaa;
+    color: #ddd;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+    font-weight: 700;
+    z-index: 5;
+  }
+  .hit-2 {
+    background-color: hsl(208, 69%, 51%);
+    border: 1px solid #aaa;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+    text-transform: lowercase;
+    font-weight: 700;
+  }
+
+  .not-hit-2 {
+    border: 1px solid #aaa;
+    color: #ddd;
     padding-left: 4px;
     padding-right: 4px;
     border-radius: 4px;
