@@ -27,6 +27,7 @@
   "type": "module",
   "dependencies": {
     "@fontsource/inter": "^4.5.14",
+    "@fontsource/raleway": "^4.5.11",
     "gh-pages": "^4.0.0"
   }
 }
