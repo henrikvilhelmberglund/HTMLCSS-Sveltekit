@@ -296,7 +296,7 @@
     width: 100%;
   }
   #main {
-    height: 86.4vh;
+    height: 94vh;
   }
   * {
     font-family: "Inter", sans-serif;

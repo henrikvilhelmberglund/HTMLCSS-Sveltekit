@@ -9,3 +9,8 @@
 ## mobile first
 
 - svårt för designer att gå från desktop till mobil för mobil har fler begränsningar med utrymmet
+
+## mediaquery
+
+- t.ex (max-width: 440px) and (orientation: landscape)
+- men kan oftast använda bredder istället
