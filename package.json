@@ -9,7 +9,9 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
     "predeploy": "vite build",
-    "deploy": "npx gh-pages -d build --dotfiles"
+    "deploy": "npx gh-pages -d build --dotfiles",
+    "release": "commit-and-tag-version",
+    "postrelease": "git push --follow-tags origin main"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
