@@ -1,4 +1,5 @@
 <script>
+  let name = "";
 </script>
 
 <svelte:head>
@@ -12,64 +13,72 @@
 </svelte:head>
 
 <main id="main">
-  <div class="flexbox-parent">
-    <div class="h1-div">
-      <h1>Inloggning</h1>
-    </div>
-    <div class="flexbox-row">
-      <div class="div-login">
-        <div class="login-column-0">
-          <input
-            type="text"
-            class="input-field-0"
-            placeholder="     Användarnamn"
-          />
-        </div>
-        <div class="login-column-1">
-          <input
-            type="text"
-            class="input-field-1"
-            placeholder="     Lösenord"
-          />
-        </div>
-        <div class="login-row">
-          <div class="row-left">
-            <div class="checkbox">
-              <input type="checkbox" name="remember-me" id="" />
-              <!-- <div class="label"> -->
-              <label for="remember-me" class="label">Kom ihåg mig</label>
-              <!-- </div> -->
+  <div class="flexbox-wrapper">
+    <div class="flexbox-parent">
+      <div class="h1-div">
+        <h1>Inloggning</h1>
+        {#if name}
+          <h3>Hej {name}!</h3>
+        {/if}
+      </div>
+      <div class="flexbox-row">
+        <div class="div-login">
+          <div class="login-column-0">
+            <input
+              type="text"
+              class="input-field-0"
+              placeholder="     Användarnamn"
+              bind:value={name}
+            />
+          </div>
+          <div class="login-column-1">
+            <input
+              type="text"
+              class="input-field-1"
+              placeholder="     Lösenord"
+            />
+          </div>
+          <div class="login-row">
+            <div class="row-left">
+              <div class="checkbox">
+                <input type="checkbox" name="remember-me" id="" />
+                <!-- <div class="label"> -->
+                <label for="remember-me" class="label">Kom ihåg mig</label>
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="row-right">
+              <div>
+                <a href="http://" class="password"
+                  >Jag har glömt mitt lösenord</a
+                >
+              </div>
             </div>
           </div>
-          <div class="row-right">
-            <div>
-              <a href="http://" class="password">Jag har glömt mitt lösenord</a>
-            </div>
+          <div class="login-column-2">
+            <button class="log-in-btn">Logga in</button>
           </div>
         </div>
-        <div class="login-column-2">
-          <button class="log-in-btn">Logga in</button>
+        <div class="div-eller">
+          <h2>eller</h2>
+        </div>
+        <div class="div-google">
+          <div class="inner-div-google">
+            <a href="" class="google-log-in-btn"> Logga in med Google-konto </a>
+          </div>
+          <div class="inner-div-google">
+            <a href="" class="facebook-log-in-btn"> Logga in med Facebook </a>
+          </div>
         </div>
       </div>
-      <div class="div-eller">
-        <h2>eller</h2>
-      </div>
-      <div class="div-google">
-        <div class="inner-div-google">
-          <a href="" class="google-log-in-btn"> Logga in med Google-konto </a>
-        </div>
-        <div class="inner-div-google">
-          <a href="" class="facebook-log-in-btn"> Logga in med Facebook </a>
-        </div>
+      <div class="footer-div">
+        <footer>
+          <p>Serve inc Fake AB</p>
+          <p>08-99 999 35 71</p>
+          <p>Inteenriktiggata 99, 13 337, Härstorp</p>
+        </footer>
       </div>
     </div>
-  </div>
-  <div class="footer-div">
-    <footer>
-      <p>Serve inc Fake AB</p>
-      <p>08-99 999 35 71</p>
-      <p>Inteenriktiggata 99, 13 337, Härstorp</p>
-    </footer>
   </div>
 </main>
 
@@ -93,11 +102,13 @@
     display: flex;
     flex-direction: row;
     width: 50%;
+    min-width: 100px;
     justify-content: flex-start;
   }
   .row-right {
     display: flex;
     width: 50%;
+    min-width: 100px;
     justify-content: flex-end;
   }
   .checkbox {
@@ -127,6 +138,7 @@
     border-radius: 4px;
     padding: 4px;
     font-weight: 600;
+    min-width: 200px;
   }
 
   .google-log-in-btn:hover {
@@ -136,6 +148,7 @@
   .facebook-log-in-btn {
     width: 100%;
     line-height: 25px;
+    min-width: 200px;
     background: #4988e7;
     color: white;
     font-size: 1rem;
@@ -277,7 +290,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     height: 100%;
     width: 100%;
@@ -313,13 +326,38 @@
     padding: 5px 0;
     font-size: 0.9rem;
   }
+  .flexbox-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .footer-div {
+    display: flex;
+    /* flex: 1; */
+    flex-direction: column;
+    width: 100%;
+    height: 10%;
+    /* justify-content: flex-end; */
+    /* align-items: flex-end; */
+  }
+  h3 {
+    font-size: 1.5rem;
+    /* font-variation-settings: "wght" 100; */
+    font-weight: 400;
+    color: white;
+    margin: 0;
+  }
 
   @media (max-width: 412px) {
-  /* @media (max-width: 500px) { */
-    
-    main {
-      background: #e7e7e7;
+    .flexbox-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 90%;
+      /* TODO */
     }
+    /* @media (max-width: 500px) { */
+
     p {
       padding: 0px;
       padding-left: 30px;
@@ -346,13 +384,13 @@
     }
     .label {
       /* flex: 1; */
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       font-weight: 400;
       color: black;
     }
     .password {
       /* flex: 1; */
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       text-decoration: none;
       font-weight: 400;
       color: black;
@@ -464,7 +502,7 @@
       display: flex;
       flex: 0.1;
       width: 100%;
-      padding: 20px 0;
+      padding: 15px 0;
     }
     .login-column-0 {
       display: flex;
@@ -517,21 +555,23 @@
       flex-direction: column;
       justify-content: flex-end;
       align-items: center;
-      padding: 10px;
+      /* padding: 10px; */
       width: 75%;
     }
     .flexbox-parent {
       display: flex;
-      flex: 1;
+      /* flex: 1; */
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 90%;
+      height: 100%;
       width: 100%;
     }
     #main {
       /* height: vh; */
       /* width: 10vh; */
+      background: #e7e7e7;
+      height: 90vh;
     }
     * {
       font-family: "Inter", sans-serif;
@@ -548,9 +588,17 @@
     .h1-div {
       padding-top: 120px;
       display: flex;
+      flex-direction: column;
       flex: 1;
     }
     h2 {
+      font-size: 1.5rem;
+      /* font-variation-settings: "wght" 100; */
+      font-weight: 400;
+      color: black;
+      margin: 0;
+    }
+    h3 {
       font-size: 1.5rem;
       /* font-variation-settings: "wght" 100; */
       font-weight: 400;
@@ -561,20 +609,21 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex: 1;
+      /* flex: 1; */
       background-color: #504c4c;
-      height: 70px;
+      height: 40px;
       width: 100%;
-      padding: 15px 0;
+      padding: 20px 0;
       font-size: 0.9rem;
     }
     .footer-div {
       display: flex;
+      /* flex: 1; */
       flex-direction: column;
       width: 100%;
       height: 10%;
-      /* justify-content: center; */
-      /* align-items: center; */
+      /* justify-content: flex-end; */
+      /* align-items: flex-end; */
     }
   }
 </style>
