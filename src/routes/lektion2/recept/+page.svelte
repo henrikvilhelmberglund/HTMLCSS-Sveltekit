@@ -119,9 +119,15 @@ Extra: Skapa en knapp för att ändra stylingen på hela sidan till dark-mode me
 <nav>
   {#each recipes as recipe}
     <section class="links">
-      <a href="#ingredienser-{recipe.title}">Ingredienser: {recipe.title}</a>
-      <a href="#tillagning-{recipe.title}">Tillagning: {recipe.title}</a>
-      <a href="#faktaruta-{recipe.title}">Faktaruta: {recipe.title}</a>
+      <a href="#ingredienser-{recipe.title.replaceAll(' ', '-')}"
+        >Ingredienser: {recipe.title.replaceAll(" ", "-")}</a
+      >
+      <a href="#tillagning-{recipe.title.replaceAll(' ', '-')}"
+        >Tillagning: {recipe.title}</a
+      >
+      <a href="#faktaruta-{recipe.title.replaceAll(' ', '-')}"
+        >Faktaruta: {recipe.title}</a
+      >
     </section>
   {/each}
 </nav>
@@ -137,7 +143,7 @@ Extra: Skapa en knapp för att ändra stylingen på hela sidan till dark-mode me
         <h3>Ingredienser:</h3>
         <ul>
           {#if recipe.ingredients}
-            <a id="ingredienser-{recipe.title}" />
+            <a id="ingredienser-{recipe.title.replaceAll(' ', '-')}" />
             {#each recipe.ingredients as ingredient}
               <li>
                 <p>{ingredient}</p>
@@ -148,7 +154,7 @@ Extra: Skapa en knapp för att ändra stylingen på hela sidan till dark-mode me
       </section>
       <section class="recipe-section">
         <h3>Tillagning:</h3>
-        <a id="tillagning-{recipe.title}" />
+        <a id="tillagning-{recipe.title.replaceAll(' ', '-')}" />
         <ol>
           {#if recipe.cookingSteps}
             {#each recipe.cookingSteps as cookingStep}
@@ -160,7 +166,7 @@ Extra: Skapa en knapp för att ändra stylingen på hela sidan till dark-mode me
         </ol>
       </section>
       <section class="recipe-section">
-        <a id="faktaruta-{recipe.title}" />
+        <a id="faktaruta-{recipe.title.replaceAll(' ', '-')}" />
         <div class="trivia">
           <h4>{recipe.trivia}</h4>
         </div>
