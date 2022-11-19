@@ -1105,7 +1105,7 @@
     }
   }
 
-  @media (orientation: landscape) {
+  @media (max-width: 1000px) and (orientation: landscape) {
     .flex-wrapper {
       display: flex;
       /* width: 100%; */
