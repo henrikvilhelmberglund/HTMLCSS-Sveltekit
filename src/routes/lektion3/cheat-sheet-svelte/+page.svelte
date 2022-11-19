@@ -410,33 +410,26 @@
                 {:else if i === 3}
                   <div class="nice-div">
                     {#each row as span, r}
-                      <!-- <h3>{table.title.replace(" ","-")}</h3> -->
+                      <!-- <h3>r = {r}, rl = {rl}, y = {y}</h3> -->
                       {#if typeof span === "object"}
                         <div class="flex-row-with-children">
                           {#each span as element, s}
                             {#if element.toUpperCase() === element}
                               <div
-                                class="flex-column-with-children-{cleanTitle(
-                                  table.title,
-                                  rl
-                                )}-{r}">
+                                class={y === 1
+                                  ? `flex-column-with-children-${r}`
+                                  : `flex-column-with-children-${r}-b`}>
                                 <div class="flex-border-wrapper">
-                                  <div
-                                    class="tiny-line-{cleanTitle(
-                                      table.title,
-                                      rl
-                                    )}-{r}" />
+                                  <div class="tiny-line-{r}" />
                                 </div>
                                 <div class="hit-{r}">
                                   {element}
                                 </div>
                                 <div class="flex-border-wrapper">
-                                  {#if r > 0}
-                                    <div
-                                      class="tiny-line-extra-{cleanTitle(
-                                        table.title,
-                                        rl
-                                      )}-{r}" />
+                                  {#if y === 1}
+                                    <div class="tiny-line-extra-{r}" />
+                                  {:else}
+                                    <div class="tiny-line-extra-{r}-b" />
                                   {/if}
                                   <div
                                     class="tiny-border-{cleanTitle(
@@ -447,26 +440,21 @@
                               </div>
                             {:else}
                               <div
-                                class="flex-column-with-children-{cleanTitle(
-                                  table.title,
-                                  rl
-                                )}-{r}">
+                                class={y === 1
+                                  ? `flex-column-with-children-${r}`
+                                  : `flex-column-with-children-${r}-b`}>
                                 <div class="flex-border-wrapper">
-                                  <div
-                                    class="tiny-line-{cleanTitle(
-                                      table.title,
-                                      rl
-                                    )}-{r}" />
+                                  <div class="tiny-line-{r}" />
                                 </div>
                                 <div class="not-hit-{r}">
                                   {element}
                                 </div>
                                 <div class="flex-border-wrapper">
-                                  <div
-                                    class="tiny-line-extra-{cleanTitle(
-                                      table.title,
-                                      rl
-                                    )}-{r}" />
+                                  {#if y === 1}
+                                    <div class="tiny-line-extra-{r}" />
+                                  {:else}
+                                    <div class="tiny-line-extra-{r}-b" />
+                                  {/if}
                                   <div
                                     class="tiny-border-{cleanTitle(
                                       table.title,
@@ -523,7 +511,7 @@
   }
 
   span {
-    /* display: inline-block; */
+    display: inline-block;
     vertical-align: middle;
     text-align: center;
   }
@@ -579,21 +567,21 @@
     display: flex;
     align-items: center;
   }
-  /* NOTE combination */
-  .flex-column-with-children-combination-0 {
+
+  .flex-column-with-children-0 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     justify-content: space-around;
     align-items: center;
   }
-  .flex-column-with-children-combination-1 {
+  .flex-column-with-children-1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     justify-content: space-around;
   }
-  .flex-column-with-children-combination-2 {
+  .flex-column-with-children-2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -601,8 +589,8 @@
     padding: 0 5px;
     /* align-items: center; */
   }
-  /* NOTE Pseudo Element */
-  .flex-column-with-children-pseudo-element-0 {
+
+  .flex-column-with-children-0-b {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -612,7 +600,7 @@
     align-items: center;
     width: 33%;
   }
-  .flex-column-with-children-pseudo-element-1 {
+  .flex-column-with-children-1-b {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -621,7 +609,7 @@
     align-items: center;
     width: 33%;
   }
-  .flex-column-with-children-pseudo-element-2 {
+  .flex-column-with-children-2-b {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -629,135 +617,7 @@
     padding: 0 5px;
     /* align-items: center; */
   }
-  /* NOTE Pseudo Class (Position/Other) */
-  .flex-column-with-children-pseudo-class-position-other-0-0 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-0-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-0-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    padding: 0 5px;
-    /* align-items: center; */
-  }
-  .flex-column-with-children-pseudo-class-position-other-1-0 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-1-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-1-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    padding: 0 5px;
-    /* align-items: center; */
-  }
-  .flex-column-with-children-pseudo-class-position-other-2-0 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-2-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-2-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    padding: 0 5px;
-    /* align-items: center; */
-  }
-  .flex-column-with-children-pseudo-class-position-other-3-0 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-3-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-3-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    padding: 0 5px;
-    /* align-items: center; */
-  }
-  .flex-column-with-children-pseudo-class-position-other-4-0 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-4-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-4-1:nth-of-type(3) {
+  div.flex-wrapper.s-cPZEnGL0Hx_5 > div:nth-child(8) > div:nth-child(11) > div:nth-child(4) > div > div:nth-child(2) > div:nth-child(3) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -767,177 +627,6 @@
     width: 33%;
     /* background-color: red; */
   }
-  .flex-column-with-children-pseudo-class-position-other-4-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    padding: 0 5px;
-    /* align-items: center; */
-  }
-  .flex-column-with-children-pseudo-class-position-other-5-0 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-5-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-5-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    padding: 0 5px;
-    /* align-items: center; */
-  }
-  .flex-column-with-children-pseudo-class-position-other-6-0 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-6-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-6-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    padding: 0 5px;
-    /* align-items: center; */
-  }
-  .flex-column-with-children-pseudo-class-position-other-7-0 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-7-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-7-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    padding: 0 5px;
-    /* align-items: center; */
-  }
-  .flex-column-with-children-pseudo-class-position-other-8-0 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-8-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-8-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    padding: 0 5px;
-    /* align-items: center; */
-  }
-  .flex-column-with-children-pseudo-class-position-other-9-0 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-9-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-9-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    padding: 0 5px;
-    /* align-items: center; */
-  }
-  .flex-column-with-children-pseudo-class-position-other-10-0 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-10-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    flex: 1;
-    align-items: center;
-    width: 33%;
-  }
-  .flex-column-with-children-pseudo-class-position-other-10-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    padding: 0 5px;
-    /* align-items: center; */
-  }
-
   .flex-row-with-children {
     display: flex;
     flex-direction: row;
@@ -1019,6 +708,56 @@
     justify-content: center;
     align-items: center;
   }
+
+  .tiny-line-0 {
+    position: relative;
+    top: 30px;
+    width: 1px;
+    background-color: white;
+    /* height: 4px; */
+  }
+  .tiny-line-1 {
+    position: relative;
+    /* top: 30px; */
+    width: 1px;
+    background-color: white;
+    height: 4px;
+  }
+  .tiny-line-2 {
+    position: relative;
+    width: 1px;
+    background-color: white;
+    height: 4px;
+  }
+  .tiny-line-extra-0 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-0-b {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-1 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  /* div:nth-child(3) > div.tiny-line-extra-1 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 0px;
+  } */
+
   /* NOTE combination */
   .tiny-border-combination-0 {
     position: relative;
@@ -1034,40 +773,6 @@
     height: 1px;
     background-color: white;
   }
-  .tiny-line-combination-0 {
-    position: relative;
-    top: 30px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-combination-1 {
-    position: relative;
-    top: 0px;
-    height: 4px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-combination-2 {
-    position: relative;
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
-  .tiny-line-extra-combination-0 {
-    position: relative;
-    top: 0px;
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
-  .tiny-line-extra-combination-1 {
-    position: relative;
-    top: 0px;
-    /* border-right: 1px solid #eee; */
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
   /* NOTE Pseudo Element */
   .tiny-border-pseudo-element-0 {
     position: relative;
@@ -1075,47 +780,6 @@
     display: flex;
     width: 81px;
     background-color: white;
-  }
-  .tiny-border-pseudo-element-1 {
-    display: flex;
-    position: relative;
-    /* width: 155%; */
-    height: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-element-0 {
-    position: relative;
-    top: 30px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-element-1 {
-    position: relative;
-    top: 0px;
-    height: 4px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-element-2 {
-    position: relative;
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
-  }
-  .tiny-line-extra-pseudo-element-0 {
-    position: relative;
-    top: 0px;
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
-  .tiny-line-extra-pseudo-element-1 {
-    position: relative;
-    top: 0px;
-    /* border-right: 1px solid #eee; */
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
   }
   /* NOTE Pseudo Class (Position/Other) */
   .tiny-border-pseudo-class-position-other-0-0 {
@@ -1125,40 +789,6 @@
     width: 31px;
     background-color: white;
   }
-  .tiny-border-pseudo-class-position-other-0-1 {
-    display: flex;
-    position: relative;
-    /* width: 155%; */
-    height: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-0-0 {
-    position: relative;
-    top: 30px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-0-1 {
-    position: relative;
-    top: 0px;
-    height: 4px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-0-2 {
-    position: relative;
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
-  }
-  .tiny-line-extra-pseudo-class-position-other-0-0 {
-    position: relative;
-    top: 0px;
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
-
   .tiny-border-pseudo-class-position-other-1-0 {
     position: relative;
     height: 1px;
@@ -1166,35 +796,6 @@
     width: 31px;
     background-color: white;
   }
-  .tiny-border-pseudo-class-position-other-1-1 {
-    display: flex;
-    position: relative;
-    /* width: 155%; */
-    height: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-1-0 {
-    position: relative;
-    top: 30px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-1-1 {
-    position: relative;
-    top: 0px;
-    height: 4px;
-    width: 1px;
-    background-color: white;
-  }
-
-  .tiny-line-extra-pseudo-class-position-other-1-0 {
-    position: relative;
-    top: 0px;
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
-
   .tiny-border-pseudo-class-position-other-2-0 {
     position: relative;
     height: 1px;
@@ -1202,70 +803,12 @@
     width: 91px;
     background-color: white;
   }
-  .tiny-border-pseudo-class-position-other-2-1 {
-    display: flex;
-    position: relative;
-    /* width: 155%; */
-    height: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-2-0 {
-    position: relative;
-    top: 30px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-2-1 {
-    position: relative;
-    top: 0px;
-    height: 4px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-extra-pseudo-class-position-other-2-0 {
-    position: relative;
-    top: 0px;
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
-
   .tiny-border-pseudo-class-position-other-3-0 {
     position: relative;
     height: 1px;
     display: flex;
     width: 91px;
     background-color: white;
-  }
-
-  .tiny-line-pseudo-class-position-other-3-0 {
-    position: relative;
-    top: 30px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-3-1 {
-    position: relative;
-    top: 0px;
-    height: 4px;
-    width: 1px;
-    background-color: white;
-  }
-
-  .tiny-line-extra-pseudo-class-position-other-3-0 {
-    position: relative;
-    top: 0px;
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
-  .tiny-line-extra-pseudo-class-position-other-3-1 {
-    position: relative;
-    top: 0px;
-    /* border-right: 1px solid #eee; */
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
   }
   .tiny-border-pseudo-class-position-other-4-0 {
     position: relative;
@@ -1284,88 +827,13 @@
     background-color: white;
     /* background-color: red; */
   }
-  .tiny-border-pseudo-class-position-other-4-1 {
-    display: flex;
-    position: relative;
-    /* width: 155%; */
-    height: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-4-0 {
-    position: relative;
-    top: 30px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-4-1 {
-    position: relative;
-    top: 0px;
-    height: 4px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-4-2 {
-    position: relative;
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
-  }
-  .tiny-line-extra-pseudo-class-position-other-4-0 {
-    position: relative;
-    top: 0px;
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
-  .tiny-line-extra-pseudo-class-position-other-4-1 {
-    position: relative;
-    top: 0px;
-    /* border-right: 1px solid #eee; */
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
-  }
+
   .tiny-border-pseudo-class-position-other-5-0 {
     position: relative;
     height: 1px;
     display: flex;
     width: 91px;
     background-color: white;
-  }
-  .tiny-border-pseudo-class-position-other-5-1 {
-    display: flex;
-    position: relative;
-    /* width: 155%; */
-    height: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-5-0 {
-    position: relative;
-    top: 30px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-5-1 {
-    position: relative;
-    top: 0px;
-    height: 4px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-extra-pseudo-class-position-other-5-0 {
-    position: relative;
-    top: 0px;
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
-  .tiny-line-extra-pseudo-class-position-other-5-1 {
-    position: relative;
-    top: 0px;
-    /* border-right: 1px solid #eee; */
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
   }
   .tiny-border-pseudo-class-position-other-6-0 {
     position: relative;
@@ -1374,104 +842,12 @@
     width: 91px;
     background-color: white;
   }
-  .tiny-border-pseudo-class-position-other-6-1 {
-    display: flex;
-    position: relative;
-    /* width: 155%; */
-    height: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-6-0 {
-    position: relative;
-    top: 30px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-6-1 {
-    position: relative;
-    top: 0px;
-    height: 4px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-extra-pseudo-class-position-other-6-0 {
-    position: relative;
-    top: 0px;
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
-  .tiny-line-extra-pseudo-class-position-other-6-1 {
-    position: relative;
-    top: 0px;
-    /* border-right: 1px solid #eee; */
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
-  }
-
-  .tiny-line-extra-pseudo-class-position-other-7-0 {
-    position: relative;
-    top: 0px;
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
-  .tiny-line-extra-pseudo-class-position-other-7-1 {
-    position: relative;
-    top: 0px;
-    /* border-right: 1px solid #eee; */
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
-  }
   .tiny-border-pseudo-class-position-other-7-0 {
     position: relative;
     height: 1px;
     display: flex;
     width: 91px;
     background-color: white;
-  }
-  .tiny-border-pseudo-class-position-other-7-1 {
-    display: flex;
-    position: relative;
-    /* width: 155%; */
-    height: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-7-0 {
-    position: relative;
-    top: 30px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-7-1 {
-    position: relative;
-    top: 0px;
-    height: 4px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-7-2 {
-    position: relative;
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
-  }
-  .tiny-line-extra-pseudo-class-position-other-7-0 {
-    position: relative;
-    top: 0px;
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
-  .tiny-line-extra-pseudo-class-position-other-7-1 {
-    position: relative;
-    top: 0px;
-    /* border-right: 1px solid #eee; */
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
   }
   .tiny-border-pseudo-class-position-other-8-0 {
     position: relative;
@@ -1480,47 +856,6 @@
     width: 91px;
     background-color: white;
   }
-  .tiny-border-pseudo-class-position-other-8-1 {
-    display: flex;
-    position: relative;
-    /* width: 155%; */
-    height: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-8-0 {
-    position: relative;
-    top: 30px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-8-1 {
-    position: relative;
-    top: 0px;
-    height: 4px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-8-2 {
-    position: relative;
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
-  }
-  .tiny-line-extra-pseudo-class-position-other-8-0 {
-    position: relative;
-    top: 0px;
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
-  .tiny-line-extra-pseudo-class-position-other-8-1 {
-    position: relative;
-    top: 0px;
-    /* border-right: 1px solid #eee; */
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
-  }
   .tiny-border-pseudo-class-position-other-9-0 {
     position: relative;
     height: 1px;
@@ -1528,94 +863,12 @@
     width: 91px;
     background-color: white;
   }
-  .tiny-border-pseudo-class-position-other-9-1 {
-    display: flex;
-    position: relative;
-    /* width: 155%; */
-    height: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-9-0 {
-    position: relative;
-    top: 30px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-9-1 {
-    position: relative;
-    top: 0px;
-    height: 4px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-9-2 {
-    position: relative;
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
-  }
-  .tiny-line-extra-pseudo-class-position-other-9-0 {
-    position: relative;
-    top: 0px;
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
-  .tiny-line-extra-pseudo-class-position-other-9-1 {
-    position: relative;
-    top: 0px;
-    /* border-right: 1px solid #eee; */
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
-  }
   .tiny-border-pseudo-class-position-other-10-0 {
     position: relative;
     height: 1px;
     display: flex;
     width: 81px;
     background-color: white;
-  }
-  .tiny-border-pseudo-class-position-other-10-1 {
-    display: flex;
-    position: relative;
-    /* width: 155%; */
-    height: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-10-0 {
-    position: relative;
-    top: 30px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-10-1 {
-    position: relative;
-    top: 0px;
-    height: 4px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-pseudo-class-position-other-10-2 {
-    position: relative;
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
-  }
-  .tiny-line-extra-pseudo-class-position-other-10-0 {
-    position: relative;
-    top: 0px;
-    background-color: white;
-    width: 1px;
-    height: 4px;
-  }
-  .tiny-line-extra-pseudo-class-position-other-10-1 {
-    position: relative;
-    top: 0px;
-    /* border-right: 1px solid #eee; */
-    background-color: white;
-    width: 1px;
-    /* height: 4px; */
   }
 
   .hit {
