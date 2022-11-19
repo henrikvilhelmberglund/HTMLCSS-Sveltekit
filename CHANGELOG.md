@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [0.0.2](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/compare/v0.0.1...v0.0.2) (2022-11-19)
+
+
+### Features
+
+* :art: update cheat-sheet-svelte, looking fine now ([6b00a5a](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/6b00a5ad49d97f96ae48d341e94af6cc24cb4e0d))
+* :sparkles: add dark mode toggle and landscape orientation support for cheat-sheet-svelte ([3dc053b](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/3dc053b59d95920e97617461dd3c71c4b61c9d35))
+* :sparkles: add file with cool commands (not done) ([ebf1481](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/ebf148108b06a42071576ab119e8a0dddd13cc25))
+* :sparkles: add github workflow that builds and deploys on push to repo ([b396bad](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/b396bad1b69f691e02dea6d82f64f3f4c0184409))
+* :sparkles: add prettier configuration to fix (some) prettier jank ([9a64649](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/9a646498f0806a394ae4fb331744adce8c0e445a))
+* :sparkles: add release and postrelease scripts ([a145f4e](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/a145f4e6e60b2882fc88e9d7bc0d0f4f963b604c))
+* :sparkles: add Threlte and example page ([3e7095a](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/3e7095a9a61e27234f7eb33b425ba383517204f1))
+* :sparkles: add Threlte to layout nav ([e48a4bc](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/e48a4bccf06be100fbf906b067af4bd0e929ddf0))
+
+
+### Bug Fixes
+
+* :art: minor fixes cheat-sheet-svelte ([210e9ba](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/210e9ba0db4e30193089b21f1ecf0866be054b52))
+* :bug: add some stuff in github actions (what was the point of the copy paste thing?) ([ff32e7e](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/ff32e7e319efa62518f680af269d846e4925f2c9))
+* :bug: fix bug with spaces in id that broke github action for some reason (but not regular builds) ([c1953b8](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/c1953b8feaabd8afcd71739a5aa54326037ae53e))
+* :bug: see if github action works ([30d9c7e](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/30d9c7e4cf8d2287fbc87ae84666a0851ca233fb))
+* :fire: didn't work, need to add action through github and not push it up ([fb38242](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/fb38242084a88334bf5d8f50884d18071b6acbc1))
+* :fire: remove half of the code because why not ([206afee](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/206afeec22df948502ee8f81c14b4364c920b77c))
+
 ### 0.0.1 (2022-11-17)
 
 
