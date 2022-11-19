@@ -318,7 +318,7 @@
             "Select elements that are the only of a type inside a container",
             "Select anchors that are the only anchor in a container",
           ],
-          [["div"], ["a", "B", "b", "A"]],
+          [["div"], ["b", "b", "A", "b"]],
         ],
         [
           ["Not", "Selector"],
@@ -332,6 +332,21 @@
       ],
     },
   ];
+
+  function cleanTitle(inputTitle, i) {
+    let output = inputTitle
+      .replace("/", "-")
+      .replace(" ", "-")
+      .replace(" (", "-")
+      .replace(")", "")
+      .toLowerCase();
+    console.log(output);
+    if (inputTitle === "Pseudo Class (Position/Other)") {
+      return output + "-" + i;
+    } else {
+      return output;
+    }
+  }
 </script>
 
 <svelte:head>
@@ -339,122 +354,162 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
   <link rel="stylesheet" href="../cheat-sheet-svelte.css" />
 </svelte:head>
 
-<div class="flex-h1">
-  <div>
-    <h1>CSS</h1>
+<div class="flex-wrapper">
+  <div class="flex-h1">
+    <div>
+      <h1>CSS</h1>
+    </div>
+    <div>
+      <h3>{"{"}selectors: cheat-sheet{"}"}</h3>
+    </div>
   </div>
-  <div>
-    <h3>{"{"}selectors: cheat-sheet{"}"}</h3>
+  <div class="flex-h4">
+    <div>
+      <h4>By Web Dev Simplified, copied(?) by Henrik Berglund</h4>
+    </div>
   </div>
-</div>
-<div class="flex-h4">
-  <div>
-    <h4>By Web Dev Simplified, copied(?) by Henrik Berglund</h4>
-  </div>
-</div>
 
-{#each tables as table, y}
-  <div class="base-div">
-    {#if table.title}
-      <h2>{table.title}</h2>
-      <div class="flex-row">
-        {#each table.subtitle as subtitle}
-          <div class="flex-column">
-            <div class="subtitle">
-              {subtitle}
-            </div>
-          </div>
-        {/each}
-      </div>
-      {#each table.rows as rows, rl}
-        <div class="flex-row-{y}">
-          {#each rows as row, i}
+  {#each tables as table, y}
+    <div class="base-div">
+      {#if table.title}
+        <h2>{table.title}</h2>
+        <div class="flex-row">
+          {#each table.subtitle as subtitle}
             <div class="flex-column">
-              {#if i === 0}
-                <div class="flex-child">
-                  {#each row as span, i}
-                    <span class="name-{i}">
-                      {span}
-                    </span>
-                  {/each}
-                </div>
-              {:else if i === 1}
-                {row}
-                <!-- NOTE HTML -->
-              {:else if i === 2}
-                {#each row as span, i}
-                  <div class="description-{i}">
-                    {span}
-                  </div>
-                {/each}
-              {:else if i === 3}
-                <div class="nice-div">
-                  {#each row as span, r}
-                    {#if typeof span === "object"}
-                      <div class="flex-row-with-children">
-                        {#each span as element, s}
-                          {#if element.toUpperCase() === element}
-                            <div class="flex-column-with-children-{r}">
-                              <!-- TODO test tiny flexboxes with certain height and width instead -->
-                              <div class="flex-border-wrapper">
-                                <div class="tiny-line-{r}" />
-                              </div>
-                              <span class="hit-{r}">
-                                {element}
-                              </span>
-                              <div class="flex-border-wrapper">
-                                <div class="tiny-border-{r}" />
-                                {#if r > 0}
-                                  <div class="tiny-line-extra-{r}" />
-                                {/if}
-                              </div>
-                            </div>
-                            <!-- </div> -->
-                          {:else}
-                            <div class="flex-column-with-children-{r}">
-                              <div class="flex-border-wrapper">
-                                <div class="tiny-line-{r}" />
-                              </div>
-                              <span class="not-hit-{r}">
-                                {element}
-                              </span>
-                              <div class="flex-border-wrapper">
-                                <div class="tiny-border-{r}" />
-                                <div class="tiny-line-extra-{r}" />
-                              </div>
-                            </div>
-                          {/if}
-                        {/each}
-                      </div>
-                    {:else if span.toUpperCase() === span}
-                      <span class="hit">
-                        {span}
-                      </span>
-                    {:else}
-                      <span class="not-hit">
-                        {span}
-                      </span>
-                    {/if}
-                  {/each}
-                </div>
-              {/if}
+              <div class="subtitle">
+                {subtitle}
+              </div>
             </div>
           {/each}
         </div>
-        {#if rl !== table.rows.length - 1}
-          <div class="border" />
-        {/if}
-      {/each}
-    {/if}
-  </div>
-{/each}
+        {#each table.rows as rows, rl}
+          <div class="flex-row-{y}">
+            {#each rows as row, i}
+              <div class="flex-column">
+                {#if i === 0}
+                  <div class="flex-child">
+                    {#each row as span, i}
+                      <span class="name-{i}">
+                        {span}
+                      </span>
+                    {/each}
+                  </div>
+                {:else if i === 1}
+                  {row}
+                  <!-- NOTE HTML -->
+                {:else if i === 2}
+                  {#each row as span, i}
+                    <div class="description-{i}">
+                      {span}
+                    </div>
+                  {/each}
+                {:else if i === 3}
+                  <div class="nice-div">
+                    {#each row as span, r}
+                      <!-- <h3>{table.title.replace(" ","-")}</h3> -->
+                      {#if typeof span === "object"}
+                        <div class="flex-row-with-children">
+                          {#each span as element, s}
+                            {#if element.toUpperCase() === element}
+                              <div
+                                class="flex-column-with-children-{cleanTitle(
+                                  table.title,
+                                  rl
+                                )}-{r}">
+                                <div class="flex-border-wrapper">
+                                  <div
+                                    class="tiny-line-{cleanTitle(
+                                      table.title,
+                                      rl
+                                    )}-{r}" />
+                                </div>
+                                <div class="hit-{r}">
+                                  {element}
+                                </div>
+                                <div class="flex-border-wrapper">
+                                  {#if r > 0}
+                                    <div
+                                      class="tiny-line-extra-{cleanTitle(
+                                        table.title,
+                                        rl
+                                      )}-{r}" />
+                                  {/if}
+                                  <div
+                                    class="tiny-border-{cleanTitle(
+                                      table.title,
+                                      rl
+                                    )}-{r}" />
+                                </div>
+                              </div>
+                            {:else}
+                              <div
+                                class="flex-column-with-children-{cleanTitle(
+                                  table.title,
+                                  rl
+                                )}-{r}">
+                                <div class="flex-border-wrapper">
+                                  <div
+                                    class="tiny-line-{cleanTitle(
+                                      table.title,
+                                      rl
+                                    )}-{r}" />
+                                </div>
+                                <div class="not-hit-{r}">
+                                  {element}
+                                </div>
+                                <div class="flex-border-wrapper">
+                                  <div
+                                    class="tiny-line-extra-{cleanTitle(
+                                      table.title,
+                                      rl
+                                    )}-{r}" />
+                                  <div
+                                    class="tiny-border-{cleanTitle(
+                                      table.title,
+                                      rl
+                                    )}-{r}" />
+                                </div>
+                              </div>
+                            {/if}
+                          {/each}
+                        </div>
+                      {:else if span.toUpperCase() === span}
+                        <span class="hit">
+                          {span}
+                        </span>
+                      {:else}
+                        <span class="not-hit">
+                          {span}
+                        </span>
+                      {/if}
+                    {/each}
+                  </div>
+                {/if}
+              </div>
+            {/each}
+          </div>
+          {#if rl !== table.rows.length - 1}
+            <div class="border" />
+          {/if}
+        {/each}
+      {/if}
+    </div>
+  {/each}
+</div>
 
 <style>
+  .flex-wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+  }
   .flex-column {
     /* background-color: green; */
     /* padding: 4px; */
@@ -463,6 +518,7 @@
     justify-content: space-around;
     /* align-items: center; */
     width: 300px;
+    margin: 15px;
     /* height: 100px; */
   }
 
@@ -493,6 +549,9 @@
     flex: 1;
   }
 
+  .flex-row {
+    display: flex;
+  }
   .flex-row-0 {
     display: flex;
   }
@@ -520,21 +579,357 @@
     display: flex;
     align-items: center;
   }
-  .flex-column-with-children-0 {
+  /* NOTE combination */
+  .flex-column-with-children-combination-0 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     justify-content: space-around;
-    /* align-items: center; */
+    align-items: center;
   }
-  .flex-column-with-children-1 {
+  .flex-column-with-children-combination-1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     justify-content: space-around;
+  }
+  .flex-column-with-children-combination-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0 5px;
     /* align-items: center; */
   }
-  .flex-column-with-children-2 {
+  /* NOTE Pseudo Element */
+  .flex-column-with-children-pseudo-element-0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-element-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-element-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0 5px;
+    /* align-items: center; */
+  }
+  /* NOTE Pseudo Class (Position/Other) */
+  .flex-column-with-children-pseudo-class-position-other-0-0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-0-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-0-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0 5px;
+    /* align-items: center; */
+  }
+  .flex-column-with-children-pseudo-class-position-other-1-0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-1-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-1-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0 5px;
+    /* align-items: center; */
+  }
+  .flex-column-with-children-pseudo-class-position-other-2-0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-2-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-2-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0 5px;
+    /* align-items: center; */
+  }
+  .flex-column-with-children-pseudo-class-position-other-3-0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-3-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-3-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0 5px;
+    /* align-items: center; */
+  }
+  .flex-column-with-children-pseudo-class-position-other-4-0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-4-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-4-1:nth-of-type(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    flex: 2;
+    align-items: center;
+    width: 33%;
+    /* background-color: red; */
+  }
+  .flex-column-with-children-pseudo-class-position-other-4-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0 5px;
+    /* align-items: center; */
+  }
+  .flex-column-with-children-pseudo-class-position-other-5-0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-5-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-5-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0 5px;
+    /* align-items: center; */
+  }
+  .flex-column-with-children-pseudo-class-position-other-6-0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-6-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-6-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0 5px;
+    /* align-items: center; */
+  }
+  .flex-column-with-children-pseudo-class-position-other-7-0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-7-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-7-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0 5px;
+    /* align-items: center; */
+  }
+  .flex-column-with-children-pseudo-class-position-other-8-0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-8-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-8-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0 5px;
+    /* align-items: center; */
+  }
+  .flex-column-with-children-pseudo-class-position-other-9-0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-9-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-9-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0 5px;
+    /* align-items: center; */
+  }
+  .flex-column-with-children-pseudo-class-position-other-10-0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-10-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-pseudo-class-position-other-10-2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -550,6 +945,8 @@
     justify-content: space-around;
     align-items: center;
     /* height: 35px; */
+    /* height: 30px; */
+    width: 120px;
   }
 
   .flex-row:nth-of-type(1) {
@@ -577,7 +974,8 @@
     align-items: center;
     width: 900px;
     height: 5px;
-    font-weight: 300;
+    padding-bottom: 30px;
+    font-weight: 200;
   }
   h1 {
     padding: 10px;
@@ -620,105 +1018,604 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* margin: 10px; */
-    /* height: 10%; */
-    /* width: 50px; */
-    /* height: 10px; */
   }
-  .tiny-border-0 {
+  /* NOTE combination */
+  .tiny-border-combination-0 {
     position: relative;
-    /* border-bottom: 2px solid #eee; */
-    /* flex: 1; */
-    /* width: 100%; */
     height: 1px;
-    /* align-items: center; */
-    /* justify-content: center; */
-    top: 5px;
     display: flex;
-    width: 185%;
+    width: 61px;
     background-color: white;
-    /* margin: 3px; */
   }
-  .tiny-border-1 {
-    /* align-items: center; */
-    /* justify-content: center; */
+  .tiny-border-combination-1 {
     display: flex;
     position: relative;
-    top: 5px;
-    /* border-bottom: 2px solid #eee; */
-    /* margin: 3px; */
     width: 155%;
     height: 1px;
     background-color: white;
   }
-  /* .tiny-line-0 {
+  .tiny-line-combination-0 {
     position: relative;
-    left: 5px;
-    display: flex;
-    height: 5px;
-    width: 2px;
-    background-color: white;
-  } */
-  .nice-div {
-    /* margin: 115px; */
-    /* position: relative; */
-    /* height: 50%; */
-    /* width: 50%; */
-  }
-  .tiny-line-0 {
-    position: relative;
-    /* right: 15px; */
     top: 30px;
-    /* top: -4px; */
-    /* left: 13px; */
-    /* left: 50%; */
-    /* display: block; */
-    /* display: flex; */
-    /* border-right: 1px solid #eee; */
-    /* margin: 10px; */
-    /* height: 4px; */
     width: 1px;
-    /* margin: 10px; */
+    background-color: white;
+  }
+  .tiny-line-combination-1 {
+    position: relative;
+    top: 0px;
+    height: 4px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-combination-2 {
+    position: relative;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-combination-0 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-combination-1 {
+    position: relative;
+    top: 0px;
+    /* border-right: 1px solid #eee; */
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  /* NOTE Pseudo Element */
+  .tiny-border-pseudo-element-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 81px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-element-1 {
+    display: flex;
+    position: relative;
+    /* width: 155%; */
+    height: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-element-0 {
+    position: relative;
+    top: 30px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-element-1 {
+    position: relative;
+    top: 0px;
+    height: 4px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-element-2 {
+    position: relative;
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
+  }
+  .tiny-line-extra-pseudo-element-0 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-pseudo-element-1 {
+    position: relative;
+    top: 0px;
+    /* border-right: 1px solid #eee; */
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
+  }
+  /* NOTE Pseudo Class (Position/Other) */
+  .tiny-border-pseudo-class-position-other-0-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 31px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-0-1 {
+    display: flex;
+    position: relative;
+    /* width: 155%; */
+    height: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-0-0 {
+    position: relative;
+    top: 30px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-0-1 {
+    position: relative;
+    top: 0px;
+    height: 4px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-0-2 {
+    position: relative;
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
+  }
+  .tiny-line-extra-pseudo-class-position-other-0-0 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+
+  .tiny-border-pseudo-class-position-other-1-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 31px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-1-1 {
+    display: flex;
+    position: relative;
+    /* width: 155%; */
+    height: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-1-0 {
+    position: relative;
+    top: 30px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-1-1 {
+    position: relative;
+    top: 0px;
+    height: 4px;
+    width: 1px;
     background-color: white;
   }
 
-  .tiny-line-1 {
+  .tiny-line-extra-pseudo-class-position-other-1-0 {
     position: relative;
-    /* right: 15px; */
     top: 0px;
-    /* left: 13px; */
-    /* left: 50%; */
-    /* display: block; */
-    /* display: flex; */
-    /* border-right: 1px solid #eee; */
-    /* margin: 10px; */
-    height: 4px;
-    width: 1px;
-    background-color: white;
-  }
-  .tiny-line-2 {
-    position: relative;
-    /* top: 4px; */
-    /* border-right: 1px solid #eee; */
     background-color: white;
     width: 1px;
     height: 4px;
   }
-  .tiny-line-extra-0 {
+
+  .tiny-border-pseudo-class-position-other-2-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 91px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-2-1 {
+    display: flex;
+    position: relative;
+    /* width: 155%; */
+    height: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-2-0 {
+    position: relative;
+    top: 30px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-2-1 {
     position: relative;
     top: 0px;
-    /* border-right: 1px solid #eee; */
+    height: 4px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-extra-pseudo-class-position-other-2-0 {
+    position: relative;
+    top: 0px;
     background-color: white;
     width: 1px;
     height: 4px;
   }
-  .tiny-line-extra-1 {
+
+  .tiny-border-pseudo-class-position-other-3-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 91px;
+    background-color: white;
+  }
+
+  .tiny-line-pseudo-class-position-other-3-0 {
+    position: relative;
+    top: 30px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-3-1 {
+    position: relative;
+    top: 0px;
+    height: 4px;
+    width: 1px;
+    background-color: white;
+  }
+
+  .tiny-line-extra-pseudo-class-position-other-3-0 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-pseudo-class-position-other-3-1 {
     position: relative;
     top: 0px;
     /* border-right: 1px solid #eee; */
     background-color: white;
     width: 1px;
+    /* height: 4px; */
+  }
+  .tiny-border-pseudo-class-position-other-4-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 31px;
+    background-color: white;
+  }
+  div:nth-child(2)
+    > div:nth-child(3)
+    > div.tiny-border-pseudo-class-position-other-4-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 1px;
+    background-color: white;
+    /* background-color: red; */
+  }
+  .tiny-border-pseudo-class-position-other-4-1 {
+    display: flex;
+    position: relative;
+    /* width: 155%; */
+    height: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-4-0 {
+    position: relative;
+    top: 30px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-4-1 {
+    position: relative;
+    top: 0px;
     height: 4px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-4-2 {
+    position: relative;
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
+  }
+  .tiny-line-extra-pseudo-class-position-other-4-0 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-pseudo-class-position-other-4-1 {
+    position: relative;
+    top: 0px;
+    /* border-right: 1px solid #eee; */
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
+  }
+  .tiny-border-pseudo-class-position-other-5-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 91px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-5-1 {
+    display: flex;
+    position: relative;
+    /* width: 155%; */
+    height: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-5-0 {
+    position: relative;
+    top: 30px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-5-1 {
+    position: relative;
+    top: 0px;
+    height: 4px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-extra-pseudo-class-position-other-5-0 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-pseudo-class-position-other-5-1 {
+    position: relative;
+    top: 0px;
+    /* border-right: 1px solid #eee; */
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
+  }
+  .tiny-border-pseudo-class-position-other-6-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 91px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-6-1 {
+    display: flex;
+    position: relative;
+    /* width: 155%; */
+    height: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-6-0 {
+    position: relative;
+    top: 30px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-6-1 {
+    position: relative;
+    top: 0px;
+    height: 4px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-extra-pseudo-class-position-other-6-0 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-pseudo-class-position-other-6-1 {
+    position: relative;
+    top: 0px;
+    /* border-right: 1px solid #eee; */
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
+  }
+
+  .tiny-line-extra-pseudo-class-position-other-7-0 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-pseudo-class-position-other-7-1 {
+    position: relative;
+    top: 0px;
+    /* border-right: 1px solid #eee; */
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
+  }
+  .tiny-border-pseudo-class-position-other-7-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 91px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-7-1 {
+    display: flex;
+    position: relative;
+    /* width: 155%; */
+    height: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-7-0 {
+    position: relative;
+    top: 30px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-7-1 {
+    position: relative;
+    top: 0px;
+    height: 4px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-7-2 {
+    position: relative;
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
+  }
+  .tiny-line-extra-pseudo-class-position-other-7-0 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-pseudo-class-position-other-7-1 {
+    position: relative;
+    top: 0px;
+    /* border-right: 1px solid #eee; */
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
+  }
+  .tiny-border-pseudo-class-position-other-8-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 91px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-8-1 {
+    display: flex;
+    position: relative;
+    /* width: 155%; */
+    height: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-8-0 {
+    position: relative;
+    top: 30px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-8-1 {
+    position: relative;
+    top: 0px;
+    height: 4px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-8-2 {
+    position: relative;
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
+  }
+  .tiny-line-extra-pseudo-class-position-other-8-0 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-pseudo-class-position-other-8-1 {
+    position: relative;
+    top: 0px;
+    /* border-right: 1px solid #eee; */
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
+  }
+  .tiny-border-pseudo-class-position-other-9-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 91px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-9-1 {
+    display: flex;
+    position: relative;
+    /* width: 155%; */
+    height: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-9-0 {
+    position: relative;
+    top: 30px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-9-1 {
+    position: relative;
+    top: 0px;
+    height: 4px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-9-2 {
+    position: relative;
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
+  }
+  .tiny-line-extra-pseudo-class-position-other-9-0 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-pseudo-class-position-other-9-1 {
+    position: relative;
+    top: 0px;
+    /* border-right: 1px solid #eee; */
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
+  }
+  .tiny-border-pseudo-class-position-other-10-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 81px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-10-1 {
+    display: flex;
+    position: relative;
+    /* width: 155%; */
+    height: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-10-0 {
+    position: relative;
+    top: 30px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-10-1 {
+    position: relative;
+    top: 0px;
+    height: 4px;
+    width: 1px;
+    background-color: white;
+  }
+  .tiny-line-pseudo-class-position-other-10-2 {
+    position: relative;
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
+  }
+  .tiny-line-extra-pseudo-class-position-other-10-0 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-pseudo-class-position-other-10-1 {
+    position: relative;
+    top: 0px;
+    /* border-right: 1px solid #eee; */
+    background-color: white;
+    width: 1px;
+    /* height: 4px; */
   }
 
   .hit {
@@ -748,32 +1645,40 @@
   }
 
   .hit-0 {
-    border: 1px solid #aaa;
+    /* border: 1px solid #aaa; */
     background-color: hsl(208, 69%, 51%);
     padding-left: 4px;
     padding-right: 4px;
     border-radius: 4px;
     text-transform: lowercase;
     font-weight: 700;
+    /* width: 20px; */
   }
 
   .not-hit-0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid #aaa;
     color: #ddd;
     padding-left: 4px;
     padding-right: 4px;
     border-radius: 4px;
     font-weight: 700;
-    z-index: 5;
+    width: 20px;
+    /* flex: 1; */
   }
   .hit-1 {
     background-color: hsl(208, 69%, 51%);
-    border: 1px solid #aaa;
+    border: 1px solid hsl(208, 69%, 51%);
+    /* margin: 10px; */
+    /* height: 20px; */
     padding-left: 4px;
     padding-right: 4px;
     border-radius: 4px;
     text-transform: lowercase;
     font-weight: 700;
+    min-width: 10px;
   }
 
   .not-hit-1 {
@@ -784,15 +1689,18 @@
     border-radius: 4px;
     font-weight: 700;
     z-index: 5;
+    min-width: 10px;
   }
   .hit-2 {
     background-color: hsl(208, 69%, 51%);
-    border: 1px solid #aaa;
+    border: 1px solid hsl(208, 69%, 51%);
+    /* border: 1px solid #aaa; */
     padding-left: 4px;
     padding-right: 4px;
     border-radius: 4px;
     text-transform: lowercase;
     font-weight: 700;
+    width: 10px;
   }
 
   .not-hit-2 {
@@ -803,6 +1711,7 @@
     border-radius: 4px;
     font-weight: 700;
     z-index: 5;
+    width: 10px;
   }
 
   .subtitle {
@@ -846,5 +1755,17 @@
 
   .tiny-text {
     font-size: 0.8rem;
+  }
+
+  @media (max-width: 420px) {
+    .flex-wrapper {
+      display: flex;
+      /* width: 100%; */
+      flex-wrap: wrap;
+      width: 100vh;
+    }
+    .base-div {
+      width: 95%;
+    }
   }
 </style>
