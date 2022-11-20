@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [0.0.3](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/compare/v0.0.2...v0.0.3) (2022-11-20)
+
+
+### Features
+
+* :sparkles: add component version of the cheat-sheet (slightly buggy) ([cdd5613](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/cdd5613b2bd0feb297210b70d674ab0199693b3f))
+
+
+### Bug Fixes
+
+* :bug: add another condition for the landscape media query ([93e5a80](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/commit/93e5a805db64d879891801acfc55f4ede4b18867))
+
 ### [0.0.2](https://github.com/henrikvilhelmberglund/HTMLCSS-Sveltekit/compare/v0.0.1...v0.0.2) (2022-11-19)
 
 
