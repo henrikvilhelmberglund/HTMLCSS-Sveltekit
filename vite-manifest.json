@@ -180,12 +180,12 @@
     "src": "node_modules/@fontsource/raleway/files/raleway-all-800-normal.woff"
   },
   "node_modules/@sveltejs/kit/src/runtime/client/start.js": {
-    "file": "_app/immutable/start-c720e74e.js",
+    "file": "_app/immutable/start-7126be22.js",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/start.js",
     "isEntry": true,
     "imports": [
       "_index-e969dfe2.js",
-      "_singletons-15bac43a.js",
+      "_singletons-27900ea1.js",
       "_paths-6cd3a76e.js"
     ],
     "dynamicImports": [
@@ -223,7 +223,8 @@
       ".svelte-kit/generated/nodes/31.js",
       ".svelte-kit/generated/nodes/32.js",
       ".svelte-kit/generated/nodes/33.js",
-      ".svelte-kit/generated/nodes/34.js"
+      ".svelte-kit/generated/nodes/34.js",
+      ".svelte-kit/generated/nodes/35.js"
     ]
   },
   "src/routes/+layout.svelte": {
@@ -286,12 +287,12 @@
     ]
   },
   "src/routes/+error.svelte": {
-    "file": "_app/immutable/components/pages/_error.svelte-cb920208.js",
+    "file": "_app/immutable/components/pages/_error.svelte-0148f295.js",
     "src": "src/routes/+error.svelte",
     "isEntry": true,
     "imports": [
       "_index-e969dfe2.js",
-      "_singletons-15bac43a.js"
+      "_singletons-27900ea1.js"
     ],
     "css": [
       "_app/immutable/assets/_error-3215df57.css"
@@ -329,7 +330,7 @@
     ]
   },
   "src/routes/lektion3/+layout.svelte": {
-    "file": "_app/immutable/components/pages/lektion3/_layout.svelte-e2b6e169.js",
+    "file": "_app/immutable/components/pages/lektion3/_layout.svelte-50ea390b.js",
     "src": "src/routes/lektion3/+layout.svelte",
     "isEntry": true,
     "imports": [
@@ -519,6 +520,17 @@
       "_app/immutable/assets/_page-40d4fff6.css"
     ]
   },
+  "src/routes/lektion3/cheat-sheet-svelte-component/+page.svelte": {
+    "file": "_app/immutable/components/pages/lektion3/cheat-sheet-svelte-component/_page.svelte-766f3911.js",
+    "src": "src/routes/lektion3/cheat-sheet-svelte-component/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-e969dfe2.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-1c35021d.css"
+    ]
+  },
   "src/routes/lektion3/exercise/+page.svelte": {
     "file": "_app/immutable/components/pages/lektion3/exercise/_page.svelte-bc172afd.js",
     "src": "src/routes/lektion3/exercise/+page.svelte",
@@ -648,8 +660,8 @@
       "__layout-8d2a742b.js"
     ]
   },
-  "_singletons-15bac43a.js": {
-    "file": "_app/immutable/chunks/singletons-15bac43a.js",
+  "_singletons-27900ea1.js": {
+    "file": "_app/immutable/chunks/singletons-27900ea1.js",
     "imports": [
       "_index-23f585b8.js",
       "_paths-6cd3a76e.js"
@@ -710,7 +722,7 @@
     ]
   },
   ".svelte-kit/generated/nodes/1.js": {
-    "file": "_app/immutable/chunks/1-3d56d9bd.js",
+    "file": "_app/immutable/chunks/1-251c2de9.js",
     "src": ".svelte-kit/generated/nodes/1.js",
     "isDynamicEntry": true,
     "imports": [
@@ -742,7 +754,7 @@
     ]
   },
   ".svelte-kit/generated/nodes/5.js": {
-    "file": "_app/immutable/chunks/5-e625e8c8.js",
+    "file": "_app/immutable/chunks/5-ecfdd6d9.js",
     "src": ".svelte-kit/generated/nodes/5.js",
     "isDynamicEntry": true,
     "imports": [
@@ -894,88 +906,96 @@
     ]
   },
   ".svelte-kit/generated/nodes/24.js": {
-    "file": "_app/immutable/chunks/24-6c05e062.js",
+    "file": "_app/immutable/chunks/24-8191b574.js",
     "src": ".svelte-kit/generated/nodes/24.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/lektion3/cheat-sheet-svelte-component/+page.svelte"
+    ]
+  },
+  ".svelte-kit/generated/nodes/25.js": {
+    "file": "_app/immutable/chunks/25-15304ea6.js",
+    "src": ".svelte-kit/generated/nodes/25.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/lektion3/exercise/+page.svelte"
     ]
   },
-  ".svelte-kit/generated/nodes/25.js": {
-    "file": "_app/immutable/chunks/25-4078df7b.js",
-    "src": ".svelte-kit/generated/nodes/25.js",
+  ".svelte-kit/generated/nodes/26.js": {
+    "file": "_app/immutable/chunks/26-4aae4f62.js",
+    "src": ".svelte-kit/generated/nodes/26.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/lektion3/specificity/+page.svelte"
     ]
   },
-  ".svelte-kit/generated/nodes/26.js": {
-    "file": "_app/immutable/chunks/26-2b26e557.js",
-    "src": ".svelte-kit/generated/nodes/26.js",
+  ".svelte-kit/generated/nodes/27.js": {
+    "file": "_app/immutable/chunks/27-d97b8a6a.js",
+    "src": ".svelte-kit/generated/nodes/27.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/lektion4/+page.svelte"
     ]
   },
-  ".svelte-kit/generated/nodes/27.js": {
-    "file": "_app/immutable/chunks/27-213fedbb.js",
-    "src": ".svelte-kit/generated/nodes/27.js",
+  ".svelte-kit/generated/nodes/28.js": {
+    "file": "_app/immutable/chunks/28-818fd4d3.js",
+    "src": ".svelte-kit/generated/nodes/28.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/lektion4/exercise/+page.svelte"
     ]
   },
-  ".svelte-kit/generated/nodes/28.js": {
-    "file": "_app/immutable/chunks/28-4e84bdc5.js",
-    "src": ".svelte-kit/generated/nodes/28.js",
+  ".svelte-kit/generated/nodes/29.js": {
+    "file": "_app/immutable/chunks/29-a1300e1f.js",
+    "src": ".svelte-kit/generated/nodes/29.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/lektion5/+page.svelte"
     ]
   },
-  ".svelte-kit/generated/nodes/29.js": {
-    "file": "_app/immutable/chunks/29-e5d3a5a4.js",
-    "src": ".svelte-kit/generated/nodes/29.js",
+  ".svelte-kit/generated/nodes/30.js": {
+    "file": "_app/immutable/chunks/30-4a192709.js",
+    "src": ".svelte-kit/generated/nodes/30.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/lektion5/exercise/+page.svelte"
     ]
   },
-  ".svelte-kit/generated/nodes/30.js": {
-    "file": "_app/immutable/chunks/30-5c96a51e.js",
-    "src": ".svelte-kit/generated/nodes/30.js",
+  ".svelte-kit/generated/nodes/31.js": {
+    "file": "_app/immutable/chunks/31-7f555919.js",
+    "src": ".svelte-kit/generated/nodes/31.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/lektion5/first-exercise-remake/+page.svelte"
     ]
   },
-  ".svelte-kit/generated/nodes/31.js": {
-    "file": "_app/immutable/chunks/31-7fbb6c1c.js",
-    "src": ".svelte-kit/generated/nodes/31.js",
+  ".svelte-kit/generated/nodes/32.js": {
+    "file": "_app/immutable/chunks/32-92253f6f.js",
+    "src": ".svelte-kit/generated/nodes/32.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/lektion5/flexbox-more/+page.svelte"
     ]
   },
-  ".svelte-kit/generated/nodes/32.js": {
-    "file": "_app/immutable/chunks/32-71498a12.js",
-    "src": ".svelte-kit/generated/nodes/32.js",
+  ".svelte-kit/generated/nodes/33.js": {
+    "file": "_app/immutable/chunks/33-744b7a68.js",
+    "src": ".svelte-kit/generated/nodes/33.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/lektion5/flexbox-more-mobile-first/+page.svelte"
     ]
   },
-  ".svelte-kit/generated/nodes/33.js": {
-    "file": "_app/immutable/chunks/33-4d69cfd6.js",
-    "src": ".svelte-kit/generated/nodes/33.js",
+  ".svelte-kit/generated/nodes/34.js": {
+    "file": "_app/immutable/chunks/34-9f723c70.js",
+    "src": ".svelte-kit/generated/nodes/34.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/lektion6/+page.svelte"
     ]
   },
-  ".svelte-kit/generated/nodes/34.js": {
-    "file": "_app/immutable/chunks/34-346177a2.js",
-    "src": ".svelte-kit/generated/nodes/34.js",
+  ".svelte-kit/generated/nodes/35.js": {
+    "file": "_app/immutable/chunks/35-624d6873.js",
+    "src": ".svelte-kit/generated/nodes/35.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/threlte/+page.svelte"
@@ -985,13 +1005,33 @@
     "file": "_app/immutable/assets/_layout-ea6d9cdb.css",
     "src": "src/routes/+layout.css"
   },
+  "src/routes/lektion5/first-exercise-remake/+page.css": {
+    "file": "_app/immutable/assets/_page-c32d7b9a.css",
+    "src": "src/routes/lektion5/first-exercise-remake/+page.css"
+  },
+  "src/routes/lektion5/flexbox-more-mobile-first/+page.css": {
+    "file": "_app/immutable/assets/_page-3ee6c1e4.css",
+    "src": "src/routes/lektion5/flexbox-more-mobile-first/+page.css"
+  },
+  "src/routes/lektion5/flexbox-more/+page.css": {
+    "file": "_app/immutable/assets/_page-b64b38fd.css",
+    "src": "src/routes/lektion5/flexbox-more/+page.css"
+  },
+  "src/routes/+error.css": {
+    "file": "_app/immutable/assets/_error-3215df57.css",
+    "src": "src/routes/+error.css"
+  },
+  "src/routes/lektion1/articles/+page.css": {
+    "file": "_app/immutable/assets/_page-a51ebe6b.css",
+    "src": "src/routes/lektion1/articles/+page.css"
+  },
+  "src/routes/lektion1/+page.css": {
+    "file": "_app/immutable/assets/_page-3b98eb30.css",
+    "src": "src/routes/lektion1/+page.css"
+  },
   "src/routes/lektion1/phone-number/+page.css": {
     "file": "_app/immutable/assets/_page-2bccbac2.css",
     "src": "src/routes/lektion1/phone-number/+page.css"
-  },
-  "Article.css": {
-    "file": "_app/immutable/assets/Article-41709cbb.css",
-    "src": "Article.css"
   },
   "src/routes/lektion1/movies/+page.css": {
     "file": "_app/immutable/assets/_page-7c0428e7.css",
@@ -1001,76 +1041,60 @@
     "file": "_app/immutable/assets/_page-10a61069.css",
     "src": "src/routes/lektion1/size-dropdown/+page.css"
   },
-  "src/routes/lektion2/recept/+page.css": {
-    "file": "_app/immutable/assets/_page-3343c5dd.css",
-    "src": "src/routes/lektion2/recept/+page.css"
+  "Article.css": {
+    "file": "_app/immutable/assets/Article-41709cbb.css",
+    "src": "Article.css"
   },
   "src/routes/lektion2/+page.css": {
     "file": "_app/immutable/assets/_page-6e3ec055.css",
     "src": "src/routes/lektion2/+page.css"
   },
-  "src/routes/lektion3/+page.css": {
-    "file": "_app/immutable/assets/_page-ae0c8c70.css",
-    "src": "src/routes/lektion3/+page.css"
-  },
-  "src/routes/lektion3/exercise/+page.css": {
-    "file": "_app/immutable/assets/_page-e6491096.css",
-    "src": "src/routes/lektion3/exercise/+page.css"
-  },
-  "src/routes/lektion4/+page.css": {
-    "file": "_app/immutable/assets/_page-720a1ba8.css",
-    "src": "src/routes/lektion4/+page.css"
-  },
-  "src/routes/lektion4/exercise/+page.css": {
-    "file": "_app/immutable/assets/_page-58d32bd0.css",
-    "src": "src/routes/lektion4/exercise/+page.css"
-  },
-  "src/routes/lektion5/+page.css": {
-    "file": "_app/immutable/assets/_page-1bf98ba9.css",
-    "src": "src/routes/lektion5/+page.css"
-  },
-  "src/routes/lektion5/first-exercise-remake/+page.css": {
-    "file": "_app/immutable/assets/_page-c32d7b9a.css",
-    "src": "src/routes/lektion5/first-exercise-remake/+page.css"
-  },
-  "src/routes/lektion5/flexbox-more/+page.css": {
-    "file": "_app/immutable/assets/_page-b64b38fd.css",
-    "src": "src/routes/lektion5/flexbox-more/+page.css"
-  },
-  "src/routes/lektion5/exercise/+page.css": {
-    "file": "_app/immutable/assets/_page-2a12abb0.css",
-    "src": "src/routes/lektion5/exercise/+page.css"
+  "src/routes/lektion2/recept/+page.css": {
+    "file": "_app/immutable/assets/_page-3343c5dd.css",
+    "src": "src/routes/lektion2/recept/+page.css"
   },
   "src/routes/lektion3/cheat-sheet-svelte/+page.css": {
     "file": "_app/immutable/assets/_page-40d4fff6.css",
     "src": "src/routes/lektion3/cheat-sheet-svelte/+page.css"
   },
-  "src/routes/lektion5/flexbox-more-mobile-first/+page.css": {
-    "file": "_app/immutable/assets/_page-3ee6c1e4.css",
-    "src": "src/routes/lektion5/flexbox-more-mobile-first/+page.css"
+  "src/routes/lektion3/+page.css": {
+    "file": "_app/immutable/assets/_page-ae0c8c70.css",
+    "src": "src/routes/lektion3/+page.css"
   },
-  "src/routes/threlte/+page.css": {
-    "file": "_app/immutable/assets/_page-b11355fe.css",
-    "src": "src/routes/threlte/+page.css"
-  },
-  "src/routes/lektion1/+layout.css": {
-    "file": "_app/immutable/assets/_layout-e52193a7.css",
-    "src": "src/routes/lektion1/+layout.css"
-  },
-  "src/routes/lektion1/articles/+page.css": {
-    "file": "_app/immutable/assets/_page-a51ebe6b.css",
-    "src": "src/routes/lektion1/articles/+page.css"
+  "src/routes/lektion4/+page.css": {
+    "file": "_app/immutable/assets/_page-720a1ba8.css",
+    "src": "src/routes/lektion4/+page.css"
   },
   "src/routes/lektion3/specificity/+page.css": {
     "file": "_app/immutable/assets/_page-25dc272f.css",
     "src": "src/routes/lektion3/specificity/+page.css"
   },
-  "src/routes/lektion1/+page.css": {
-    "file": "_app/immutable/assets/_page-3b98eb30.css",
-    "src": "src/routes/lektion1/+page.css"
+  "src/routes/lektion3/exercise/+page.css": {
+    "file": "_app/immutable/assets/_page-e6491096.css",
+    "src": "src/routes/lektion3/exercise/+page.css"
   },
-  "src/routes/+error.css": {
-    "file": "_app/immutable/assets/_error-3215df57.css",
-    "src": "src/routes/+error.css"
+  "src/routes/lektion5/exercise/+page.css": {
+    "file": "_app/immutable/assets/_page-2a12abb0.css",
+    "src": "src/routes/lektion5/exercise/+page.css"
+  },
+  "src/routes/lektion1/+layout.css": {
+    "file": "_app/immutable/assets/_layout-e52193a7.css",
+    "src": "src/routes/lektion1/+layout.css"
+  },
+  "src/routes/lektion5/+page.css": {
+    "file": "_app/immutable/assets/_page-1bf98ba9.css",
+    "src": "src/routes/lektion5/+page.css"
+  },
+  "src/routes/lektion3/cheat-sheet-svelte-component/+page.css": {
+    "file": "_app/immutable/assets/_page-1c35021d.css",
+    "src": "src/routes/lektion3/cheat-sheet-svelte-component/+page.css"
+  },
+  "src/routes/threlte/+page.css": {
+    "file": "_app/immutable/assets/_page-b11355fe.css",
+    "src": "src/routes/threlte/+page.css"
+  },
+  "src/routes/lektion4/exercise/+page.css": {
+    "file": "_app/immutable/assets/_page-58d32bd0.css",
+    "src": "src/routes/lektion4/exercise/+page.css"
   }
 }
