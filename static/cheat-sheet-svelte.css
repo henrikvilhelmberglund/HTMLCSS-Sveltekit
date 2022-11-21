@@ -4,3 +4,12 @@ body {
   font-family: 'Open Sans', sans-serif;
   /* width: 50%; */
 }
+
+#svelte {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}

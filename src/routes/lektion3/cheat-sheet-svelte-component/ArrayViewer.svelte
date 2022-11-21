@@ -21,269 +21,268 @@
 </script>
 
 {#if type === 0}
-    <div class="base-div {darkMode ? '' : 'light-bg'}">
-      {#if table.title}
-        <h2 class={darkMode ? "" : "light"}>{table.title}</h2>
-        <div class="flex-row">
-          {#each table.subtitle as subtitle}
+  <div class="base-div {darkMode ? '' : 'light-bg'}">
+    {#if table.title}
+      <h2 class={darkMode ? "" : "light"}>{table.title}</h2>
+      <div class="flex-row">
+        {#each table.subtitle as subtitle}
+          <div class="flex-column">
+            <div class="subtitle">
+              {subtitle}
+            </div>
+          </div>
+        {/each}
+      </div>
+      {#each table.rows as rows, rl}
+        <div class="flex-row-{y}">
+          {#each rows as row, i}
             <div class="flex-column">
-              <div class="subtitle">
-                {subtitle}
-              </div>
+              {#if i === 0}
+                <div class="flex-child">
+                  {#each row as span, i}
+                    <span class="name-{i} {darkMode ? '' : 'light'}">
+                      {span}
+                    </span>
+                  {/each}
+                </div>
+              {:else if i === 1}
+                <span class={darkMode ? "" : "light"}>
+                  {row}
+                </span>
+                <!-- NOTE HTML -->
+              {:else if i === 2}
+                {#each row as span, i}
+                  <div class="description-{i} {darkMode ? '' : 'light'}">
+                    {span}
+                  </div>
+                {/each}
+              {:else if i === 3}
+                <div class="nice-div">
+                  {#each row as span, r}
+                    <!-- <p>r = {r}, rl = {rl}, y = {y}</p> -->
+                    {#if typeof span === "object"}
+                      <div class="flex-row-with-children">
+                        {#each span as element, s}
+                          {#if element.toUpperCase() === element}
+                            <div
+                              class={y === 1
+                                ? `flex-column-with-children-${r}`
+                                : y === 5 && rl === 4
+                                ? `flex-column-with-children-only-child-${r}`
+                                : `flex-column-with-children-${r}-b`}>
+                              <div class="flex-border-wrapper">
+                                <div
+                                  class="tiny-line-{r} {darkMode
+                                    ? ''
+                                    : 'light-border'}" />
+                              </div>
+                              <div class="hit-{r} {darkMode ? '' : 'light'}">
+                                {element}
+                              </div>
+                              <div class="flex-border-wrapper">
+                                {#if y === 1}
+                                  <div
+                                    class="tiny-line-extra-{r} {darkMode
+                                      ? ''
+                                      : 'light-border'}" />
+                                {:else}
+                                  <div
+                                    class="tiny-line-extra-{r}-b {darkMode
+                                      ? ''
+                                      : 'light-border'}" />
+                                {/if}
+                                <div
+                                  class="tiny-border-{cleanTitle(
+                                    table.title,
+                                    rl
+                                  )}-{r} {darkMode ? '' : 'light-border'}" />
+                              </div>
+                            </div>
+                          {:else}
+                            <div
+                              class={y === 1
+                                ? `flex-column-with-children-${r}`
+                                : `flex-column-with-children-${r}-b`}>
+                              <div class="flex-border-wrapper">
+                                <div
+                                  class="tiny-line-{r} {darkMode
+                                    ? ''
+                                    : 'light-border'}" />
+                              </div>
+                              <div
+                                class="not-hit-{r} {darkMode ? '' : 'light'}">
+                                {element}
+                              </div>
+                              <div class="flex-border-wrapper">
+                                {#if y === 1}
+                                  <div
+                                    class="tiny-line-extra-{r} {darkMode
+                                      ? ''
+                                      : 'light-border'}" />
+                                {:else}
+                                  <div
+                                    class="tiny-line-extra-{r}-b {darkMode
+                                      ? ''
+                                      : 'light-border'}" />
+                                {/if}
+                                <div
+                                  class="tiny-border-{cleanTitle(
+                                    table.title,
+                                    rl
+                                  )}-{r} {darkMode ? '' : 'light-border'}" />
+                              </div>
+                            </div>
+                          {/if}
+                        {/each}
+                      </div>
+                    {:else if span.toUpperCase() === span}
+                      <span class="hit {darkMode ? '' : 'light'}">
+                        {span}
+                      </span>
+                    {:else}
+                      <span class="not-hit {darkMode ? '' : 'light'}">
+                        {span}
+                      </span>
+                    {/if}
+                  {/each}
+                </div>
+              {/if}
             </div>
           {/each}
         </div>
-        {#each table.rows as rows, rl}
-          <div class="flex-row-{y}">
-            {#each rows as row, i}
-              <div class="flex-column">
-                {#if i === 0}
-                  <div class="flex-child">
-                    {#each row as span, i}
-                      <span class="name-{i} {darkMode ? '' : 'light'}">
-                        {span}
-                      </span>
-                    {/each}
-                  </div>
-                {:else if i === 1}
-                  <span class={darkMode ? "" : "light"}>
-                    {row}
-                  </span>
-                  <!-- NOTE HTML -->
-                {:else if i === 2}
-                  {#each row as span, i}
-                    <div class="description-{i} {darkMode ? '' : 'light'}">
-                      {span}
-                    </div>
-                  {/each}
-                {:else if i === 3}
-                  <div class="nice-div">
-                    {#each row as span, r}
-                      <!-- <p>r = {r}, rl = {rl}, y = {y}</p> -->
-                      {#if typeof span === "object"}
-                        <div class="flex-row-with-children">
-                          {#each span as element, s}
-                            {#if element.toUpperCase() === element}
-                              <div
-                                class={y === 1
-                                  ? `flex-column-with-children-${r}`
-                                  : y === 5 && rl === 4
-                                  ? `flex-column-with-children-only-child-${r}`
-                                  : `flex-column-with-children-${r}-b`}>
-                                <div class="flex-border-wrapper">
-                                  <div
-                                    class="tiny-line-{r} {darkMode
-                                      ? ''
-                                      : 'light-border'}" />
-                                </div>
-                                <div class="hit-{r} {darkMode ? '' : 'light'}">
-                                  {element}
-                                </div>
-                                <div class="flex-border-wrapper">
-                                  {#if y === 1}
-                                    <div
-                                      class="tiny-line-extra-{r} {darkMode
-                                        ? ''
-                                        : 'light-border'}" />
-                                  {:else}
-                                    <div
-                                      class="tiny-line-extra-{r}-b {darkMode
-                                        ? ''
-                                        : 'light-border'}" />
-                                  {/if}
-                                  <div
-                                    class="tiny-border-{cleanTitle(
-                                      table.title,
-                                      rl
-                                    )}-{r} {darkMode ? '' : 'light-border'}" />
-                                </div>
-                              </div>
-                            {:else}
-                              <div
-                                class={y === 1
-                                  ? `flex-column-with-children-${r}`
-                                  : `flex-column-with-children-${r}-b`}>
-                                <div class="flex-border-wrapper">
-                                  <div
-                                    class="tiny-line-{r} {darkMode
-                                      ? ''
-                                      : 'light-border'}" />
-                                </div>
-                                <div
-                                  class="not-hit-{r} {darkMode ? '' : 'light'}">
-                                  {element}
-                                </div>
-                                <div class="flex-border-wrapper">
-                                  {#if y === 1}
-                                    <div
-                                      class="tiny-line-extra-{r} {darkMode
-                                        ? ''
-                                        : 'light-border'}" />
-                                  {:else}
-                                    <div
-                                      class="tiny-line-extra-{r}-b {darkMode
-                                        ? ''
-                                        : 'light-border'}" />
-                                  {/if}
-                                  <div
-                                    class="tiny-border-{cleanTitle(
-                                      table.title,
-                                      rl
-                                    )}-{r} {darkMode ? '' : 'light-border'}" />
-                                </div>
-                              </div>
-                            {/if}
-                          {/each}
-                        </div>
-                      {:else if span.toUpperCase() === span}
-                        <span class="hit {darkMode ? '' : 'light'}">
-                          {span}
-                        </span>
-                      {:else}
-                        <span class="not-hit {darkMode ? '' : 'light'}">
-                          {span}
-                        </span>
-                      {/if}
-                    {/each}
-                  </div>
-                {/if}
-              </div>
-            {/each}
-          </div>
-          {#if rl !== table.rows.length - 1}
-            <div class="border" />
-          {/if}
-        {/each}
-      {/if}
-    </div>
+        {#if rl !== table.rows.length - 1}
+          <div class="border" />
+        {/if}
+      {/each}
+    {/if}
+  </div>
   <!-- SECTION - type 1 -->
 {:else if type === 1}
-    <div class="base-div-b {darkMode ? '' : 'light-bg'}">
-      {#if table.title}
-        <h2 class={darkMode ? "" : "light"}>{table.title}</h2>
-        {#each table.rows as rows, rl}
-          <div class="flex-row-{y}-b">
-            {#each rows as row, i}
-              <div class="flex-column-b">
-                {#if i === 0}
-                  <div class="flex-child">
-                    {#each row as span, i}
-                      <span class="name-{i} {darkMode ? '' : 'light'}">
+  <div class="base-div-b {darkMode ? '' : 'light-bg'}">
+    {#if table.title}
+      <h2 class={darkMode ? "" : "light"}>{table.title}</h2>
+      {#each table.rows as rows, rl}
+        <div class="flex-row-{y}-b">
+          {#each rows as row, i}
+            <div class="flex-column-b">
+              {#if i === 0}
+                <div class="flex-child">
+                  {#each row as span, i}
+                    <span class="name-{i} {darkMode ? '' : 'light'}">
+                      {span}
+                    </span>
+                  {/each}
+                </div>
+              {:else if i === 1}
+                <span class={darkMode ? "" : "light"}>
+                  {row}
+                </span>
+                <!-- NOTE HTML -->
+              {:else if i === 2}
+                {#each row as span, i}
+                  <div class="description-{i} {darkMode ? '' : 'light'}">
+                    {span}
+                  </div>
+                {/each}
+              {:else if i === 3}
+                <div class="nice-div">
+                  {#each row as span, r}
+                    <!-- <p>r = {r}, rl = {rl}, y = {y}</p> -->
+                    {#if typeof span === "object"}
+                      <div class="flex-row-with-children">
+                        {#each span as element, s}
+                          {#if element.toUpperCase() === element}
+                            <div
+                              class={y === 1
+                                ? `flex-column-with-children-${r}`
+                                : y === 5 && rl === 4
+                                ? `flex-column-with-children-only-child-${r}`
+                                : `flex-column-with-children-${r}-b`}>
+                              <div class="flex-border-wrapper">
+                                <div
+                                  class="tiny-line-{r} {darkMode
+                                    ? ''
+                                    : 'light-border'}" />
+                              </div>
+                              <div class="hit-{r} {darkMode ? '' : 'light'}">
+                                {element}
+                              </div>
+                              <div class="flex-border-wrapper">
+                                {#if y === 1}
+                                  <div
+                                    class="tiny-line-extra-{r} {darkMode
+                                      ? ''
+                                      : 'light-border'}" />
+                                {:else}
+                                  <div
+                                    class="tiny-line-extra-{r}-b {darkMode
+                                      ? ''
+                                      : 'light-border'}" />
+                                {/if}
+                                <div
+                                  class="tiny-border-{cleanTitle(
+                                    table.title,
+                                    rl
+                                  )}-{r} {darkMode ? '' : 'light-border'}" />
+                              </div>
+                            </div>
+                          {:else}
+                            <div
+                              class={y === 1
+                                ? `flex-column-with-children-${r}`
+                                : `flex-column-with-children-${r}-b`}>
+                              <div class="flex-border-wrapper">
+                                <div
+                                  class="tiny-line-{r} {darkMode
+                                    ? ''
+                                    : 'light-border'}" />
+                              </div>
+                              <div
+                                class="not-hit-{r} {darkMode ? '' : 'light'}">
+                                {element}
+                              </div>
+                              <div class="flex-border-wrapper">
+                                {#if y === 1}
+                                  <div
+                                    class="tiny-line-extra-{r} {darkMode
+                                      ? ''
+                                      : 'light-border'}" />
+                                {:else}
+                                  <div
+                                    class="tiny-line-extra-{r}-b {darkMode
+                                      ? ''
+                                      : 'light-border'}" />
+                                {/if}
+                                <div
+                                  class="tiny-border-{cleanTitle(
+                                    table.title,
+                                    rl
+                                  )}-{r} {darkMode ? '' : 'light-border'}" />
+                              </div>
+                            </div>
+                          {/if}
+                        {/each}
+                      </div>
+                    {:else if span.toUpperCase() === span}
+                      <span class="hit {darkMode ? '' : 'light'}">
                         {span}
                       </span>
-                    {/each}
-                  </div>
-                {:else if i === 1}
-                  <span class={darkMode ? "" : "light"}>
-                    {row}
-                  </span>
-                  <!-- NOTE HTML -->
-                {:else if i === 2}
-                  {#each row as span, i}
-                    <div class="description-{i} {darkMode ? '' : 'light'}">
-                      {span}
-                    </div>
+                    {:else}
+                      <span class="not-hit {darkMode ? '' : 'light'}">
+                        {span}
+                      </span>
+                    {/if}
                   {/each}
-                {:else if i === 3}
-                  <div class="nice-div">
-                    {#each row as span, r}
-                      <!-- <p>r = {r}, rl = {rl}, y = {y}</p> -->
-                      {#if typeof span === "object"}
-                        <div class="flex-row-with-children">
-                          {#each span as element, s}
-                            {#if element.toUpperCase() === element}
-                              <div
-                                class={y === 1
-                                  ? `flex-column-with-children-${r}`
-                                  : y === 5 && rl === 4
-                                  ? `flex-column-with-children-only-child-${r}`
-                                  : `flex-column-with-children-${r}-b`}>
-                                <div class="flex-border-wrapper">
-                                  <div
-                                    class="tiny-line-{r} {darkMode
-                                      ? ''
-                                      : 'light-border'}" />
-                                </div>
-                                <div class="hit-{r} {darkMode ? '' : 'light'}">
-                                  {element}
-                                </div>
-                                <div class="flex-border-wrapper">
-                                  {#if y === 1}
-                                    <div
-                                      class="tiny-line-extra-{r} {darkMode
-                                        ? ''
-                                        : 'light-border'}" />
-                                  {:else}
-                                    <div
-                                      class="tiny-line-extra-{r}-b {darkMode
-                                        ? ''
-                                        : 'light-border'}" />
-                                  {/if}
-                                  <div
-                                    class="tiny-border-{cleanTitle(
-                                      table.title,
-                                      rl
-                                    )}-{r} {darkMode ? '' : 'light-border'}" />
-                                </div>
-                              </div>
-                            {:else}
-                              <div
-                                class={y === 1
-                                  ? `flex-column-with-children-${r}`
-                                  : `flex-column-with-children-${r}-b`}>
-                                <div class="flex-border-wrapper">
-                                  <div
-                                    class="tiny-line-{r} {darkMode
-                                      ? ''
-                                      : 'light-border'}" />
-                                </div>
-                                <div
-                                  class="not-hit-{r} {darkMode ? '' : 'light'}">
-                                  {element}
-                                </div>
-                                <div class="flex-border-wrapper">
-                                  {#if y === 1}
-                                    <div
-                                      class="tiny-line-extra-{r} {darkMode
-                                        ? ''
-                                        : 'light-border'}" />
-                                  {:else}
-                                    <div
-                                      class="tiny-line-extra-{r}-b {darkMode
-                                        ? ''
-                                        : 'light-border'}" />
-                                  {/if}
-                                  <div
-                                    class="tiny-border-{cleanTitle(
-                                      table.title,
-                                      rl
-                                    )}-{r} {darkMode ? '' : 'light-border'}" />
-                                </div>
-                              </div>
-                            {/if}
-                          {/each}
-                        </div>
-                      {:else if span.toUpperCase() === span}
-                        <span class="hit {darkMode ? '' : 'light'}">
-                          {span}
-                        </span>
-                      {:else}
-                        <span class="not-hit {darkMode ? '' : 'light'}">
-                          {span}
-                        </span>
-                      {/if}
-                    {/each}
-                  </div>
-                {/if}
-              </div>
-            {/each}
-          </div>
-          {#if rl !== table.rows.length - 1}
-            <div class="border" />
-          {/if}
-        {/each}
-      {/if}
-    </div>
+                </div>
+              {/if}
+            </div>
+          {/each}
+        </div>
+        {#if rl !== table.rows.length - 1}
+          <div class="border" />
+        {/if}
+      {/each}
+    {/if}
   </div>
 {/if}
 
@@ -511,13 +510,20 @@
   }
 
   .base-div {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
     background-color: #222222;
     color: #ddd;
     border-radius: 8px;
     padding-left: 20px;
     margin: 10px;
     padding-bottom: 10px;
-    width: 900px;
+    /* width: 900px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* width: 90%; */
   }
   .base-div-b {
     background-color: #222222;
@@ -527,6 +533,10 @@
     margin: 10px;
     padding-bottom: 10px;
     width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
   }
 
   .gray {
@@ -721,8 +731,9 @@
     border-radius: 4px;
     text-transform: lowercase;
     font-weight: 700;
+    text-align: center;
   }
-
+  
   .not-hit {
     border: 1px solid #aaa;
     color: #ddd;
@@ -734,8 +745,9 @@
     border-radius: 4px;
     font-weight: 700;
     z-index: 5;
+    text-align: center;
   }
-
+  
   .hit-0 {
     /* border: 1px solid #aaa; */
     background-color: hsl(208, 69%, 51%);
@@ -746,8 +758,9 @@
     text-transform: lowercase;
     font-weight: 700;
     /* width: 20px; */
+    text-align: center;
   }
-
+  
   .not-hit-0 {
     display: flex;
     justify-content: center;
@@ -760,6 +773,7 @@
     font-weight: 700;
     width: 20px;
     /* flex: 1; */
+    text-align: center;
   }
   .hit-1 {
     background-color: hsl(208, 69%, 51%);
@@ -772,8 +786,10 @@
     text-transform: lowercase;
     font-weight: 700;
     min-width: 10px;
+    /* width: 10px; */
+    text-align: center;
   }
-
+  
   .not-hit-1 {
     border: 1px solid #aaa;
     color: #ddd;
@@ -783,6 +799,7 @@
     font-weight: 700;
     z-index: 5;
     min-width: 10px;
+    text-align: center;
   }
   .hit-2 {
     background-color: hsl(208, 69%, 51%);
@@ -794,8 +811,9 @@
     text-transform: lowercase;
     font-weight: 700;
     width: 10px;
+    text-align: center;
   }
-
+  
   .not-hit-2 {
     border: 1px solid #aaa;
     color: #ddd;
@@ -805,6 +823,7 @@
     font-weight: 700;
     z-index: 5;
     width: 10px;
+    text-align: center;
   }
 
   .subtitle {
@@ -886,12 +905,6 @@
 
   .light-border {
     background-color: #333;
-  }
-  .base-div-b {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 90%;
   }
 
   /* @media (max-width: 420px) {

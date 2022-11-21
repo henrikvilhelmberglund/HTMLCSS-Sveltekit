@@ -349,6 +349,7 @@
     href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="../cheat-sheet-svelte.css" />
+  <!-- <link rel="stylesheet" href="../app.css" /> -->
 </svelte:head>
 
 {#if type === 0}
