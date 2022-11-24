@@ -1,0 +1,23 @@
+// Nestade selectors
+header {
+  @include border($ankademin-green);
+
+  &:hover {
+    background-color: lightblue;
+
+    * {
+      background-color: lightcoral;
+    }
+  }
+
+  p {
+    font-size: $p-font-size;
+    color: $ankademin-green;
+  }
+
+  h1 {
+    font: 100% $font-stack;
+    color: $primary-color;
+    font-size: $font-size;
+  }
+}

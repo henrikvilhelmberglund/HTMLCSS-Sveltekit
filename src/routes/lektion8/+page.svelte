@@ -1,9 +1,9 @@
 <script>
 </script>
 
-<!-- <svelte:head>
-  <link rel="stylesheet" href="../style2.css" />
-</svelte:head> -->
+<svelte:head>
+  <link rel="stylesheet" href="./styles/style.css" />
+</svelte:head>
 
 <header>
   <nav>
@@ -24,68 +24,82 @@
 </main>
 
 <style lang="scss">
-  // variables
-  $font-stack: Helvetica, sans-serif;
-  $primary-color: #aaa;
-  $font-size: 40px;
-  $p-font-size: 18px;
-  $ankademin-green: green;
-  $ankademin-coral: coral;
+  // // variables
+  // $font-stack: Helvetica, sans-serif;
+  // $primary-color: #777;
+  // $font-size: 40px;
+  // $p-font-size: 18px;
+  // $ankademin-green: green;
+  // $ankademin-coral: coral;
+  // $mobile: 600px;
 
-  // mixin
-  @mixin border($color: white) {
-    border: 2px solid $color;
-    padding: 6px;
-  }
+  // @mixin mobile {
+  //   @media (max-width: $mobile) {
+  //     @content;
+  //   }
+  // }
 
-  @mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-  }
+  // // mixin
+  // @mixin border($color: white) {
+  //   border: 2px solid $color;
+  //   padding: 6px;
+  // }
 
-  p {
-    color: darkblue;
-  }
+  // @mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+  //   display: flex;
+  //   flex-direction: $direction;
+  //   justify-content: $justify;
+  //   align-items: $align;
+  // }
 
-  nav {
-    ul {
-      color: white;
-      // display: flex;
-      // gap: 30px;
-      // @include flex();
-      @include flex($direction: column);
-    }
-  }
+  // p {
+  //   color: darkblue;
+  // }
 
-  // Nestade selectors
-  header {
-    @include border($ankademin-green);
-    p {
-      font-size: $p-font-size;
-      color: $ankademin-green;
-    }
-    h1 {
-      font: 100% $font-stack;
-      color: $primary-color;
-      font-size: $font-size;
-    }
-  }
+  // nav {
+  //   ul {
+  //     // display: flex;
+  //     // gap: 30px;
+  //     // @include flex();
+  //     @include flex($direction: column);
+  //     @include mobile {
+  //       flex-direction: column;
+  //       align-items: center;
+  //     }
+  //   }
+  // }
 
-  main {
-    @include border($ankademin-coral);
-    p {
-      font-size: $p-font-size;
-      color: $ankademin-coral;
-    }
-    h2 {
-      color: #eee;
-    }
-  }
+  // // Nestade selectors
+  // header {
+  //   @include border($ankademin-green);
+  //   &:hover {
+  //     background-color: lightblue;
+  //     * {
+  //       background-color: lightcoral;
+  //     }
+  //   }
+  //   p {
+  //     font-size: $p-font-size;
+  //     color: $ankademin-green;
+  //   }
+  //   h1 {
+  //     font: 100% $font-stack;
+  //     color: $primary-color;
+  //     font-size: $font-size;
+  //   }
+  // }
 
-  // :global(#svelte) {
-  //   background-color: black;
-  //   height: 100vh;
+  // main {
+  //   @include border($ankademin-coral);
+  //   &:hover {
+  //     background-color: antiquewhite;
+  //   }
+  //   p {
+  //     font-size: $p-font-size;
+  //     color: $ankademin-coral;
+  //   }
+  //   h2 {
+  //     color: #444;
+  //   }
   // }
 </style>
