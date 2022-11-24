@@ -4,7 +4,7 @@
       "name": "Open App (Headless)",
       "request": "launch",
       "type": "vscode-edge-devtools.debug",
-      "url": "http://localhost:5500",
+      "url": "http://localhost:5173",
       "webRoot": "${workspaceFolder}"
     },
     {
@@ -15,7 +15,7 @@
         "--headless",
         "--remote-debugging-port=9222"
       ],
-      "url": "http://localhost:5500",
+      "url": "http://localhost:5173",
       "presentation": {
         "hidden": true
       }
@@ -24,7 +24,7 @@
       "type": "vscode-edge-devtools.debug",
       "name": "Open Edge DevTools",
       "request": "attach",
-      "url": "http://localhost:5500",
+      "url": "http://localhost:5173",
       "presentation": {
         "hidden": true
       }
@@ -36,7 +36,7 @@
       "runtimeArgs": [
         "--remote-debugging-port=9222"
       ],
-      "url": "http://localhost:5500",
+      "url": "http://localhost:5173",
       "presentation": {
         "hidden": true
       }
