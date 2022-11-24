@@ -14,3 +14,14 @@
 
 - t.ex (max-width: 440px) and (orientation: landscape)
 - men kan oftast använda bredder istället
+
+## Figma
+
+- layout grid om man selectar frame
+- font - kan focusa fältet och trycka upp/ner
+- margin, gutter 
+- proportioner mellan elementen är viktigast
+- style - bredvid fill kan man lägga till style (ge namn till en färg)
+- kan också spara text på samma sätt
+- kan markera flera element - gruppera
+- wireframe, mockup, prototype
