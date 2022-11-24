@@ -8,88 +8,59 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+    referrerpolicy="no-referrer" />
 </svelte:head>
 
-<main id="main">
-  <div class="flexbox-wrapper">
+<div class="flexbox-wrapper">
+  <main id="main">
     <div class="flexbox-parent">
-      <div class="h1-div">
-        <h1>Inloggning</h1>
-        {#if name}
-          <h3>Hej {name}!</h3>
-        {/if}
-      </div>
+      <h1>Inloggning</h1>
+      {#if name}
+        <h3>Hej {name}!</h3>
+      {/if}
       <div class="flexbox-row">
         <div class="div-login">
-          <div class="login-column-0">
-            <input
-              type="text"
-              class="input-field-0"
-              placeholder="     Användarnamn"
-              bind:value={name}
-            />
+          <input
+            type="text"
+            class="input-field-0"
+            placeholder="     Användarnamn"
+            bind:value={name} />
+          <input
+            type="text"
+            class="input-field-1"
+            placeholder="     Lösenord" />
+          <div class="flex-password-row">
+            <input type="checkbox" name="remember-me" id="" />
+            <label for="remember-me" class="label">Kom ihåg mig</label>
+            <a href="http://" class="password">Jag har glömt mitt lösenord</a>
           </div>
-          <div class="login-column-1">
-            <input
-              type="text"
-              class="input-field-1"
-              placeholder="     Lösenord"
-            />
-          </div>
-          <div class="login-row">
-            <div class="row-left">
-              <div class="checkbox">
-                <input type="checkbox" name="remember-me" id="" />
-                <!-- <div class="label"> -->
-                <label for="remember-me" class="label">Kom ihåg mig</label>
-                <!-- </div> -->
-              </div>
-            </div>
-            <div class="row-right">
-              <div>
-                <a href="http://" class="password"
-                  >Jag har glömt mitt lösenord</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="login-column-2">
-            <button class="log-in-btn">Logga in</button>
-          </div>
+          <button class="log-in-btn">Logga in</button>
         </div>
-        <div class="div-eller">
-          <h2>eller</h2>
-        </div>
+        <h2>eller</h2>
         <div class="div-google">
-          <div class="inner-div-google">
-            <a href="" class="google-log-in-btn"> Logga in med Google-konto </a>
-          </div>
-          <div class="inner-div-google">
-            <a href="" class="facebook-log-in-btn"> Logga in med Facebook </a>
-          </div>
+          <a href="" class="google-log-in-btn"> Logga in med Google-konto </a>
+          <a href="" class="facebook-log-in-btn"> Logga in med Facebook </a>
         </div>
-      </div>
-      <div class="footer-div">
-        <footer>
-          <p>Serve inc Fake AB</p>
-          <p>08-99 999 35 71</p>
-          <p>Inteenriktiggata 99, 13 337, Härstorp</p>
-        </footer>
       </div>
     </div>
-  </div>
-</main>
+    <!-- </div> -->
+  </main>
+  <footer>
+    <p>Serve inc Fake AB</p>
+    <p>08-99 999 35 71</p>
+    <p>Inteenriktiggata 99, 13 337, Härstorp</p>
+  </footer>
+</div>
 
 <style>
-  .footer-div {
+  .flexbox-wrapper {
     display: flex;
+    /* flex: 1; */
     flex-direction: column;
-    width: 100%;
-    /* height: 10%; */
-    justify-content: flex-end;
-    align-items: flex-end;
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+    height: 93vh;
+    /* TODO */
   }
   p {
     padding: 0px;
@@ -98,25 +69,6 @@
     color: white;
     font-weight: 200;
   }
-  .row-left {
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-    min-width: 100px;
-    justify-content: flex-start;
-  }
-  .row-right {
-    display: flex;
-    width: 50%;
-    min-width: 100px;
-    justify-content: flex-end;
-  }
-  .checkbox {
-    /* flex: 0; */
-    /* padding-left: 5px; */
-    font-size: 0.8rem;
-    text-align: center;
-  }
   .label {
     /* flex: 1; */
     font-size: 0.7rem;
@@ -124,6 +76,10 @@
   }
   .password {
     /* flex: 1; */
+    display: flex;
+    width: 200px;
+    justify-content: flex-end;
+    /* align-self: flex-end; */
     font-size: 0.7rem;
     text-decoration: none;
     font-weight: 200;
@@ -139,6 +95,8 @@
     padding: 4px;
     font-weight: 600;
     min-width: 200px;
+    margin: 5px;
+    text-align: center;
   }
 
   .google-log-in-btn:hover {
@@ -146,6 +104,7 @@
     cursor: pointer;
   }
   .facebook-log-in-btn {
+    text-align: center;
     width: 100%;
     line-height: 25px;
     min-width: 200px;
@@ -156,36 +115,33 @@
     border-radius: 4px;
     padding: 4px;
     font-weight: 600;
+    margin: 5px;
   }
   .facebook-log-in-btn:hover {
     background: hsl(216, 77%, 70%);
     cursor: pointer;
-  }
-  .inner-div-google {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    width: 100%;
-    text-align: center;
   }
   .div-google {
     display: flex;
     flex-direction: column;
     align-items: center;
     /* display: block; */
-    /* width: 300px; */
-    width: 100%;
-    flex: 1;
+    width: 250px;
+    min-width: 250px;
+    /* width: 200px; */
+    /* margin: auto; */
+    /* flex: 1; */
   }
+
   .input-field-0 {
+    /* display: flex; */
     width: 100%;
     height: 30px;
     border: 0px solid black;
     border-radius: 4px;
     padding-left: 10px;
+    margin: 6px;
+    min-width: 0;
   }
   .input-field-0::placeholder {
     padding-left: 2px;
@@ -200,6 +156,7 @@
     border: 0px solid black;
     border-radius: 4px;
     padding-left: 10px;
+    margin: 6px;
   }
   .input-field-1::placeholder {
     padding-left: 2px;
@@ -219,6 +176,8 @@
     border: none;
     font-weight: 600;
     border-radius: 4px;
+    margin: 6px;
+    padding-left: 10px;
     /* padding: 0; */
     /* display: block; */
   }
@@ -233,49 +192,24 @@
       1px 2px 5px rgba(0, 0, 0, 0.6);
     /* cursor: pointer; */
   }
-  .login-row {
-    display: flex;
-    width: 100%;
-  }
-  .login-column-0 {
-    display: flex;
-    flex: 1;
-    /* padding: 10px; */
-    /* min-width: 100px; */
-    width: 100%;
-  }
-
-  .login-column-1 {
-    display: flex;
-    flex: 1;
-    padding: 15px 0 10px 0;
-    /* min-width: 100px; */
-    width: 100%;
-  }
-  .login-column-2 {
-    display: flex;
-    flex: 1;
-    padding: 15px 0 10px 0;
-    /* min-width: 100px; */
-    width: 100%;
-  }
   a {
     color: white;
   }
+  .flex-password-row {
+    display: flex;
+    /* justify-content: space-around; */
+    /* width: 100px; */
+  }
   .div-login {
     display: flex;
-    flex: 1;
     flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
     /* width: 33%; */
     color: white;
     /* width: 270px; */
-    width: 100%;
-  }
-  .div-eller {
-    /* flex: 1; */
-    /* width: 33%; */
-    color: white;
-    padding: 70px;
+    width: 270px;
+    min-width: 270px;
   }
 
   .flexbox-row {
@@ -284,19 +218,19 @@
     justify-content: center;
     align-items: center;
     padding: 30px;
-    width: 40%;
+    width: 60%;
   }
   .flexbox-parent {
     display: flex;
     flex: 1;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 90%;
     width: 100%;
   }
   #main {
-    height: 94vh;
+    height: 86vh;
   }
   * {
     font-family: "Inter", sans-serif;
@@ -309,9 +243,13 @@
     padding-top: 100px;
   }
   h2 {
+    display: flex;
+    width: 20%;
+    justify-content: center;
     font-size: 1.1rem;
     /* font-variation-settings: "wght" 100; */
     font-weight: 200;
+    color: white;
   }
   main {
     /* height: 100vh; */
@@ -319,26 +257,15 @@
     background: linear-gradient(black, #fd3a22);
   }
   footer {
-    /* flex: 0.1; */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    /* justify-self: flex-end; */
     background-color: #504c4c;
-    height: 70px;
+    /* height: 70px; */
     width: 100%;
     padding: 5px 0;
     font-size: 0.9rem;
-  }
-  .flexbox-wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  .footer-div {
-    display: flex;
-    /* flex: 1; */
-    flex-direction: column;
-    width: 100%;
-    height: 10%;
-    /* justify-content: flex-end; */
-    /* align-items: flex-end; */
   }
   h3 {
     font-size: 1.5rem;
@@ -365,28 +292,12 @@
       color: white;
       font-weight: 200;
     }
-    .row-left {
-      display: flex;
-      flex-direction: row;
-      width: 50%;
-      justify-content: flex-start;
-    }
-    .row-right {
-      display: flex;
-      width: 50%;
-      justify-content: flex-end;
-    }
-    .checkbox {
-      /* flex: 0; */
-      /* padding-left: 5px; */
-      font-size: 0.8rem;
-      text-align: center;
-    }
     .label {
       /* flex: 1; */
       font-size: 0.6rem;
       font-weight: 400;
       color: black;
+      margin: 24px 0;
     }
     .password {
       /* flex: 1; */
@@ -394,18 +305,20 @@
       text-decoration: none;
       font-weight: 400;
       color: black;
+      margin: 24px 0;
     }
     .google-log-in-btn {
       width: 100%;
       line-height: 45px;
-      height: 45px;
       background: white;
       color: #222;
       font-size: 1.1rem;
       text-decoration: none;
       border-radius: 4px;
-      padding: 4px;
+      padding: 0px;
       font-weight: 800;
+      min-width: 270px;
+      margin: 6px 0;
     }
 
     .google-log-in-btn:hover {
@@ -413,28 +326,21 @@
       cursor: pointer;
     }
     .facebook-log-in-btn {
+      min-width: 270px;
       width: 100%;
       line-height: 45px;
-      height: 45px;
       background: #4988e7;
       color: white;
       font-size: 1.1rem;
       text-decoration: none;
       border-radius: 4px;
-      padding: 4px;
+      padding: 0px;
       font-weight: 600;
+      margin: 6px 0;
     }
     .facebook-log-in-btn:hover {
       background: hsl(216, 77%, 70%);
       cursor: pointer;
-    }
-    .inner-div-google {
-      padding: 10px;
-      display: flex;
-      flex-direction: row;
-      flex: 1;
-      width: 100%;
-      text-align: center;
     }
     .div-google {
       display: flex;
@@ -451,6 +357,7 @@
       border: 0px solid black;
       border-radius: 4px;
       padding-left: 10px;
+      margin: 6px 0;
     }
     .input-field-0::placeholder {
       padding-left: 2px;
@@ -465,6 +372,7 @@
       border: 0px solid black;
       border-radius: 4px;
       padding-left: 10px;
+      margin: 6px 0;
     }
     .input-field-1::placeholder {
       padding-left: 2px;
@@ -484,7 +392,8 @@
       border: none;
       font-weight: 800;
       border-radius: 4px;
-      /* padding: 0; */
+      padding: 0;
+      margin: 6px 0;
       /* display: block; */
     }
     .log-in-btn:hover {
@@ -498,34 +407,6 @@
         1px 2px 5px rgba(0, 0, 0, 0.6);
       /* cursor: pointer; */
     }
-    .login-row {
-      display: flex;
-      flex: 0.1;
-      width: 100%;
-      padding: 15px 0;
-    }
-    .login-column-0 {
-      display: flex;
-      flex: 0.1;
-      /* padding: 10px; */
-      /* min-width: 100px; */
-      width: 100%;
-    }
-
-    .login-column-1 {
-      display: flex;
-      flex: 0.1;
-      padding: 15px 0 10px 0;
-      /* min-width: 100px; */
-      width: 100%;
-    }
-    .login-column-2 {
-      display: flex;
-      flex: 0.1;
-      padding: 15px 0 10px 0;
-      /* min-width: 100px; */
-      width: 100%;
-    }
     a {
       color: white;
     }
@@ -538,20 +419,12 @@
       /* width: 270px; */
       width: 100%;
     }
-    .div-eller {
-      display: flex;
-      /* flex: 1; */
-      height: 10%;
-      /* flex: 1; */
-      /* width: 33%; */
-      color: white;
-      padding: 5px;
-      /* padding-bottom: 20px; */
+    * {
+      box-sizing: border-box;
     }
-
     .flexbox-row {
       display: flex;
-      flex: 1;
+      /* flex: 1; */
       flex-direction: column;
       justify-content: flex-end;
       align-items: center;
@@ -571,7 +444,7 @@
       /* height: vh; */
       /* width: 10vh; */
       background: #e7e7e7;
-      height: 90vh;
+      height: 80vh;
     }
     * {
       font-family: "Inter", sans-serif;
@@ -585,13 +458,8 @@
       padding-bottom: 0px;
       font-size: 1.5rem;
     }
-    .h1-div {
-      padding-top: 120px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
     h2 {
+      /* flex: 1; */
       font-size: 1.5rem;
       /* font-variation-settings: "wght" 100; */
       font-weight: 400;
@@ -615,15 +483,6 @@
       width: 100%;
       padding: 20px 0;
       font-size: 0.9rem;
-    }
-    .footer-div {
-      display: flex;
-      /* flex: 1; */
-      flex-direction: column;
-      width: 100%;
-      height: 10%;
-      /* justify-content: flex-end; */
-      /* align-items: flex-end; */
     }
   }
 </style>

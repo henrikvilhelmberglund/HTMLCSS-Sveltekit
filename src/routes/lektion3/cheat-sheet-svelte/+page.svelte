@@ -318,7 +318,7 @@
             "Select elements that are the only of a type inside a container",
             "Select anchors that are the only anchor in a container",
           ],
-          [["div"], ["a", "B", "b", "A"]],
+          [["div"], ["b", "b", "A", "b"]],
         ],
         [
           ["Not", "Selector"],
@@ -332,6 +332,27 @@
       ],
     },
   ];
+
+  function cleanTitle(inputTitle, i) {
+    let output = inputTitle
+      .replace("/", "-")
+      .replace(" ", "-")
+      .replace(" (", "-")
+      .replace(")", "")
+      .toLowerCase();
+    console.log(output);
+    if (inputTitle === "Pseudo Class (Position/Other)") {
+      return output + "-" + i;
+    } else {
+      return output;
+    }
+  }
+
+  let darkMode = true;
+
+  function toggleDarkMode() {
+    darkMode = darkMode ? false : true;
+  }
 </script>
 
 <svelte:head>
@@ -339,122 +360,175 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
   <link rel="stylesheet" href="../cheat-sheet-svelte.css" />
 </svelte:head>
 
-<div class="flex-h1">
-  <div>
-    <h1>CSS</h1>
+<div class="flex-wrapper {darkMode ? '' : 'light-bg'}">
+  <div class="flex-h1  {darkMode ? '' : 'light'}">
+    <div>
+      <h1>CSS</h1>
+    </div>
+    <div>
+      <h3>{"{"}selectors: cheat-sheet{"}"}</h3>
+    </div>
   </div>
-  <div>
-    <h3>{"{"}selectors: cheat-sheet{"}"}</h3>
+  <div class="flex-h4 {darkMode ? '' : 'light'}">
+    <div>
+      <h4>By Web Dev Simplified, copied(?) by Henrik Berglund</h4>
+    </div>
   </div>
-</div>
-<div class="flex-h4">
-  <div>
-    <h4>By Web Dev Simplified, copied(?) by Henrik Berglund</h4>
-  </div>
-</div>
 
-{#each tables as table, y}
-  <div class="base-div">
-    {#if table.title}
-      <h2>{table.title}</h2>
-      <div class="flex-row">
-        {#each table.subtitle as subtitle}
-          <div class="flex-column">
-            <div class="subtitle">
-              {subtitle}
-            </div>
-          </div>
-        {/each}
-      </div>
-      {#each table.rows as rows, rl}
-        <div class="flex-row-{y}">
-          {#each rows as row, i}
+  <button on:click={toggleDarkMode}
+    >{darkMode ? "Toggle Light Mode" : "Toggle Dark Mode"}</button>
+
+  {#each tables as table, y}
+    <div class="base-div {darkMode ? '' : 'light-bg'}">
+      {#if table.title}
+        <h2 class={darkMode ? "" : "light"}>{table.title}</h2>
+        <div class="flex-row">
+          {#each table.subtitle as subtitle}
             <div class="flex-column">
-              {#if i === 0}
-                <div class="flex-child">
-                  {#each row as span, i}
-                    <span class="name-{i}">
-                      {span}
-                    </span>
-                  {/each}
-                </div>
-              {:else if i === 1}
-                {row}
-                <!-- NOTE HTML -->
-              {:else if i === 2}
-                {#each row as span, i}
-                  <div class="description-{i}">
-                    {span}
-                  </div>
-                {/each}
-              {:else if i === 3}
-                <div class="nice-div">
-                  {#each row as span, r}
-                    {#if typeof span === "object"}
-                      <div class="flex-row-with-children">
-                        {#each span as element, s}
-                          {#if element.toUpperCase() === element}
-                            <div class="flex-column-with-children-{r}">
-                              <!-- TODO test tiny flexboxes with certain height and width instead -->
-                              <div class="flex-border-wrapper">
-                                <div class="tiny-line-{r}" />
-                              </div>
-                              <span class="hit-{r}">
-                                {element}
-                              </span>
-                              <div class="flex-border-wrapper">
-                                <div class="tiny-border-{r}" />
-                                {#if r > 0}
-                                  <div class="tiny-line-extra-{r}" />
-                                {/if}
-                              </div>
-                            </div>
-                            <!-- </div> -->
-                          {:else}
-                            <div class="flex-column-with-children-{r}">
-                              <div class="flex-border-wrapper">
-                                <div class="tiny-line-{r}" />
-                              </div>
-                              <span class="not-hit-{r}">
-                                {element}
-                              </span>
-                              <div class="flex-border-wrapper">
-                                <div class="tiny-border-{r}" />
-                                <div class="tiny-line-extra-{r}" />
-                              </div>
-                            </div>
-                          {/if}
-                        {/each}
-                      </div>
-                    {:else if span.toUpperCase() === span}
-                      <span class="hit">
-                        {span}
-                      </span>
-                    {:else}
-                      <span class="not-hit">
-                        {span}
-                      </span>
-                    {/if}
-                  {/each}
-                </div>
-              {/if}
+              <div class="subtitle">
+                {subtitle}
+              </div>
             </div>
           {/each}
         </div>
-        {#if rl !== table.rows.length - 1}
-          <div class="border" />
-        {/if}
-      {/each}
-    {/if}
-  </div>
-{/each}
+        {#each table.rows as rows, rl}
+          <div class="flex-row-{y}">
+            {#each rows as row, i}
+              <div class="flex-column">
+                {#if i === 0}
+                  <div class="flex-child">
+                    {#each row as span, i}
+                      <span class="name-{i} {darkMode ? '' : 'light'}">
+                        {span}
+                      </span>
+                    {/each}
+                  </div>
+                {:else if i === 1}
+                  <span class={darkMode ? "" : "light"}>
+                    {row}
+                  </span>
+                  <!-- NOTE HTML -->
+                {:else if i === 2}
+                  {#each row as span, i}
+                    <div class="description-{i} {darkMode ? '' : 'light'}">
+                      {span}
+                    </div>
+                  {/each}
+                {:else if i === 3}
+                  <div class="nice-div">
+                    {#each row as span, r}
+                      <!-- <h3>r = {r}, rl = {rl}, y = {y}</h3> -->
+                      {#if typeof span === "object"}
+                        <div class="flex-row-with-children">
+                          {#each span as element, s}
+                            {#if element.toUpperCase() === element}
+                              <div
+                                class={y === 1
+                                  ? `flex-column-with-children-${r}`
+                                  : `flex-column-with-children-${r}-b`}>
+                                <div class="flex-border-wrapper">
+                                  <div
+                                    class="tiny-line-{r} {darkMode
+                                      ? ''
+                                      : 'light-border'}" />
+                                </div>
+                                <div class="hit-{r} {darkMode ? '' : 'light'}">
+                                  {element}
+                                </div>
+                                <div class="flex-border-wrapper">
+                                  {#if y === 1}
+                                    <div
+                                      class="tiny-line-extra-{r} {darkMode
+                                        ? ''
+                                        : 'light-border'}" />
+                                  {:else}
+                                    <div
+                                      class="tiny-line-extra-{r}-b {darkMode
+                                        ? ''
+                                        : 'light-border'}" />
+                                  {/if}
+                                  <div
+                                    class="tiny-border-{cleanTitle(
+                                      table.title,
+                                      rl
+                                    )}-{r} {darkMode ? '' : 'light-border'}" />
+                                </div>
+                              </div>
+                            {:else}
+                              <div
+                                class={y === 1
+                                  ? `flex-column-with-children-${r}`
+                                  : `flex-column-with-children-${r}-b`}>
+                                <div class="flex-border-wrapper">
+                                  <div
+                                    class="tiny-line-{r} {darkMode
+                                      ? ''
+                                      : 'light-border'}" />
+                                </div>
+                                <div
+                                  class="not-hit-{r} {darkMode ? '' : 'light'}">
+                                  {element}
+                                </div>
+                                <div class="flex-border-wrapper">
+                                  {#if y === 1}
+                                    <div
+                                      class="tiny-line-extra-{r} {darkMode
+                                        ? ''
+                                        : 'light-border'}" />
+                                  {:else}
+                                    <div
+                                      class="tiny-line-extra-{r}-b {darkMode
+                                        ? ''
+                                        : 'light-border'}" />
+                                  {/if}
+                                  <div
+                                    class="tiny-border-{cleanTitle(
+                                      table.title,
+                                      rl
+                                    )}-{r} {darkMode ? '' : 'light-border'}" />
+                                </div>
+                              </div>
+                            {/if}
+                          {/each}
+                        </div>
+                      {:else if span.toUpperCase() === span}
+                        <span class="hit {darkMode ? '' : 'light'}">
+                          {span}
+                        </span>
+                      {:else}
+                        <span class="not-hit {darkMode ? '' : 'light'}">
+                          {span}
+                        </span>
+                      {/if}
+                    {/each}
+                  </div>
+                {/if}
+              </div>
+            {/each}
+          </div>
+          {#if rl !== table.rows.length - 1}
+            <div class="border" />
+          {/if}
+        {/each}
+      {/if}
+    </div>
+  {/each}
+</div>
 
 <style>
+  .flex-wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    /* background-color: red; */
+  }
   .flex-column {
     /* background-color: green; */
     /* padding: 4px; */
@@ -463,11 +537,12 @@
     justify-content: space-around;
     /* align-items: center; */
     width: 300px;
+    margin: 15px;
     /* height: 100px; */
   }
 
   span {
-    /* display: inline-block; */
+    display: inline-block;
     vertical-align: middle;
     text-align: center;
   }
@@ -493,8 +568,14 @@
     flex: 1;
   }
 
-  .flex-row-0 {
+  .flex-row {
     display: flex;
+    height: 25px;
+  }
+  .flex-row-0 {
+    /* padding-top: 10px; */
+    display: flex;
+    height: 50px;
   }
   .flex-row-1 {
     display: flex;
@@ -520,19 +601,19 @@
     display: flex;
     align-items: center;
   }
+
   .flex-column-with-children-0 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     justify-content: space-around;
-    /* align-items: center; */
+    align-items: center;
   }
   .flex-column-with-children-1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     justify-content: space-around;
-    /* align-items: center; */
   }
   .flex-column-with-children-2 {
     display: flex;
@@ -543,6 +624,50 @@
     /* align-items: center; */
   }
 
+  .flex-column-with-children-0-b {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-1-b {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    width: 33%;
+  }
+  .flex-column-with-children-2-b {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0 5px;
+    /* align-items: center; */
+  }
+  /* only child, bottom rightmost flex-column-with-children */
+  div.flex-wrapper.s-cPZEnGL0Hx_5
+    > div:nth-child(9)
+    > div:nth-child(11)
+    > div:nth-child(4)
+    > div
+    > div:nth-child(2)
+    > div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    flex: 2;
+    align-items: center;
+    width: 33%;
+    /* background-color: red; */
+  }
   .flex-row-with-children {
     display: flex;
     flex-direction: row;
@@ -550,6 +675,8 @@
     justify-content: space-around;
     align-items: center;
     /* height: 35px; */
+    /* height: 30px; */
+    width: 120px;
   }
 
   .flex-row:nth-of-type(1) {
@@ -577,7 +704,8 @@
     align-items: center;
     width: 900px;
     height: 5px;
-    font-weight: 300;
+    padding-bottom: 30px;
+    font-weight: 200;
   }
   h1 {
     padding: 10px;
@@ -585,8 +713,10 @@
   }
 
   h2 {
-    padding: 10px;
+    padding-left: 8px;
+    padding-top: 4px;
     padding-bottom: 0px;
+    margin: 5px;
   }
 
   h3 {
@@ -620,94 +750,38 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* margin: 10px; */
-    /* height: 10%; */
-    /* width: 50px; */
-    /* height: 10px; */
-  }
-  .tiny-border-0 {
-    position: relative;
-    /* border-bottom: 2px solid #eee; */
-    /* flex: 1; */
-    /* width: 100%; */
-    height: 1px;
-    /* align-items: center; */
-    /* justify-content: center; */
-    top: 5px;
-    display: flex;
-    width: 185%;
-    background-color: white;
-    /* margin: 3px; */
-  }
-  .tiny-border-1 {
-    /* align-items: center; */
-    /* justify-content: center; */
-    display: flex;
-    position: relative;
-    top: 5px;
-    /* border-bottom: 2px solid #eee; */
-    /* margin: 3px; */
-    width: 155%;
-    height: 1px;
-    background-color: white;
-  }
-  /* .tiny-line-0 {
-    position: relative;
-    left: 5px;
-    display: flex;
-    height: 5px;
-    width: 2px;
-    background-color: white;
-  } */
-  .nice-div {
-    /* margin: 115px; */
-    /* position: relative; */
-    /* height: 50%; */
-    /* width: 50%; */
-  }
-  .tiny-line-0 {
-    position: relative;
-    /* right: 15px; */
-    top: 30px;
-    /* top: -4px; */
-    /* left: 13px; */
-    /* left: 50%; */
-    /* display: block; */
-    /* display: flex; */
-    /* border-right: 1px solid #eee; */
-    /* margin: 10px; */
-    /* height: 4px; */
-    width: 1px;
-    /* margin: 10px; */
-    background-color: white;
   }
 
-  .tiny-line-1 {
+  .tiny-line-0 {
     position: relative;
-    /* right: 15px; */
-    top: 0px;
-    /* left: 13px; */
-    /* left: 50%; */
-    /* display: block; */
-    /* display: flex; */
-    /* border-right: 1px solid #eee; */
-    /* margin: 10px; */
-    height: 4px;
+    top: 30px;
     width: 1px;
     background-color: white;
+    /* height: 4px; */
+  }
+  .tiny-line-1 {
+    position: relative;
+    /* top: 30px; */
+    width: 1px;
+    background-color: white;
+    height: 4px;
   }
   .tiny-line-2 {
     position: relative;
-    /* top: 4px; */
-    /* border-right: 1px solid #eee; */
-    background-color: white;
     width: 1px;
+    background-color: white;
     height: 4px;
   }
   .tiny-line-extra-0 {
     position: relative;
     top: 0px;
-    /* border-right: 1px solid #eee; */
+    background-color: white;
+    width: 1px;
+    height: 4px;
+  }
+  .tiny-line-extra-0-b {
+    position: relative;
+    top: 0px;
     background-color: white;
     width: 1px;
     height: 4px;
@@ -715,14 +789,134 @@
   .tiny-line-extra-1 {
     position: relative;
     top: 0px;
-    /* border-right: 1px solid #eee; */
     background-color: white;
     width: 1px;
     height: 4px;
   }
+  /* div:nth-child(3) > div.tiny-line-extra-1 {
+    position: relative;
+    top: 0px;
+    background-color: white;
+    width: 1px;
+    height: 0px;
+  } */
+
+  /* NOTE combination */
+  .tiny-border-combination-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 61px;
+    background-color: white;
+  }
+  .tiny-border-combination-1 {
+    display: flex;
+    position: relative;
+    width: 155%;
+    height: 1px;
+    background-color: white;
+  }
+  /* NOTE Pseudo Element */
+  .tiny-border-pseudo-element-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 81px;
+    background-color: white;
+  }
+  /* NOTE Pseudo Class (Position/Other) */
+  .tiny-border-pseudo-class-position-other-0-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 31px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-1-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 31px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-2-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 91px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-3-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 91px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-4-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 31px;
+    background-color: white;
+  }
+  div:nth-child(2)
+    > div:nth-child(3)
+    > div.tiny-border-pseudo-class-position-other-4-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 1px;
+    background-color: white;
+    /* background-color: red; */
+  }
+
+  .tiny-border-pseudo-class-position-other-5-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 91px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-6-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 91px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-7-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 91px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-8-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 91px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-9-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 91px;
+    background-color: white;
+  }
+  .tiny-border-pseudo-class-position-other-10-0 {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 81px;
+    background-color: white;
+  }
 
   .hit {
     background-color: hsl(208, 69%, 51%);
+    border: 1px solid hsl(206, 71%, 22%);
     /* margin: 0 15px 0 15px; */
     /* width: 20%; */
     margin: 5px;
@@ -748,32 +942,41 @@
   }
 
   .hit-0 {
-    border: 1px solid #aaa;
+    /* border: 1px solid #aaa; */
     background-color: hsl(208, 69%, 51%);
+    border: 1px solid hsl(206, 71%, 22%);
     padding-left: 4px;
     padding-right: 4px;
     border-radius: 4px;
     text-transform: lowercase;
     font-weight: 700;
+    /* width: 20px; */
   }
 
   .not-hit-0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid #aaa;
     color: #ddd;
     padding-left: 4px;
     padding-right: 4px;
     border-radius: 4px;
     font-weight: 700;
-    z-index: 5;
+    width: 20px;
+    /* flex: 1; */
   }
   .hit-1 {
     background-color: hsl(208, 69%, 51%);
-    border: 1px solid #aaa;
+    border: 1px solid hsl(206, 71%, 22%);
+    /* margin: 10px; */
+    /* height: 20px; */
     padding-left: 4px;
     padding-right: 4px;
     border-radius: 4px;
     text-transform: lowercase;
     font-weight: 700;
+    min-width: 10px;
   }
 
   .not-hit-1 {
@@ -784,15 +987,18 @@
     border-radius: 4px;
     font-weight: 700;
     z-index: 5;
+    min-width: 10px;
   }
   .hit-2 {
     background-color: hsl(208, 69%, 51%);
-    border: 1px solid #aaa;
+    border: 1px solid hsl(206, 71%, 22%);
+    /* border: 1px solid #aaa; */
     padding-left: 4px;
     padding-right: 4px;
     border-radius: 4px;
     text-transform: lowercase;
     font-weight: 700;
+    width: 10px;
   }
 
   .not-hit-2 {
@@ -803,6 +1009,7 @@
     border-radius: 4px;
     font-weight: 700;
     z-index: 5;
+    width: 10px;
   }
 
   .subtitle {
@@ -812,7 +1019,7 @@
   }
 
   .name-0 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     padding: 3px;
   }
 
@@ -846,5 +1053,67 @@
 
   .tiny-text {
     font-size: 0.8rem;
+  }
+
+  .light-bg {
+    background-color: hsl(245, 14%, 97%);
+  }
+
+  .base-div.light-bg {
+    background-color: white;
+  }
+
+  .light {
+    color: #333;
+  }
+  h2.light {
+    color: #555;
+  }
+  .description-1.light {
+    color: #888;
+  }
+  .description-2.light {
+    color: #888;
+  }
+  .hit.light {
+    color: #eee;
+  }
+  .hit-1.light {
+    color: #eee;
+  }
+  .hit-2.light {
+    color: #eee;
+  }
+  .not-hit.light {
+    color: #444;
+    /* color: red; */
+  }
+
+  .light-border {
+    background-color: #333;
+  }
+
+  @media (max-width: 420px) {
+    .flex-wrapper {
+      display: flex;
+      /* width: 100%; */
+      flex-wrap: wrap;
+      width: 100vh;
+    }
+    .base-div {
+      width: 95%;
+    }
+  }
+
+  @media (max-width: 1000px) and (orientation: landscape) {
+    .flex-wrapper {
+      display: flex;
+      /* width: 100%; */
+      flex-wrap: wrap;
+      width: 210vh;
+    }
+    .base-div {
+      width: 95%;
+    }
   }
 </style>

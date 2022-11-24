@@ -1,6 +1,6 @@
 {
   "name": "htmlcss-sveltekit",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "dev": "vite dev",
@@ -8,19 +8,31 @@
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
-    "deploy": "npx gh-pages -d build --dotfiles"
+    "predeploy": "vite build",
+    "deploy": "npx gh-pages -d build --dotfiles",
+    "release": "commit-and-tag-version",
+    "postrelease": "git push --follow-tags origin main"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/adapter-static": "^1.0.0-next.47",
     "@sveltejs/kit": "next",
+    "@threlte/core": "^5.0.1",
+    "@threlte/extras": "^4.7.0",
+    "@threlte/preprocess": "^0.0.2",
+    "@threlte/rapier": "^0.5.0",
+    "@types/three": "^0.146.0",
+    "@yushijinhun/three-minifier-rollup": "^0.4.0",
     "autoprefixer": "^10.4.7",
+    "mdsvex": "^0.10.6",
     "postcss": "^8.4.14",
     "postcss-load-config": "^4.0.1",
     "svelte": "^3.44.0",
     "svelte-check": "^2.7.1",
     "svelte-preprocess": "^4.10.7",
+    "svelte-sequential-preprocessor": "^0.0.7",
     "tailwindcss": "^3.1.5",
+    "three": "^0.146.0",
     "typescript": "^4.7.4",
     "vite": "^3.1.0"
   },
