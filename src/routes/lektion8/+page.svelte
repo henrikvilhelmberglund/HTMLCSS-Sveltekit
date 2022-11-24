@@ -6,6 +6,15 @@
 </svelte:head> -->
 
 <header>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+      <li>Career</li>
+      <li>SCSS</li>
+    </ul>
+  </nav>
   <h1>SASS Example Code</h1>
   <p>Lorem ipsum dolor sit amet.</p>
 </header>
@@ -24,17 +33,35 @@
   $ankademin-coral: coral;
 
   // mixin
-  @mixin border {
-    border: 2px solid white;
+  @mixin border($color: white) {
+    border: 2px solid $color;
     padding: 6px;
+  }
+
+  @mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
   }
 
   p {
     color: darkblue;
   }
 
+  nav {
+    ul {
+      color: white;
+      // display: flex;
+      // gap: 30px;
+      // @include flex();
+      @include flex($direction: column);
+    }
+  }
+
+  // Nestade selectors
   header {
-    @include border;
+    @include border($ankademin-green);
     p {
       font-size: $p-font-size;
       color: $ankademin-green;
@@ -47,7 +74,7 @@
   }
 
   main {
-    @include border;
+    @include border($ankademin-coral);
     p {
       font-size: $p-font-size;
       color: $ankademin-coral;
@@ -57,8 +84,8 @@
     }
   }
 
-  :global(#svelte) {
-    background-color: black;
-    height: 100vh;
-  }
+  // :global(#svelte) {
+  //   background-color: black;
+  //   height: 100vh;
+  // }
 </style>
