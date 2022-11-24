@@ -83,7 +83,7 @@
     align-items: $align;
   }
   @mixin border($color: white) {
-    border: 2px solid scale-color($color, $lightness: -25%);
+    border: 4px solid scale-color($color, $lightness: -25%);
   }
   $color-big: coral;
   $color-medium: firebrick;
