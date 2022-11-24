@@ -1,0 +1,16 @@
+main {
+  @include border($ankademin-coral);
+
+  &:hover {
+    background-color: antiquewhite;
+  }
+
+  p {
+    font-size: $p-font-size;
+    color: $ankademin-coral;
+  }
+
+  h2 {
+    color: #444;
+  }
+}
