@@ -379,9 +379,8 @@
     </div>
   </div>
 
-  <button on:click={toggleDarkMode}>
-    {darkMode ? "Toggle Light Mode" : "Toggle Dark Mode"}
-  </button>
+  <button on:click={toggleDarkMode}
+    >{darkMode ? "Toggle Light Mode" : "Toggle Dark Mode"}</button>
 
   {#each tables as table, y}
     <div class="base-div {darkMode ? '' : 'light-bg'}">
