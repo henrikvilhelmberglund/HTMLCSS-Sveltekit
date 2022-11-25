@@ -1,11 +1,26 @@
 ---
-title: Fabuloso
+title: Nice Title
+author: henrikvilhelmberglund
+date: today
+layout: notes
 ---
+<script>
+export let list;
+</script>
 
-# {title}
+<!-- # {title} -->
+
 
 > lol
 
 1. one
 1. two 
 1. three
+
+why hello there
+
+<ul>
+{#each list as item}
+  <li>{item}</li>
+{/each}
+</ul>
