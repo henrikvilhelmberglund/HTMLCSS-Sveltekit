@@ -1,8 +1,8 @@
 import H1 from "./components/H1.svelte";
-export { H1 as h1 };
+export { H1 };
 import Blockquote from "./components/Blockquote.svelte";
-export { Blockquote as blockquote };
+export { Blockquote };
 import Li from "./components/Li.svelte";
-export { Li as li };
+export { Li };
 import P from "./components/P.svelte";
-export { P as p };
+export { P };
