@@ -23,6 +23,7 @@
   <a href="{base}/lektion7">Lektion 7</a>
   <a href="{base}/lektion8">Lektion 8</a>
   <a href="{base}/threlte">Threlte test</a>
+  <a href="{base}/svelte-course">Svelte course notes</a>
 </nav>
 
 <slot />

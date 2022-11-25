@@ -35,8 +35,7 @@ const config = {
     preprocess({
       postcss: true,
     }),
-    seqPreprocessor([preprocess(), preprocessThrelte()]),
-    mdsvex(mdsvexConfig),
+    seqPreprocessor([preprocess(), mdsvex(mdsvexConfig), preprocessThrelte()]),
   ],
 };
 
