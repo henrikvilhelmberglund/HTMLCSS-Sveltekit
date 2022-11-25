@@ -1,3 +1,0 @@
-import{S as n,i as s,s as r,q as m,r as c,b as d,B as a,h as l}from"../../../chunks/index-e969dfe2.js";function u(i){let t;return{c(){t=m(`hi!! https://excalidraw.com/#json=Uenn0fgauFm4SgHX-_yGL,-bSOAtXyv9Tb-rpOZHZHqg
-https://www.figma.com/file/t0TPBx9S8rerF51MBuTjsd/Builder.io---Figma-to-HTML%2C-React%2C-and-more-(Community)?node-id=0%3A1&t=0zzHMaj5OZZKC8Hj-1`)},l(e){t=c(e,`hi!! https://excalidraw.com/#json=Uenn0fgauFm4SgHX-_yGL,-bSOAtXyv9Tb-rpOZHZHqg
-https://www.figma.com/file/t0TPBx9S8rerF51MBuTjsd/Builder.io---Figma-to-HTML%2C-React%2C-and-more-(Community)?node-id=0%3A1&t=0zzHMaj5OZZKC8Hj-1`)},m(e,o){d(e,t,o)},p:a,i:a,o:a,d(e){e&&l(t)}}}class g extends n{constructor(t){super(),s(this,t,null,u,r,{})}}export{g as default};
