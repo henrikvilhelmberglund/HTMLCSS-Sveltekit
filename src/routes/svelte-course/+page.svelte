@@ -1,7 +1,8 @@
 <script>
+  import Notes from "./Notes.svx";
 </script>
 
---- title: Fabuloso --- # {title}
+<Notes />
 
 <style>
 </style>
