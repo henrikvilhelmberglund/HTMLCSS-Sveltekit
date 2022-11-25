@@ -1,14 +1,14 @@
 import { defineMDSveXConfig as defineConfig } from "mdsvex";
 
 const config = defineConfig({
-  extensions: [".svelte", ".svelte.md", ".md", ".svx"],
+  extensions: [".svelte.md", ".md", ".svx"],
 
   smartypants: {
     dashes: "oldschool",
   },
 
   layout: {
-    notes: "/src/routes/svelte-course/mdsvex-layout.svelte",
+    notes: "/src/routes/svelte-course/mdsvex-layout.svx",
   },
   remarkPlugins: [],
   rehypePlugins: [],
