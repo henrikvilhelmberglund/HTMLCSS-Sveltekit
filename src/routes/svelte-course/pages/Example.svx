@@ -9,6 +9,7 @@ layout: notes
 <script>
   import Count from '../svelte-components/Count.svelte';
   import Seriously from '../svelte-components/Seriously.svelte';
+  import ThrelteTest from '../svelte-components/ThrelteTest.svelte';
   let count = 0;
 </script>
 
@@ -25,6 +26,8 @@ An h1 header
 much wow
 
 </Seriously>
+
+<ThrelteTest/>
 
 Paragraphs are separated by a blank line. <Count {count}/> <Count {count}/> <Count {count}/>
 
