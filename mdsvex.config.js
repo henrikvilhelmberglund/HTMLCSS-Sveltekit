@@ -8,7 +8,8 @@ const config = defineConfig({
   },
 
   layout: {
-    notes: "/src/routes/svelte-course/mdsvex-layout.svx",
+    notes: "/src/routes/svelte-course/mdsvex-layout-notes.svx",
+    mainpage: "/src/routes/svelte-course/mdsvex-layout-mainpage.svx",
   },
   remarkPlugins: [],
   rehypePlugins: [],
