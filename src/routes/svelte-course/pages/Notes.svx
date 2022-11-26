@@ -1,47 +1,20 @@
 ---
+title: Nice Title
+author: henrikvilhelmberglund
+date: 2022-11-26
 layout: notes
 ---
-
 <script>
-  // import Notes from "./Notes.svx";
-  let list = [1, 2, 3, 4, 5];
-  export let data;
-  let items = [];
-  // for (const path in data.titles) {
-    /*
-      let outputPath = path.split("/")[1]
-      outputPath = outputPath.split(".")[0]
-      items.push(outputPath);
-      console.log(outputPath)
-      */
-  
-
-
+import * from "../components.js";
 </script>
 
-
-<!-- 
-
-for svx extension
-{
-              "begin": "^(?=\\s*[{#]\\w*)",
-              "end": "(?<=})",
-              "contentName": "source.svelte",
-              "patterns": [{ "include": "source.svelte" }]
-            },
-
- -->
-
-{#each data.myPages as item}
-<svelte:component this={item.newbody}></svelte:component>
-{/each}
+<!-- # {title} -->
 
 
-<!-- <Notes {list} /> -->
+> lol
 
+1. one
+1. two 
+1. three
 
-# hi
-
-## nice page
-<style>
-</style>
+why *hello* **there**
