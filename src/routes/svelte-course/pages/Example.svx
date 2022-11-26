@@ -6,10 +6,27 @@ date: 2022-11-26
 layout: notes
 ---
 
+<script>
+  import Count from '../svelte-components/Count.svelte';
+  import Seriously from '../svelte-components/Seriously.svelte';
+  let count = 0;
+</script>
+
 An h1 header
 ============
 
-Paragraphs are separated by a blank line.
+
+<Count {count}/>
+
+<Seriously>
+
+  # This is markdown in a component
+
+much wow
+
+</Seriously>
+
+Paragraphs are separated by a blank line. <Count {count}/> <Count {count}/> <Count {count}/>
 
 2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
 look like:
