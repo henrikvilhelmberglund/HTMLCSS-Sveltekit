@@ -6,7 +6,6 @@ date: 2022-11-26
 layout: notes
 ---
 <script>
-import * from "../components.js";
 </script>
 
 <!-- # {title} -->
