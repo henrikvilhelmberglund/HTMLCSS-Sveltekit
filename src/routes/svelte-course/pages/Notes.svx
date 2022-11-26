@@ -1,0 +1,20 @@
+---
+title: Nice Title
+author: henrikvilhelmberglund
+date: 2022-11-26
+layout: notes
+---
+<script>
+import * from "../components.js";
+</script>
+
+<!-- # {title} -->
+
+
+> lol
+
+1. one
+1. two 
+1. three
+
+why *hello* **there**
