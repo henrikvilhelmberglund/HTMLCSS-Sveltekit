@@ -1,6 +1,7 @@
 ---
 title: Nice Title
 author: henrikvilhelmberglund
+authorlink: github.com/henrikvilhelmberglund/
 date: 2022-11-26
 layout: notes
 ---
