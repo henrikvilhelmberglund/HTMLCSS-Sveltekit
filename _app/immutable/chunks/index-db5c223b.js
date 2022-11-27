@@ -1,1 +1,0 @@
-import"./index-651d43d0.js";function s(n){return n<.5?4*n*n*n:.5*Math.pow(2*n-2,3)+1}function a(n){const t=n-1;return t*t*t+1}function c(n){const t=Math.cos(n*Math.PI*.5);return Math.abs(t)<1e-14?1:1-t}function r(n){return Math.sin(n*Math.PI/2)}export{s as a,c as b,a as c,r as s};
