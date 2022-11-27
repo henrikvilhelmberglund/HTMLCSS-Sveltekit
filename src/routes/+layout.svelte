@@ -10,6 +10,7 @@
   import "@fontsource/raleway/600.css";
   import "@fontsource/raleway/800.css";
   // import "@fontsource/inter";
+  import { page } from '$app/stores';
 </script>
 
 <nav>
@@ -25,5 +26,9 @@
   <a href="{base}/threlte">Threlte test</a>
   <a href="{base}/svelte-course">Svelte course notes</a>
 </nav>
+
+<svelte:head>
+  <title>{$page.data.title}</title>
+</svelte:head>
 
 <slot />

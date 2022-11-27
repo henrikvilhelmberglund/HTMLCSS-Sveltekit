@@ -1,0 +1,35 @@
+---
+title: Writing Your First Svelte Component
+author: henrikvilhelmberglund
+authorlink: github.com/henrikvilhelmberglund/
+date: 2022-11-27
+layout: notes
+---
+<script>
+  import Component_000 from "../svelte-components/Component_000.svelte"
+</script>
+
+
+There is a [REPL](https://svelte.dev/repl/hello-world?version=3.53.1) at the site where you can write code and run it in the browser.
+
+In a .svelte file you can have a script tag, markup (HTML) and a single style tag that contains all of the styles.
+
+```svelte example Wrapper="/src/lib/Example.svelte"
+<h2>My first Svelte component</h2>
+
+<p>Hello World</p>
+
+<a href="https://www.youtube.com/lihautan">Link to Li Hau's youtube</a>
+
+<style>
+  h2 {
+    color: rebeccapurple;
+  }
+  p {
+    color: blue;
+    font-size: 44px;
+  }
+</style>
+```
+
+You can import a .svelte from anywhere and use it like a class.

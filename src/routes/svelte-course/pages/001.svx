@@ -1,20 +1,11 @@
 ---
-title: Nice Title
+title: Style your Svelte Component
 author: henrikvilhelmberglund
 authorlink: github.com/henrikvilhelmberglund/
-date: 2022-11-26
+date: 2022-11-27
 layout: notes
 ---
 <script>
 </script>
 
-<!-- # {title} -->
 
-
-> lol
-
-1. one
-1. two 
-1. three
-
-why *hello* **there**

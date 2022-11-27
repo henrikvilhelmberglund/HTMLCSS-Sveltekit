@@ -7,16 +7,6 @@ layout: mainpage
   let list = [1, 2, 3, 4, 5];
   export let data;
   let items = [];
-  // for (const path in data.titles) {
-    /*
-      let outputPath = path.split("/")[1]
-      outputPath = outputPath.split(".")[0]
-      items.push(outputPath);
-      console.log(outputPath)
-      */
-  
-
-
 </script>
 
 
@@ -36,12 +26,5 @@ for svx extension
 <svelte:component this={item.newbody}></svelte:component>
 {/each}
 
-
-<!-- <Notes {list} /> -->
-
-
-# hi
-
-## nice page
 <style>
 </style>
