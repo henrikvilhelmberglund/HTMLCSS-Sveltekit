@@ -10,6 +10,7 @@ layout: notes
   import Count from '../svelte-components/Count.svelte';
   import Seriously from '../svelte-components/Seriously.svelte';
   import ThrelteTest from '../svelte-components/ThrelteTest.svelte';
+  import Wrap from '../svelte-components/Wrap.svelte';
   let count = 0;
 </script>
 
@@ -119,8 +120,7 @@ Now a nested list:
 Notice again how text always lines up on 4-space indents (including
 that last line which continues item 3 above).
 
-Here's a link to [a website](http://foo.bar), to a [local
-doc](local-doc.html), and to a [section heading in the current
+Here's a link to [a website](http://foo.bar) and to a [section heading in the current
 doc](#an-h2-header). Here's a footnote [^1].
 
 [^1]: Some footnote text.
@@ -174,7 +174,13 @@ Here's a "line block" (note how whitespace is honored):
 |   Line too
 | Line tree
 
-and images can be specified like so:
+<Wrap id="an-h2-header">
+
+  and images can be specified like so:
+
+
+</Wrap>
+
 
 ![example image](example-image.jpg "An exemplary image")
 
