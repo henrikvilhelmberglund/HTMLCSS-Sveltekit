@@ -1,4 +1,5 @@
 import { defineMDSveXConfig as defineConfig } from "mdsvex";
+import examples from "mdsvexamples";
 
 const config = defineConfig({
   extensions: [".svelte.md", ".md", ".svx"],
@@ -11,7 +12,14 @@ const config = defineConfig({
     notes: "/src/routes/svelte-course/mdsvex-layout-notes.svx",
     mainpage: "/src/routes/svelte-course/mdsvex-layout-mainpage.svx",
   },
-  remarkPlugins: [],
+  remarkPlugins: [
+    examples,
+    {
+      defaults: {
+        Wrapper: "src/lib/Example.svelte",
+      },
+    },
+  ],
   rehypePlugins: [],
 });
 
