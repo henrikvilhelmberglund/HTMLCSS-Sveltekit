@@ -4,7 +4,11 @@
 
 <header>
     <nav>
-
+        <ul>
+            <li>Home</li>
+            <li>Products</li>
+            <li>About</li>
+        </ul>
     </nav>
 </header>
 
