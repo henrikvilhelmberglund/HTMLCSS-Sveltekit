@@ -43,6 +43,7 @@
     "@fontsource/inter": "^4.5.14",
     "@fontsource/raleway": "^4.5.11",
     "gh-pages": "^4.0.0",
-    "mdsvexamples": "^0.3.2"
+    "mdsvexamples": "^0.3.2",
+    "ntl": "^5.1.0"
   }
 }
