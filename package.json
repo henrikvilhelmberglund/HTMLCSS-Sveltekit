@@ -40,6 +40,8 @@
   },
   "type": "module",
   "dependencies": {
+    "@fontsource/elsie": "^4.5.7",
+    "@fontsource/genos": "^4.5.10",
     "@fontsource/inter": "^4.5.14",
     "@fontsource/raleway": "^4.5.11",
     "gh-pages": "^4.0.0",
