@@ -40,3 +40,13 @@ t.ex
 - bootstrap använder bara klasser för komponenter, inte id
 - accordion är ett exempel på hur vi kan använda färdiga komponenter
 - vill ha kvar aria-taggar etc men kan ta bort mycket annat om man vill
+- finns SASS variables i docs
+
+### När man jobbar med CSS-ramverk
+
+- vill kunna ha egen CSS också
+- hur gör vi det? lägger till en styletagg
+- om vi t.ex lägger background: red på \* blir inte all bakgrund röd, det är för att knapparna har klasser och därmed högre specificity
+- .btn-primary skulle heller inte fungera för att vi länkar vår CSS innan Bootstraps, kan lägga den _längst ner efter alla ramverks CSS_
+- framework vs library: library kan man bara kasta in, framework använder man deras funktionalitet
+- rekommendation: styla inte existerande klasser, lägg till ny .my-btn istället
