@@ -74,3 +74,4 @@ t.ex
 - TailwindCSS (bäst när man använder ett ramverk med komponenter), en annan filosofi där vi gör all CSS med klasser
 
 välj ett och prova på, lära sig lite grundkunskaper 
+till 11:00
