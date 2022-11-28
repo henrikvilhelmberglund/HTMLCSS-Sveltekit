@@ -3,7 +3,12 @@ const config = {
   mode: "jit",
   content: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,svelte,svx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        duckName: ["Elsie"],
+        duckDesc: ["Genos"],
+      },
+    },
   },
 
   plugins: [],
