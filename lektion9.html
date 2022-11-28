@@ -57,17 +57,17 @@
 		<link rel="preload" as="font" type="font/woff2" href="/HTMLCSS-Sveltekit/_app/immutable/assets/raleway-vietnamese-800-normal-6b17a23e.woff2" crossorigin>
 		<link rel="preload" as="font" type="font/woff2" href="/HTMLCSS-Sveltekit/_app/immutable/assets/raleway-latin-ext-800-normal-c6dd2104.woff2" crossorigin>
 		<link rel="preload" as="font" type="font/woff2" href="/HTMLCSS-Sveltekit/_app/immutable/assets/raleway-latin-800-normal-ead9bd74.woff2" crossorigin>
-		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/start-89dcaab0.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/start-ea926cae.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/index-2415c921.js">
-		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/singletons-66044b0f.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/singletons-d329d20a.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/index-53849f94.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/paths-6cd3a76e.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/preload-helper-b21cceae.js">
-		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/_layout.svelte-63ce0822.js">
-		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/stores-01a00c78.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/_layout.svelte-2b3ba7b3.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/stores-0fe53efe.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/modules/pages/_layout.js-7b9cbfbc.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/_layout-8d2a742b.js">
-		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/lektion9/_page.svelte-0013a9c0.js"><title>undefined</title><!-- HEAD_svelte-7jht9m_START --><!-- HEAD_svelte-7jht9m_END -->
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/lektion9/_page.svelte-61b81ac8.js"><title>undefined</title><!-- HEAD_svelte-7jht9m_START --><!-- HEAD_svelte-7jht9m_END -->
 </head>
 
 <body>
@@ -91,9 +91,54 @@
 
 hi
 
+<h1>CSS-ramverk</h1>
+<p>väljer ett ramverk i slutet av lektionen och gör en uppgift</p>
+<h2>Bootstrap</h2>
+<ul><li>väldigt populärt</li>
+<li>vill slippa uppfinna hjulet</li>
+<li>bibliotek för komponenter</li>
+<li>löste responsivitet väldigt tidigt</li>
+<li>var svårt med layouts tidigare, för 10 år sedan hade man table för layouts</li>
+<li>idag bygger bootstrap på flexbox</li>
+<li>bra stöd för SCSS</li></ul>
+<h3>CDN</h3>
+<ul><li>länk som vi placerar i head</li></ul>
+<p><a href="https://getbootstrap.com/docs/5.2/getting-started/introduction/#cdn-links" rel="nofollow">CDN</a></p>
+<ul><li><p>behöver inte vara läsbar, ska vara snabb att ladda, därför tar de bort all whitespace (mellanslag etc), kan gå in på länken i browser för att se</p></li>
+<li><p><a href="https://codesandbox.io/live/a1d53aec228" rel="nofollow">livekodning</a></p></li></ul>
+<h3>Dokumentation</h3>
+<p>t.ex</p>
+<p><a href="https://getbootstrap.com/docs/5.2/components/buttons/" rel="nofollow">docs</a></p>
+<ul><li>använder klass för att få CSSn man vill ha t.ex <code>btn btn-success</code>, <code>btn lg</code>, <code>btn sm</code></li></ul>
+<h3>Accordion</h3>
+<ul><li>har olika val där man togglar visa/visa inte</li>
+<li>har mycket text men vill inte visa allt på en gång, kan ha accordion så user själv kan visa</li>
+<li>behöver javascript för att den ska fungera</li>
+<li>kopierar in javascriptfilen från CDN så fungerar den! (glöm inte defer när man har i head)</li>
+<li>kan ta bort .min i länken om man vill se inte-minifierad version men man använder minifierad för mindre filstorlek</li>
+<li>bootstrap använder bara klasser för komponenter, inte id</li>
+<li>accordion är ett exempel på hur vi kan använda färdiga komponenter</li>
+<li>vill ha kvar aria-taggar etc men kan ta bort mycket annat om man vill</li>
+<li>finns SASS variables i docs</li></ul>
+<h3>När man jobbar med CSS-ramverk</h3>
+<ul><li>vill kunna ha egen CSS också</li>
+<li>hur gör vi det? lägger till en styletagg</li>
+<li>om vi t.ex lägger background: red på * blir inte all bakgrund röd, det är för att knapparna har klasser och därmed högre specificity</li>
+<li>.btn-primary skulle heller inte fungera för att vi länkar vår CSS innan Bootstraps, kan lägga den <strong>längst ner efter alla ramverks CSS</strong></li>
+<li>framework vs library: library kan man bara kasta in, framework använder man deras funktionalitet</li>
+<li>rekommendation: <strong>styla inte existerande klasser</strong>, lägg till ny .my-btn istället</li>
+<li>när vi inte har design kan vi ha bootstrap för att jobba snabbt</li>
+<li>även när vi har design kan vi använda för att hjälpa med t.ex responsivitet</li></ul>
+<h3><a href="https://getbootstrap.com/docs/5.2/layout/breakpoints/" rel="nofollow">Breakpoints</a></h3>
+<ul><li>kan förhålla sig till dessa (vanligt förekommande), sm, md, lg, xl, xxl och deras pixlar</li></ul>
+<h3>Gridsystem i Bootstrap</h3>
+<ul><li>div är perfekt för att göra wrapper/container</li>
+<li>div med klass container, div med klass row, divs med klass col-6</li>
+<li>12kolumnssystem, delar upp hela bredden i sidan i 12 kolumner</li></ul>
 
-		<script type="module" data-sveltekit-hydrate="tsbl30">
-			import { start } from "/HTMLCSS-Sveltekit/_app/immutable/start-89dcaab0.js";
+
+		<script type="module" data-sveltekit-hydrate="1uymsws">
+			import { start } from "/HTMLCSS-Sveltekit/_app/immutable/start-ea926cae.js";
 
 			start({
 				env: {},
@@ -107,7 +152,7 @@ hi
 					form: null
 				},
 				paths: {"base":"/HTMLCSS-Sveltekit","assets":"/HTMLCSS-Sveltekit"},
-				target: document.querySelector('[data-sveltekit-hydrate="tsbl30"]').parentNode,
+				target: document.querySelector('[data-sveltekit-hydrate="1uymsws"]').parentNode,
 				trailing_slash: "never"
 			});
 		</script>
