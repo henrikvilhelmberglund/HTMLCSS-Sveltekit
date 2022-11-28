@@ -6,7 +6,6 @@ date: 2022-11-27
 layout: notes
 ---
 <script>
-  import Component_000 from "../svelte-components/Component_000.svelte"
 </script>
 
 
