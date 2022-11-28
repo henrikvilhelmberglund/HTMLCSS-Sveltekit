@@ -47,6 +47,8 @@ t.ex
 - vill kunna ha egen CSS också
 - hur gör vi det? lägger till en styletagg
 - om vi t.ex lägger background: red på \* blir inte all bakgrund röd, det är för att knapparna har klasser och därmed högre specificity
-- .btn-primary skulle heller inte fungera för att vi länkar vår CSS innan Bootstraps, kan lägga den _längst ner efter alla ramverks CSS_
+- .btn-primary skulle heller inte fungera för att vi länkar vår CSS innan Bootstraps, kan lägga den **längst ner efter alla ramverks CSS**
 - framework vs library: library kan man bara kasta in, framework använder man deras funktionalitet
-- rekommendation: styla inte existerande klasser, lägg till ny .my-btn istället
+- rekommendation: **styla inte existerande klasser**, lägg till ny .my-btn istället
+- när vi inte har design kan vi ha bootstrap för att jobba snabbt
+- även när vi har design kan vi använda för att hjälpa med t.ex responsivitet
