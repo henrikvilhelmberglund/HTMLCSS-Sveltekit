@@ -64,3 +64,13 @@ t.ex
 - 12kolumnssystem, delar upp hela bredden i sidan i 12 kolumner
 - oberoende av hur stor sidan visas blir inte texten t.ex jättestor, det är pga t.ex max-width för content
 - col-md-3 col-sm-12 t.ex för att ändra storlek beroende på skärmen
+
+## Fyra (och ett halvt) ramverk vi kan fokusera på denna lektion
+
+- Bootstrap (används mest på äldre sidor nu, finns kanske bättre alternativ)
+- Bulma (Brandon tycker är väldigt smidig)
+- Materialize (byggt på Material Design), har SASS-stöd
+- UIKit (var främst för mobil), har SASS-stöd, många komponenter
+- TailwindCSS (bäst när man använder ett ramverk med komponenter), en annan filosofi där vi gör all CSS med klasser
+
+välj ett och prova på, lära sig lite grundkunskaper 
