@@ -1,0 +1,107 @@
+<script>
+  import Button from "./Button.svelte";
+  import P from "./P.svelte";
+  import PGrid from "./PGrid.svelte";
+  import H2 from "./H2.svelte";
+  import Header from "./Header.svelte";
+</script>
+
+<Header />
+
+<H2>Exempel: grid</H2>
+
+<P>Här är ett exempel på grid:</P>
+
+<div class="grid grid-cols-4 gap-2 p-2 bg-slate-500 text-center h-32 [&>*]:border-4 [&>*]:border-solid">
+  <div><PGrid>01</PGrid></div>
+  <div class="bg-slate-300"><PGrid>02</PGrid></div>
+  <div><PGrid>03</PGrid></div>
+  <div class="bg-slate-300"><PGrid>04</PGrid></div>
+  <div class="bg-slate-300 col-span-3"><PGrid>05</PGrid></div>
+  <div class=""><PGrid>06</PGrid></div>
+</div>
+
+
+```html
+    
+    <div class="grid grid-cols-4 gap-2 p-2 bg-slate-500 text-center h-32 [&>*]:border-4 [&>*]:border-solid">
+      <div><PGrid>01</PGrid></div>
+      <div class="bg-slate-300"><PGrid>02</PGrid></div>
+      <div><PGrid>03</PGrid></div>
+      <div class="bg-slate-300"><PGrid>04</PGrid></div>
+      <div class="bg-slate-300 col-span-3"><PGrid>05</PGrid></div>
+      <div class=""><PGrid>06</PGrid></div>
+    </div>
+```
+
+
+<H2>Exempel: knapp</H2>
+
+<div class="flex flex-col">
+  <P>Med Tailwind kan man använda sig av små klasser som gör en viss sak.</P>
+  <P>Knappen nedanför använder sig av fem klasser:</P>
+  <ul>
+    <li>
+      <P><span class="font-bold">w-32</span> (ställer in bredden, samma sak som width: 8rem;)</P>
+    </li>
+    <li>
+      <P><span class="font-bold">h-12</span> (ställer in höjden, samma sak som height: 3rem;</P>
+    </li>
+    <li>
+      <P>
+        <span class="font-bold">bg-green-600</span> (ställer in bakgrundsfärgen, finns en mängd olika färger
+        där man kan ändra t.ex 600 till 50-900)
+      </P>
+    </li>
+    <li>
+      <P><span class="font-bold">hover:bg-green-400</span> (lägger till en färg som visas vid hover)</P>
+    </li>
+    <li>
+      <P>
+        <span class="font-bold">rounded</span> (ställer in hur rund man vill ha, samma sak som border-radius:
+        0.25rem;)
+      </P>
+    </li>
+  </ul>
+
+  <button class="w-32 h-12 bg-green-600 hover:bg-green-400 rounded">Klicka här!</button>
+
+  ```html
+
+      <button class="w-32 h-12 bg-green-600 hover:bg-green-400 rounded">Klicka här!</button>
+  ```
+
+  <H2>Exempel: ändra styling</H2>
+
+  <P>
+    En fördel är att man enkelt kan ändra på sin styling genom att ändra på
+    klasserna.
+  </P>
+
+  <button class="w-32 h-12 bg-pink-600 hover:bg-pink-400 rounded"
+    >Har bara ändrat bg-green till bg-pink!</button>
+    
+  <H2>Exempel: komponenter i JS-ramverk</H2>
+
+  <P>För att undvika repeterade klasser för alla html-element kan man använda
+    sig av komponenter i javascript-ramverket man använder för att kunna ändra
+    på klasserna på ett ställe.
+    </P>
+
+  <Button>En button-komponent</Button>
+  <Button>En till button-komponent</Button>
+
+  <P>
+    Man kan också skicka med en variabel som ändrar på komponenten i logiken.
+  </P>
+
+  <Button type="warning">Warning!!</Button>
+
+  <a
+    href="https://nerdcave.com/tailwind-cheat-sheet"
+    class="text-emerald-400 text-3xl hover:text-emerald-200"
+    >Tailwind Cheat-sheet</a>
+</div>
+
+<style>
+</style>
