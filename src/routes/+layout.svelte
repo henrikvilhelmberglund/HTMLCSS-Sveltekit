@@ -10,7 +10,7 @@
   import "@fontsource/raleway/600.css";
   import "@fontsource/raleway/800.css";
   // import "@fontsource/inter";
-  import { page } from '$app/stores';
+  import { page } from "$app/stores";
 </script>
 
 <nav>
@@ -23,6 +23,7 @@
   <a href="{base}/lektion6">Lektion 6</a>
   <a href="{base}/lektion7">Lektion 7</a>
   <a href="{base}/lektion8">Lektion 8</a>
+  <a href="{base}/lektion9">Lektion 9</a>
   <a href="{base}/threlte">Threlte test</a>
   <a href="{base}/svelte-course">Svelte course notes</a>
 </nav>
