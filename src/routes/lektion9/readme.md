@@ -35,3 +35,8 @@ t.ex
 - har olika val där man togglar visa/visa inte
 - har mycket text men vill inte visa allt på en gång, kan ha accordion så user själv kan visa
 - behöver javascript för att den ska fungera
+- kopierar in javascriptfilen från CDN så fungerar den! (glöm inte defer när man har i head)
+- kan ta bort .min i länken om man vill se inte-minifierad version men man använder minifierad för mindre filstorlek
+- bootstrap använder bara klasser för komponenter, inte id
+- accordion är ett exempel på hur vi kan använda färdiga komponenter
+- vill ha kvar aria-taggar etc men kan ta bort mycket annat om man vill
