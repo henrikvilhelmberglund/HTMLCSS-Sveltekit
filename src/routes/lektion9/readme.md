@@ -52,3 +52,14 @@ t.ex
 - rekommendation: **styla inte existerande klasser**, lägg till ny .my-btn istället
 - när vi inte har design kan vi ha bootstrap för att jobba snabbt
 - även när vi har design kan vi använda för att hjälpa med t.ex responsivitet
+
+### [Breakpoints](https://getbootstrap.com/docs/5.2/layout/breakpoints/)
+
+- kan förhålla sig till dessa (vanligt förekommande), sm, md, lg, xl, xxl och deras pixlar
+
+### Gridsystem i Bootstrap
+
+- div är perfekt för att göra wrapper/container
+- div med klass container, div med klass row, divs med klass col-6
+- 12kolumnssystem, delar upp hela bredden i sidan i 12 kolumner
+
