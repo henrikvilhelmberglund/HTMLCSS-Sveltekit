@@ -62,4 +62,5 @@ t.ex
 - div är perfekt för att göra wrapper/container
 - div med klass container, div med klass row, divs med klass col-6
 - 12kolumnssystem, delar upp hela bredden i sidan i 12 kolumner
-
+- oberoende av hur stor sidan visas blir inte texten t.ex jättestor, det är pga t.ex max-width för content
+- col-md-3 col-sm-12 t.ex för att ändra storlek beroende på skärmen
