@@ -4,6 +4,10 @@
   import PGrid from "./PGrid.svelte";
   import H2 from "./H2.svelte";
   import Header from "./Header.svelte";
+  import HUIRadio from "./HUIRadio.svelte"
+  import HUIRadioStyled from "./HUIRadioStyled.svelte"
+  import HUISwitch from "./HUISwitch.svelte"
+  let enabled;
 </script>
 
 <Header />
@@ -102,6 +106,27 @@
     class="text-emerald-400 text-3xl hover:text-emerald-200"
     >Tailwind Cheat-sheet</a>
 </div>
+<H2>Exempel: Headless UI-komponenter</H2>
+
+<HUISwitch bind:enabled/>
+
+{#if enabled}
+  <div class="p-4">
+  <HUIRadioStyled/>
+  </div>
+  
+{:else}
+  
+<div class="p-4">
+  <HUIRadio/>
+</div>
+{/if}
+
+<P>
+  Det finns: Dialog, Disclosure, Listbox, Menu, Popover, Radio Group, Switch, Tabs, Transition
+</P>
+<p class="flex p-64 w-16 opacity-0">hi</p>
+
 
 <style>
 </style>
