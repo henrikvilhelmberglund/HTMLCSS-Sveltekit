@@ -1,7 +1,7 @@
 import { sveltekit } from "@sveltejs/kit/vite";
 import { defineConfig } from "vite";
 import { threeMinifier } from "@yushijinhun/three-minifier-rollup";
-import examples from 'mdsvexamples/vite'
+import examples from "mdsvexamples/vite";
 
 /** @type {import('vite').UserConfig} */
 // const config = {
@@ -20,7 +20,7 @@ export default defineConfig({
     sveltekit(),
   ],
   ssr: {
-    noExternal: ["three", "troika-three-text"],
+    noExternal: ["three", "troika-three-text", "svelte-headlessui"],
   },
   build: {
     target: "esnext",
