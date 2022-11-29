@@ -5,7 +5,7 @@
   import Card from "./Card.svelte";
   import H2 from "./H2.svelte";
 
-  let duck = [
+  let ducks = [
     {
       type: "Svensk blå anka",
       src: `${base}/ankor/blå-anka.jpg`,
@@ -44,15 +44,18 @@
   ];
 </script>
 
+<svelte:head>
+  <title>Ankademin Webshop</title>
+</svelte:head>
+
 <Header />
 <Main myClass="bg-gradient-to-b from-green-600 to-white">
   <H2>Nya ankor</H2>
-  <div class="flex flex-1 flex-col sm:flex-row justify-between gap-5">
-    <Card duck={duck[0]} />
-    <Card duck={duck[1]} />
-    <Card duck={duck[2]} />
-    <Card duck={duck[3]} />
-    <Card duck={duck[4]} />
+  <div
+    class="flex flex-1 flex-col sm:flex-row justify-around items-center sm:items-baseline gap-5  ">
+    {#each ducks as duck}
+      <Card {duck} />
+    {/each}
   </div>
 </Main>
 
