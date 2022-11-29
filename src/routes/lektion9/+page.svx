@@ -125,7 +125,7 @@
 <P>
   Det finns: Dialog, Disclosure, Listbox, Menu, Popover, Radio Group, Switch, Tabs, Transition
 </P>
-<p class="flex p-64 w-16 opacity-0">hi</p>
+<p class="flex p-32 w-16 opacity-0">hi</p>
 
 
 <style>
