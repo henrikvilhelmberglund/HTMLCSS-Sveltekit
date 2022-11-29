@@ -10,6 +10,10 @@
   let enabled;
 </script>
 
+<svelte:head>
+  <title>Tailwind example page</title>
+</svelte:head>
+
 <Header />
 
 <H2>Exempel: grid</H2>
@@ -17,25 +21,25 @@
 <P>Här är ett exempel på grid:</P>
 
 <div class="grid grid-cols-4 gap-2 p-2 bg-slate-500 text-center h-32 [&>*]:border-4 [&>*]:border-solid">
-  <div><PGrid>01</PGrid></div>
+  <div><PGrid white>01</PGrid></div>
   <div class="bg-slate-300"><PGrid>02</PGrid></div>
-  <div><PGrid>03</PGrid></div>
+  <div><PGrid white>03</PGrid></div>
   <div class="bg-slate-300"><PGrid>04</PGrid></div>
   <div class="bg-slate-300 col-span-3"><PGrid>05</PGrid></div>
-  <div class=""><PGrid>06</PGrid></div>
+  <div><PGrid white>06</PGrid></div>
 </div>
 
 
 ```html
     
-    <div class="grid grid-cols-4 gap-2 p-2 bg-slate-500 text-center h-32 [&>*]:border-4 [&>*]:border-solid">
-      <div><PGrid>01</PGrid></div>
-      <div class="bg-slate-300"><PGrid>02</PGrid></div>
-      <div><PGrid>03</PGrid></div>
-      <div class="bg-slate-300"><PGrid>04</PGrid></div>
-      <div class="bg-slate-300 col-span-3"><PGrid>05</PGrid></div>
-      <div class=""><PGrid>06</PGrid></div>
-    </div>
+<div class="grid grid-cols-4 gap-2 p-2 bg-slate-500 text-center h-32 [&>*]:border-4 [&>*]:border-solid">
+  <div><PGrid white>01</PGrid></div>
+  <div class="bg-slate-300"><PGrid>02</PGrid></div>
+  <div><PGrid white>03</PGrid></div>
+  <div class="bg-slate-300"><PGrid>04</PGrid></div>
+  <div class="bg-slate-300 col-span-3"><PGrid>05</PGrid></div>
+  <div><PGrid white>06</PGrid></div>
+</div>
 ```
 
 
@@ -103,7 +107,7 @@
 
   <a
     href="https://nerdcave.com/tailwind-cheat-sheet"
-    class="text-emerald-400 text-3xl hover:text-emerald-200"
+    class="text-emerald-600 text-3xl hover:text-emerald-200 hover:stroke-black stroke-2"
     >Tailwind Cheat-sheet</a>
 </div>
 <H2>Exempel: Headless UI-komponenter</H2>
