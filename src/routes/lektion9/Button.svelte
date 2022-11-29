@@ -17,7 +17,7 @@
     <button
       on:mousedown={enter}
       on:mouseup={leave}
-      class="w-32 h-12 font-bold text-xl bg-red-800 transition-all hover:bg-red-500 active:bg-red-400 rounded border-none m-2 shadow-xl shadow-red-800">
+      class="w-32 h-12 font-bold text-xl bg-red-700 transition-all hover:bg-red-500 active:bg-red-400 rounded border-none m-2 shadow-xl shadow-red-800">
       <slot />
     </button>
   {:else}
