@@ -7,6 +7,6 @@
 <style>
   
 </style>
-<p class="text-3xl font-duckDesc m-2">
+<p class="text-3xl font-duckDesc m-0">
   <slot />
 </p>

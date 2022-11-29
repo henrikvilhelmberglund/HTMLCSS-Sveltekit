@@ -2,7 +2,7 @@
   import "@fontsource/elsie";
 </script>
 
-<h2 class="text-center text-4xl font-duckName">
+<h2 class="text-center text-3xl font-duckName">
   <slot />
 </h2>
 
