@@ -114,17 +114,9 @@
 
 <HUISwitch bind:enabled/>
 
-{#if enabled}
-  <div class="p-4">
-  <HUIRadioStyled/>
-  </div>
-  
-{:else}
-  
 <div class="p-4">
-  <HUIRadio/>
+  <svelte:component this={enabled ? HUIRadioStyled : HUIRadio }></svelte:component>
 </div>
-{/if}
 
 <P>
   Det finns: Dialog, Disclosure, Listbox, Menu, Popover, Radio Group, Switch, Tabs, Transition
