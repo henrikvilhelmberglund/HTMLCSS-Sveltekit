@@ -45,7 +45,7 @@
 </script>
 
 <Header />
-<Main class="flex">
+<Main myClass="bg-gradient-to-b from-green-600 to-white">
   <H2>Nya ankor</H2>
   <div class="flex flex-1 flex-col sm:flex-row justify-between gap-5">
     <Card duck={duck[0]} />
