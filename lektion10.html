@@ -11,7 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/HTMLCSS-Sveltekit/prism-vsc-dark-plus.css">
   <meta http-equiv="content-security-policy" content="">
-		<link href="/HTMLCSS-Sveltekit/_app/immutable/assets/_layout-5af59760.css" rel="stylesheet">
+		<link href="/HTMLCSS-Sveltekit/_app/immutable/assets/_layout-1c7e14f8.css" rel="stylesheet">
+		<link href="/HTMLCSS-Sveltekit/_app/immutable/assets/_page-6adcfa34.css" rel="stylesheet">
 		<link rel="preload" as="font" type="font/woff2" href="/HTMLCSS-Sveltekit/_app/immutable/assets/inter-cyrillic-ext-400-normal-f7666a51.woff2" crossorigin>
 		<link rel="preload" as="font" type="font/woff" href="/HTMLCSS-Sveltekit/_app/immutable/assets/inter-all-400-normal-f824029b.woff" crossorigin>
 		<link rel="preload" as="font" type="font/woff2" href="/HTMLCSS-Sveltekit/_app/immutable/assets/inter-cyrillic-400-normal-e9493683.woff2" crossorigin>
@@ -57,17 +58,17 @@
 		<link rel="preload" as="font" type="font/woff2" href="/HTMLCSS-Sveltekit/_app/immutable/assets/raleway-vietnamese-800-normal-6b17a23e.woff2" crossorigin>
 		<link rel="preload" as="font" type="font/woff2" href="/HTMLCSS-Sveltekit/_app/immutable/assets/raleway-latin-ext-800-normal-c6dd2104.woff2" crossorigin>
 		<link rel="preload" as="font" type="font/woff2" href="/HTMLCSS-Sveltekit/_app/immutable/assets/raleway-latin-800-normal-ead9bd74.woff2" crossorigin>
-		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/start-f60cb54e.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/start-c06bf6f0.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/index-e44d5234.js">
-		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/singletons-eee89e55.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/singletons-0afe8e97.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/index-24cc50d7.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/paths-6cd3a76e.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/preload-helper-b21cceae.js">
-		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/_layout.svelte-c1d09723.js">
-		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/stores-170298ab.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/_layout.svelte-ed162143.js">
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/stores-7a6e4e19.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/modules/pages/_layout.js-7b9cbfbc.js">
 		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/chunks/_layout-8d2a742b.js">
-		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/lektion10/_page.svelte-1c1e8ace.js"><title>undefined</title><!-- HEAD_svelte-7jht9m_START --><!-- HEAD_svelte-7jht9m_END -->
+		<link rel="modulepreload" href="/HTMLCSS-Sveltekit/_app/immutable/components/pages/lektion10/_page.svelte-63a4ddf9.js"><title>undefined</title><!-- HEAD_svelte-7jht9m_START --><!-- HEAD_svelte-7jht9m_END -->
 </head>
 
 <body>
@@ -88,13 +89,53 @@
     <a href="/HTMLCSS-Sveltekit/threlte">Threlte test</a>
     <a href="/HTMLCSS-Sveltekit/svelte-course">Svelte course notes</a></nav>
 
+  <h1>HTML Forms</h1>
+<aside><article><h2>Argentinas förlust mot Saudiarabien i VM
+      <a href="http://" aria-label="Läs mer om Argentinas förlust i VM">Läs mer</a></h2></article>
+  <article><h2 id="artikel">Argentinas förlust mot Saudiarabien i VM
+      <a id="länk" href="http://" aria-labelledby="länk artikel">Läs mer</a></h2></article>
+  <article><h2>Argentinas förlust mot Saudiarabien i VM
+      <a href="http://">Läs mer</a></h2></article></aside>
+<form action=""><label for="formy">Random input field</label>
+  <input type="text" name="" id="formy">
+  <button class="">Klicka här!</button>
+  <div><fieldset><legend class="font-bold text-lg" for="color">Välj färg för produkt</legend>
+      <label>Röd
+        <input type="radio" name="color"></label>
+
+      <label>Blå
+        <input type="radio" name="color"></label>
+
+      <label>Grön
+        <input type="radio" name="color"></label></fieldset>
+    <label>I agree to terms and conditions
+      <input type="checkbox" class="svelte-1ft1w81"></label></div>
+  <p class="text-xl" id="add-todo">Lägg till todos</p>
+  <input type="text" placeholder="Add todo" aria-labelledby="add-todo">
+  <br>
+  <input type="text" placeholder="Add todo" aria-labelledby="add-todo">
+  <br>
   
+  <input type="text" placeholder="Add todo" aria-label="Lägg till todo">
+  
+  <br>
+  <br>
+  <label for="password-input">Lösenord</label>
+  <input aria-describedby="pw-description" id="password-input" type="password" name="">
+  <p id="pw-description">Minst 1 siffra, en versal och ett specialtecken</p>
+  <div><label for="name">Namn:</label>
+    <input type="text" id="name" autocomplete="given-name">
+    <label for="address">Address:</label>
+    <input type="text" id="address" autocomplete="address-level1">
+    <label for="creditcard">Betalkort:</label>
+    <input type="text" id="creditcard" autocomplete="cc-number"></div>
+</form>
 
 
 
 
-		<script type="module" data-sveltekit-hydrate="fs47wk">
-			import { start } from "/HTMLCSS-Sveltekit/_app/immutable/start-f60cb54e.js";
+		<script type="module" data-sveltekit-hydrate="1k9o7n2">
+			import { start } from "/HTMLCSS-Sveltekit/_app/immutable/start-c06bf6f0.js";
 
 			start({
 				env: {},
@@ -108,7 +149,7 @@
 					form: null
 				},
 				paths: {"base":"/HTMLCSS-Sveltekit","assets":"/HTMLCSS-Sveltekit"},
-				target: document.querySelector('[data-sveltekit-hydrate="fs47wk"]').parentNode,
+				target: document.querySelector('[data-sveltekit-hydrate="1k9o7n2"]').parentNode,
 				trailing_slash: "never"
 			});
 		</script>
